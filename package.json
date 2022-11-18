@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@el3um4s/node-mdb": "^0.1.2",
+    "mime": "^3.0.0",
+    "ws": "^8.11.0"
+  }
+}
