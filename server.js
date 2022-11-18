@@ -1,28 +1,26 @@
 // Module Imports
-const http = require("http");
+const https = require("https");
 const ws = require("ws");
 const mime = require("mime");
 const dbman = require("./src/dbman")
 const fs = require("fs");
 
 const config = require("./config.json");
-const { WebSocketServer } = require("ws");
-const { threadId } = require("worker_threads");
 
 wsp = config.Websocketserver.port
-
+const options = {
+    key: fs.readFileSync("./cert/cert.key"),
+    cert: fs.readFileSync("./cert/cert.cer")
+  };
 
 // Client Object used in the authdClients Protocol as a login method
-class authorizedclient {
-    constructor(ipaddr) {
-        this.ipaddr = ipaddr;
-    }
-}
 class application {
     constructor() {
         this.ASSETMAN = new dbman(config.database);
-        this.webserver = http.createServer();
-        this.websocketserver = new ws.WebSocketServer({port:wsp})
+        this.webserver = https.createServer(options);
+        this.websocketserver = new ws.Server({
+            server:this.webserver,
+        })
         this._authdClients = [];
 
         // Used for timestamps when logging
@@ -43,13 +41,12 @@ class application {
             var deetatype
 
             // Check if client is on authenticated list
-            if (!this._authdClients.includes(new authorizedclient(request.socket.remoteAddress))) {
+            console.log(this._authdClients.includes(request.socket.remoteAddress))
+            if (!this._authdClients.includes(request.socket.remoteAddress)) {
                 var deeta = fs.readFileSync(`./client/html/login.html`)
-                var deetatype = mime.getType(`./client/html/login.html`)
-                statuscode = 401;
-                response.statusCode = statuscode;
+                response.statusCode = 401;
                 response.setHeader('Access-Control-Allow-Origin', '*')
-                response.setHeader('Content-Type', `${deetatype}`)
+                response.setHeader('Content-Type', `Text/HTML`)
                 response.write(deeta);
                 response.end();
                 return;
@@ -86,7 +83,7 @@ class application {
             response.setHeader('Content-Type', `${deetatype}`)
             response.write(deeta);
             response.end();
-        })
+    })
 
 
         this.websocketserver.addListener("connection", (websocket, client) => {
@@ -95,9 +92,27 @@ class application {
             websocket.on("close", () => {console.log(this.stamp() + `[WSS] Connection Disconnected to (${cliaddr})`);})
             websocket.on("message", (data) => {
                 console.log(this.stamp() + `[WSS] Message Recieved from client (${cliaddr}): ${data}`);
+                if (data.toString().startsWith("[AUTH]AUTHENTICATE(")) {
+                    var msg = data.toString().replace("[AUTH]AUTHENTICATE(", "").replace(")", "");
+                    var cred = msg.split(",");
+                    if (cred.length != 2) {
+                        // INTERNAL SERVER ERROR: PASSWORDS SHOULD NOT INCLUDE: () OR ,
+                        console.log("Uh oh");
+                        websocket.send("[ERR]Uhoh")
+                        return;
+                    }
+                    console.log(`Validating Credentials of user ${cred[0]}`)
+                    this._authdClients.push(client.socket.remoteAddress)
+                    console.log(this._authdClients)
+                    // Now we check if the credentials entered match any in the database
+                    websocket.send("[AUTH]200OK")
+                }
+
+
+            
             })
         })
-        this.websocketserver.on("listening",() => {console.log(this.stamp() + `[WSS] Websocket Server Listening on port 444, marking as READY.`);})
+        this.websocketserver.on("listening",() => {console.log(this.stamp() + `[WSS] Websocket Server Listening on HTTPS Webserver listening on ${config.Webserver.port}, marking as READY.`);})
     }
 
 
