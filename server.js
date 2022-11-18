@@ -5,10 +5,14 @@ const mime = require("mime");
 const dbman = require("./src/dbman")
 const fs = require("fs");
 
-const configuration = JSON.parse(fs.readFileSync("./config.json"))
+const config = require("./config.json")
 class application {
-    constructor(configfile) {
+    constructor() {
+        this.ASSETMAN = new dbman(config.database);
 
+        const server = http.createServer();
+
+        server.listen(config.port);
     }
 }
 
