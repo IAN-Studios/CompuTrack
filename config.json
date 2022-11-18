@@ -1,4 +1,9 @@
 {
-    "port":"80",
-    "database":"./db/debug.mdb"
+    "Webserver": {
+        "port":80,
+        "database":"./db/dev.mdb" 
+    },
+    "Websocketserver": {
+        "port":444
+    }
 }
