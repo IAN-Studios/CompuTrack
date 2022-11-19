@@ -6,6 +6,7 @@ const dbman = require("./src/dbman")
 const fs = require("fs");
 
 const config = require("./config.json");
+const { runInThisContext } = require("vm");
 
 wsp = config.Websocketserver.port
 const options = {
@@ -16,7 +17,7 @@ const options = {
 // Client Object used in the authdClients Protocol as a login method
 class application {
     constructor() {
-        this.ASSETMAN = new dbman(config.database);
+        this.ASSETMAN = new dbman("./db/dev.mdb");
         this.webserver = https.createServer(options);
         this.websocketserver = new ws.Server({
             server:this.webserver,
@@ -31,8 +32,18 @@ class application {
         }
 
 
+    // Time to Initalize Databases
+        this.UserInfo;
 
-        
+        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Information From Database`)})        
+
+
+
+
+
+
+
+
 
         // I TRUST Students to not abuse this, so for simplicity's sake I am allowing all requests to be direct paths.
         this.webserver.on("request", (request, response) => {
@@ -103,7 +114,6 @@ class application {
                     }
                     console.log(`Validating Credentials of user ${cred[0]}`)
                     this._authdClients.push(client.socket.remoteAddress)
-                    console.log(this._authdClients)
                     // Now we check if the credentials entered match any in the database
                     websocket.send("[AUTH]200OK")
                 }

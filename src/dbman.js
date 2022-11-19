@@ -2,7 +2,7 @@ const nmdb = require("@el3um4s/node-mdb");
 
 // Be thankful I use Javadoc for documentation
 class dbman {
-    /**@param {database} database database to manage*/
+    /**@param {String} database database to manage*/
     constructor(database) {
         this.database = database;
         
@@ -40,26 +40,37 @@ class dbman {
                 var data = await nmdb.query.sql({this:database, sql})
                 return JSON.parse(data);
             },
-            /**@param {sql} sql SQL Code to run (DEPRECIATED)*/
+            /**@param {String} sql SQL Code to run (DEPRECIATED)*/
             query: async function(sql) {
                 var data = await nmdb.query.sql({this:database, sql})
                 return JSON.parse(data);
             },
             /**
-             * @param {Issue ID} [ID] ID Number of Issue
-             * @param {Asset Tag} [AssetTag] Asset Tag of Item
-             * @param {New Status} [value] New Status of Issue
+             * @param {Number} ID ID Number of Issue
+             * @param {String} AssetTag Asset Tag of Item
+             * @param {String} value New Status of Issue
              **/
             updateStatus: function(ID, AssetTag, value) {
 
             },
             /**
-             * @param {Asset Tag} [AssetTag] Asset Tag of Item
-             * @param {Severity Level} [Severity] Severity of Issue
-             * @param {Description} [Description] Description for Issue
+             * @param {String} AssetTag Asset Tag of Item
+             * @param {String} Severity Severity of Issue
+             * @param {String} Description Description for Issue
              **/
             new: function(AssetTag, Severity, Description) {
 
+            }
+        }
+
+        this.Credentials = {
+            fetchUserInfo: async function() {
+                var sql = `
+                SELECT Credentials.UUID, Credentials.Username, Credentials.Displayname, Auth.Password, Auth.PermissionLevel
+                FROM Auth INNER JOIN Credentials ON Auth.UUID = Credentials.UUID;
+                `
+                const data = await nmdb.query.sql({database, sql})
+                return data;
             }
         }
     }
