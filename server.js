@@ -35,7 +35,7 @@ class application {
     // Time to Initalize Databases
         this.UserInfo;
 
-        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Information From Database`)})        
+        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Information From Database`)});
 
 
 
@@ -52,7 +52,6 @@ class application {
             var deetatype
 
             // Check if client is on authenticated list
-            console.log(this._authdClients.includes(request.socket.remoteAddress))
             if (!this._authdClients.includes(request.socket.remoteAddress)) {
                 var deeta = fs.readFileSync(`./client/html/login.html`)
                 response.statusCode = 401;
@@ -112,10 +111,24 @@ class application {
                         websocket.send("[ERR]Uhoh")
                         return;
                     }
-                    console.log(`Validating Credentials of user ${cred[0]}`)
-                    this._authdClients.push(client.socket.remoteAddress)
-                    // Now we check if the credentials entered match any in the database
-                    websocket.send("[AUTH]200OK")
+                    console.log(this.stamp() + `[WSS] Validating Credentials of user ${cred[0]}`)
+
+                    var auth = 0;
+                    // Check database for client
+                    this.UserInfo.forEach(item => {
+                        if ((cred[0].toLowerCase() == item.Username.toLowerCase()) && (cred[1] == item.Password)) {
+                            console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Authorized.`)
+                            this._authdClients.push(client.socket.remoteAddress)
+                            websocket.send("[AUTH]200OK")
+                            auth = 1;
+                        }
+                    })
+                    if (auth == 0) {
+                        console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Unauthorized`)
+                        this._authdClients.push(client.socket.remoteAddress)
+                        websocket.send("[AUTH]401UNAUTHORIZED")
+                        return;
+                    }
                 }
 
 

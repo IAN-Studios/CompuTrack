@@ -4,16 +4,25 @@
         <title>CompuTrack - Login</title>
         <style>
             :root {
-                --page-bg: #4d4d4d;
+                --page-bg: #afafaf;
+                --page-bg1: #4d4d4d;
                 --title-bg: #d3d3d3;
                 --subtitle-bg: #9389ff;
                 --loginbox-bg: #ffffff;
             }
             body {
-                background-color: var(--page-bg);
+                background-image: radial-gradient(var(--page-bg), var(--page-bg1));
+                height:100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            div.login {
+                position: relative;
+                margin:10%;
             }
             div.login-title {
-                position: absolute;
                 text-align: center;
                 left: 0px;
                 top: 0px;
@@ -25,7 +34,6 @@
                 background-color: var(--title-bg);
             }
             div.login-subtitle {
-                position: absolute;
                 left: 0px;
                 top: 50px;
                 width:500px;
@@ -36,7 +44,6 @@
                 background-color: var(--subtitle-bg);
             }
             div.loginbox {
-                position: absolute;
                 left:0px;
                 top:80px;
                 height:150px;
@@ -90,16 +97,18 @@
         </script>
     </head>
     <body>
-        <div class="login-title">CompuTrack - Login Required</div>
-        <div class="login-subtitle" id="status">Please Sign in to Continue (HTTP 401).</div>
-        <div class="loginbox">
-            <div class="username">
-                Username: <input id="username" type="text"/>
+        <div class="login">
+            <div class="login-title">CompuTrack - Login Required</div>
+            <div class="login-subtitle" id="status">Please Sign in to Continue (HTTP 401).</div>
+            <div class="loginbox">
+                <div class="username">
+                    Username: <input id="username" type="text"/>
+                </div>
+                <div class="password">
+                    Password: <input id="password" type="password"/> 
+                </div>
+                <button class="authorize" onclick="authorize()">Authenticate</button>
             </div>
-            <div class="password">
-                Password: <input id="password" type="password"/> 
-            </div>
-            <button class="authorize" onclick="authorize()">Authenticate</button>
         </div>
     </body>
 </html>
