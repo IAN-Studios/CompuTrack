@@ -17,7 +17,7 @@ const options = {
 // Client Object used in the authdClients Protocol as a login method
 class application {
     constructor() {
-        this.ASSETMAN = new dbman("./db/dev.mdb");
+        this.ASSETMAN = new dbman("./db/cred.mdb");
         this.webserver = https.createServer(options);
         this.websocketserver = new ws.Server({
             server:this.webserver,
@@ -51,6 +51,20 @@ class application {
             var deeta;
             var deetatype
 
+
+            //Favicon Load Before Client Authentication
+            if (request.url == "/client/assets/icon.png") {
+                var deeta = fs.readFileSync(`.${request.url}`)
+                var deetatype = mime.getType(`.${request.url}`)
+
+                response.statusCode = 200
+                response.setHeader('Access-Control-Allow-Origin', '*')
+                response.setHeader('Content-Type', `${deetatype}`)
+                response.write(deeta);
+                response.end();
+                return;
+            }
+
             // Check if client is on authenticated list
             if (!this._authdClients.includes(request.socket.remoteAddress)) {
                 var deeta = fs.readFileSync(`./client/html/login.html`)
@@ -62,10 +76,26 @@ class application {
                 return;
             }
 
+            // Check if request includes database path
+            if (request.url.startsWith("/db")) {
+                response.statusCode = 403
+                response.setHeader('Content-Type', `Text/Plain`)
+                response.write("403 FORBIDDEN");
+                response.end();
+                return;
+            }
+
+            // Database Data Retrival System 
+            // (Uses specific parameters to control data flow, and the SQL Queries are predefined & server-side only)
+
+                // Types of Requests
+                const DBreqlist = [ "stats", "reqassets", "reqissues" ]
 
 
 
+            
 
+            // Main Request Handler
             try {
                 var deeta = fs.readFileSync(`.${request.url}`)
                 var deetatype = mime.getType(`.${request.url}`)
@@ -115,6 +145,7 @@ class application {
 
                     var auth = 0;
                     // Check database for client
+                    console.log(cred)
                     this.UserInfo.forEach(item => {
                         if ((cred[0].toLowerCase() == item.Username.toLowerCase()) && (cred[1] == item.Password)) {
                             console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Authorized.`)
@@ -125,7 +156,6 @@ class application {
                     })
                     if (auth == 0) {
                         console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Unauthorized`)
-                        this._authdClients.push(client.socket.remoteAddress)
                         websocket.send("[AUTH]401UNAUTHORIZED")
                         return;
                     }

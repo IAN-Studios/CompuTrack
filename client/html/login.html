@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>CompuTrack - Login</title>
+        <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
         <style>
             :root {
                 --page-bg: #afafaf;
@@ -18,9 +19,10 @@
                 justify-content: center;
                 overflow: hidden;
             }
-            div.login {
+            form.login {
                 position: relative;
                 margin:10%;
+                border: 2px black solid;
             }
             div.login-title {
                 text-align: center;
@@ -81,6 +83,7 @@
                     if (message.data == "[AUTH]200OK") {
                         status.innerHTML = "Authentication Successful. Welcome Back!"
                         window.location.href = window.location.href;
+                        document.cookie = `account=${username}`
                         socket.removeEventListener("message", () => {});
                     }
                     if (message.data == "[AUTH]401UNAUTHORIZED") {
@@ -97,7 +100,7 @@
         </script>
     </head>
     <body>
-        <div class="login">
+        <form class="login">
             <div class="login-title">CompuTrack - Login Required</div>
             <div class="login-subtitle" id="status">Please Sign in to Continue (HTTP 401).</div>
             <div class="loginbox">
@@ -105,10 +108,10 @@
                     Username: <input id="username" type="text"/>
                 </div>
                 <div class="password">
-                    Password: <input id="password" type="password"/> 
+                    Password: <input id="password" type="password" /> 
                 </div>
-                <button class="authorize" onclick="authorize()">Authenticate</button>
+                <button class="authorize" type="submit" onclick="authorize()">Authenticate</button>
             </div>
-        </div>
+        </form>
     </body>
 </html>

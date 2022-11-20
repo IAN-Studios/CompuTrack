@@ -1,0 +1,65 @@
+body {
+    overflow:hidden;
+}
+
+/* Navigation Header */
+div.header {
+    height:50px;
+    width:100%;
+    background-color: var(--header-primary);
+    position: absolute;
+    left:0;
+    top:0;
+}
+.header-icon {
+    margin:5px;  
+    user-select: none;  
+}
+div.header-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position:absolute;
+    margin-bottom :5px;
+    font-size:20px;
+    top:5px;
+    user-select: none;
+    padding: 5px;
+    transition: background-color 0.25s;
+}
+div.header-icontext {
+    left:50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position:absolute;
+    margin-bottom :5px;
+    font-size:20px;
+    top:5px;
+    user-select: none;
+    padding: 5px;
+    font-weight: bold;
+    user-select: none;
+}
+div.header-dashboard {
+    left:200px;
+}
+div.header-assets {
+    left:350px;
+}
+div.header-issues {
+    left:475px;
+}
+div.header-logout {
+    right:5px;
+}
+
+div.header-text:hover {
+    background-color: var(--header-text-hover)
+}
+div.header-selected {
+    text-decoration: underline;
+}
+div.body {
+    position: absolute;
+    top:50px;
+    left:0px;
+    width: 100vw;
+    height: 100vh;
+}

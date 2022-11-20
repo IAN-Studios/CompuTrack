@@ -1,0 +1,14 @@
+
+/* Dashboard */
+div.dashboard-title {
+    font-family: 'copperplate', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:36pt;
+    font-weight: bold;
+    text-align: center;
+}
+div.dashboard {
+    background-color: var(--palette-orange);
+    margin:20px;
+    width: auto;
+    height:90%
+}

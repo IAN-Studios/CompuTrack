@@ -1,3 +1,7 @@
 :root {
-    
+    --header-primary: #cecece;
+    --header-secondary: #dedede;
+    --header-text: #404040;
+    --header-text-hover :#aaaaaa;   
+    --palette-orange: #ff6a00a1;
 }
