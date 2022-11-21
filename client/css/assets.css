@@ -1,0 +1,22 @@
+table.table {
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+div.body {
+    overflow: scroll;
+}
+th.table-header {
+    position: relative;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+}
+tr.Assets-Asset:hover {
+    background-color: #494949;
+    color:white;
+}
+tr.assets-headers {
+    font-weight: bold;
+    text-decoration: underline;
+}

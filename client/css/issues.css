@@ -1,0 +1,24 @@
+div.body {
+    overflow:scroll
+}
+table.table {
+    width: 100%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+th.table-header {
+    width: 100%;
+    font-size: 24pt;
+}
+tr.Assets-Asset:hover {
+    background-color: #494949;
+    color:white;
+}
+tr.Issues-Issue:hover {
+    background-color: #494949;
+    color:white;
+}
+tr.issues-header {
+    font-weight: bold;
+    text-decoration: underline;
+}

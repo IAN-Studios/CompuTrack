@@ -5,6 +5,7 @@
         <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
         <link rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
+        <link rel="stylesheet" type="text/css" href="/client/css/issues.css"/>
         <script src="/client/js/index.js"></script>
     </head>
     <body>
@@ -17,10 +18,21 @@
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
         <div class="body">
-          list of Issues
-          <div id="issuelist">
-
-          </div>
+          <table class="table">
+            <thead>
+              <th class="table-header" colspan="6">CompuTrack Issue Manager</th>
+            </thead>
+            <tbody id="issuelist">
+              <tr class="issues-header">
+                <td>Issue ID</td>
+                <td>Asset Tag</td>
+                <td>Issue Severity</td>
+                <td>Date Added</td>
+                <td>Issue Resolved?</td>
+                <td>Issue Description</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <script>
             function getCookie(cname) {
