@@ -10,14 +10,15 @@ class dbman {
         this.Assets = {
             fetchAll: async function() {
                 var sql = `
-                SELECT Assets.*
-                FROM Assets;
+                SELECT ASSETS.*
+                FROM ASSETS;
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
             },
             fetch: async function(sql) {
-                var data = await nmdb.query.sql({database, sql})
+                var data = "NOT IMPLEMENTED"
+                //var data = await nmdb.query.sql({database, sql})
                 return data;
             }
         }
@@ -25,26 +26,26 @@ class dbman {
         this.Issues = {
             fetchAll: async function() {
                 var sql = `
-                SELECT Issues.*
-                FROM Issues;
+                SELECT ISSUES.*
+                FROM ISSUES;
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
             },
             fetchAllUnresolved: async function() {
                 var sql = `
-                SELECT Issues.*
-                FROM Issues
-                WHEN (((Issues.resolved) = "no"));
+                SELECT ISSUES.ID, ISSUES.[Asset Tag], ISSUES.[Severity (Optional)], ISSUES.[Date Added], ISSUES.[Resolved?], ISSUES.[Problem Description]
+                FROM ISSUES
+                WHERE (((ISSUES.[Resolved?])=False));                
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
             },
             fetchAllResolved: async function() {
                 var sql = `
-                SELECT Issues.*
-                FROM Issues
-                WHEN (((Issues.resolved) = "yes"));
+                SELECT ISSUES.ID, ISSUES.[Asset Tag], ISSUES.[Severity (Optional)], ISSUES.[Date Added], ISSUES.[Resolved?], ISSUES.[Problem Description]
+                FROM ISSUES
+                WHERE (((ISSUES.[Resolved?])=True));     
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
@@ -75,16 +76,16 @@ class dbman {
         this.Credentials = {
             fetchUserLoginInfo: async function() {
                 var sql = `
-                SELECT Credentials.UUID, Credentials.Username, Credentials.Displayname, Auth.Password, Auth.PermissionLevel
-                FROM Auth INNER JOIN Credentials ON Auth.UUID = Credentials.UUID;
+                SELECT USERS.UUID, USERS.Username, USERS.Displayname, AUTH.Password, AUTH.PermissionLevel
+                FROM AUTH INNER JOIN USERS ON AUTH.UUID = USERS.UUID;
                 `
                 const data = await nmdb.query.sql({database, sql})
                 return data;
             },
             fetchUserInfo : async function() {
                 var sql = `
-                SELECT Credentials.UUID, Credentials.Username, Credentials.Displayname, Auth.PermissionLevel
-                FROM Auth INNER JOIN Credentials ON Auth.UUID = Credentials.UUID;
+                SELECT USERS.UUID, USERS.Username, USERS.Displayname, AUTH.PermissionLevel
+                FROM AUTH INNER JOIN USERS ON AUTH.UUID = USERS.UUID;
                 `
                 const data = await nmdb.query.sql({database, sql});
                 return data;

@@ -17,7 +17,7 @@ const options = {
 // Client Object used in the authdClients Protocol as a login method
 class application {
     constructor() {
-        this.ASSETMAN = new dbman("../db/cred.mdb");
+        this.ASSETMAN = new dbman("../db/computrack-database.mdb");
         this.webserver = https.createServer(options);
         this.websocketserver = new ws.Server({
             server:this.webserver,
