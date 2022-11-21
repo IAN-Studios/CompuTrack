@@ -43,14 +43,13 @@ class application {
                 Resolved: []
             }
         }
-        // this.database.LoginInfo Fetch
-        this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)});
-        // this.database.UserInfo
-        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)})
-        // this.database.Assets
-
-        // this.database.Issues.All
-
+        // Hugemongeous Block of code to dictate loading of all database items
+        this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Assets.fetchAll().then(r=>{this.database.Assets = Array.from(r);console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Issues.fetchAll().then(r=>{this.database.Issues.All = Array.from(r);console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = Array.from(r);console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = Array.from(r);console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
 
 
         // I TRUST Students to not abuse this, so for simplicity's sake I am allowing all requests to be direct paths.
@@ -138,7 +137,9 @@ class application {
             // Handle Logout Request
             if (request.url == "/client/logout") {
                     response.statuscode = 200;
-                    this._authdClients.splice(this._authdClients.indexOf(request.socket.remoteAddress), 1)
+                    this._authdClients.forEach(element => {
+                        if (element.address == request.socket.remoteAddress) this._authdClients.splice(this._authdClients.indexOf(element), 1)
+                    })
                     console.log(this._authdClients);
                     response.setHeader('Content-Type', `Text/HTML`)
                     response.write("<script>window.location.href = '/'</script>"); // smart way of doing something without use 301 status code
@@ -152,7 +153,7 @@ class application {
                 var deetatype = mime.getType(`.${request.url}`)
                 var statuscode = 200
             } catch {
-                if (request.url == "/") {
+                if ((request.url == "/")||(request.url == "/client/html/index.html?")||(request.url == "/?")) {
                     var deeta = fs.readFileSync(`./client/html/index.html`)
                     var deetatype = mime.getType(`./client/html/index.html`)
                     response.setHeader('Location', `/client/html/index.html`)

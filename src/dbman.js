@@ -13,12 +13,12 @@ class dbman {
                 SELECT Assets.*
                 FROM Assets;
                 `
-                var data = await nmdb.query.sql({this:database, sql})
-                return JSON.parse(data);
+                var data = await nmdb.query.sql({database, sql})
+                return data;
             },
             fetch: async function(sql) {
-                var data = await nmdb.query.sql({this:database, sql})
-                return JSON.parse(data);
+                var data = await nmdb.query.sql({database, sql})
+                return data;
             }
         }
         /**@param Issues Manage Issues */
@@ -28,8 +28,8 @@ class dbman {
                 SELECT Issues.*
                 FROM Issues;
                 `
-                var data = await nmdb.query.sql({this:database, sql})
-                return JSON.parse(data);
+                var data = await nmdb.query.sql({database, sql})
+                return data;
             },
             fetchAllUnresolved: async function() {
                 var sql = `
@@ -37,13 +37,22 @@ class dbman {
                 FROM Issues
                 WHEN (((Issues.resolved) = "no"));
                 `
-                var data = await nmdb.query.sql({this:database, sql})
-                return JSON.parse(data);
+                var data = await nmdb.query.sql({database, sql})
+                return data;
+            },
+            fetchAllResolved: async function() {
+                var sql = `
+                SELECT Issues.*
+                FROM Issues
+                WHEN (((Issues.resolved) = "yes"));
+                `
+                var data = await nmdb.query.sql({database, sql})
+                return data;
             },
             /**@param {String} sql SQL Code to run (DEPRECIATED)*/
             query: async function(sql) {
-                var data = await nmdb.query.sql({this:database, sql})
-                return JSON.parse(data);
+                var data = await nmdb.query.sql({database, sql})
+                return data;
             },
             /**
              * @param {Number} ID ID Number of Issue
