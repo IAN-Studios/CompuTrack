@@ -33,15 +33,23 @@ class application {
 
 
     // Time to Initalize Databases
-        this.UserInfo;
+        this.database = {
+            LoginInfo,
+            UserInfo,
+            Assets,
+            Issues: {
+                All,
+                Unresolved,
+                Resolved
+            }
+        }
+        // this.database.LoginInfo Fetch
+        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.LoginInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Information From Database`)});
+        // this.database.UserInfo
 
-        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Information From Database`)});
+        // this.database.Assets
 
-
-
-
-
-
+        // this.database.Issues.All
 
 
 
@@ -78,23 +86,58 @@ class application {
 
             // Check if request includes database path
             if (request.url.startsWith("/db")) {
-                response.statusCode = 403
-                response.setHeader('Content-Type', `Text/Plain`)
-                response.write("403 FORBIDDEN");
+                response.statusCode = 301
+                response.setHeader('Location', `/client/html/index.html`)
+                response.write();
                 response.end();
                 return;
             }
 
-            // Database Data Retrival System 
+            // Client Information Retrival System 
             // (Uses specific parameters to control data flow, and the SQL Queries are predefined & server-side only)
 
+            if (request.url.startsWith("/request?q=")) {
+                const req = request.url.slice(11).split("&")
+                console.log(req)
                 // Types of Requests
-                const DBreqlist = [ "stats", "reqassets", "reqissues" ]
+                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user" ];
+                var res = "{"
+
+                req.forEach(element => {
+                    if (element == "stats") {
+                        res = res + "STATS"
+                    } else if (element == "reqassets") {
+                        res = res + "REQASSETS"
+                    } else if (element == "reqissues") {
+                        res = res + "REQISSUES"
+                    } else if (element == "currentuser") {
+                        res = res + JSON.stringify(this.UserInfo);
+                    } else {
+                        console.log("client sent uh oh!")
+                    }
+                });
+                res = res + "}"
+                response.statusCode = 200;
+                response.write(res);
+                response.end();
+                return;
+            }
 
 
 
-            
 
+
+            // Handle Logout Request
+            if (request.url == "/client/logout") {
+                    response.statuscode = 200;
+                    this._authdClients.splice(this._authdClients.indexOf(request.socket.remoteAddress), 1)
+                    console.log(this._authdClients);
+                    response.setHeader('Content-Type', `Text/HTML`)
+                    response.write("<script>window.location.href = '/'</script>"); // smart way of doing something without use 301 status code
+                    response.end()
+                    return;
+            }
+        
             // Main Request Handler
             try {
                 var deeta = fs.readFileSync(`.${request.url}`)
