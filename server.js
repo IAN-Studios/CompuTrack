@@ -93,7 +93,7 @@ class application {
 
             if (request.url.startsWith("/request?q=")) {
                 const req = request.url.slice(11).split("&")
-                console.log(req)
+
                 // Types of Requests
                 const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user" ];
                 var res = "{"

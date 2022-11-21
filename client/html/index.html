@@ -6,7 +6,6 @@
         <link rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
-        <script src="/client/js/index.js"></script>
     </head>
     <body>
         <div class="header">
@@ -20,7 +19,10 @@
         <div class="body">
             <div class="dashboard">
                 <div class="dashboard-title">Dashboard</div>
-                <div class="dashboard-stat dashboard-statistics"></div>
+                <div class="dashboard-statistics">
+                  <div class="dashboard-statistics-title">STATISTICS</div>
+                  <div id="stats"></div>
+                </div>
             </div>
         </div>
         <script>
@@ -41,5 +43,6 @@
               }
               document.getElementById("logoutbutton").innerHTML = `Logout ${getCookie("account")}`
         </script>
+        <script src="/client/js/index.js"></script>
     </body>
 </html>

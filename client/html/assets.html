@@ -17,6 +17,10 @@
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
         <div class="body">
+          <div class="Assets-title">List of Assets</div>
+          <div class="Assets-List" id="assetlist">
+
+          </div>
 
         </div>
         <script>
@@ -37,5 +41,6 @@
               }
               document.getElementById("logoutbutton").innerHTML = `Logout ${getCookie("account")}`
         </script>
+        <script src="/client/js/assets.js"></script>
     </body>
 </html>

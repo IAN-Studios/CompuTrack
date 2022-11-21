@@ -17,7 +17,10 @@
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
         <div class="body">
+          list of Issues
+          <div id="issuelist">
 
+          </div>
         </div>
         <script>
             function getCookie(cname) {
@@ -37,5 +40,6 @@
               }
               document.getElementById("logoutbutton").innerHTML = `Logout ${getCookie("account")}`
         </script>
+        <script src="/client/js/issues.js"></script>
     </body>
 </html>
