@@ -100,22 +100,23 @@ class application {
 
                 req.forEach(element => {
                     if (element == "stats") {
-                        res = res + `stats:${JSON.stringify(database.Statistics)}`
+                        res = res + `"stats":${JSON.stringify(database.Statistics)}`
                     } else if (element == "reqassets") {
-                        res = res + `reqassets:${JSON.stringify(database.Assets)}`
+                        res = res + `"reqassets":${JSON.stringify(database.Assets)}`
                     } else if (element == "reqissuesall") {
-                        res = res + `reqissuesall:${JSON.stringify(database.Issues.All)}`
+                        res = res + `"reqissuesall":${JSON.stringify(database.Issues.All)}`
                     } else if (element == "reqissuesunresolved") {
-                        res = res + `reqissuesunresolved:${JSON.stringify(database.Issues.Unresolved)}`
+                        res = res + `"reqissuesunresolved":${JSON.stringify(database.Issues.Unresolved)}`
                     } else if (element == "reqissuesresolved") {
-                        res = res + `reqissuesresolved:${JSON.stringify(database.Issues.Resolved)}`
+                        res = res + `"reqissuesresolved":${JSON.stringify(database.Issues.Resolved)}`
                     } else if (element == "currentuser") {
                         res = res + `"userinfo":${JSON.stringify(database.UserInfo)}`
                     } else {
                         console.log("client sent uh oh!")
                     }
+                    res = res + ","
                 });
-                res = res + "}"
+                res = res + `"end":"end"}`
                 response.statusCode = 200;
                 response.write(res);
                 response.end();
