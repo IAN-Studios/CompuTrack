@@ -62,7 +62,7 @@ class dbman {
             updateStatus: function(ID, AssetTag, value) {
 
             },
-            /**
+            /** 
              * @param {String} AssetTag Asset Tag of Item
              * @param {String} Severity Severity of Issue
              * @param {String} Description Description for Issue
