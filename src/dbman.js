@@ -52,7 +52,7 @@ class dbman {
             /**@param {String} sql SQL Code to run (DEPRECIATED)*/
             query: async function(sql) {
                 var data = await nmdb.query.sql({database, sql})
-                return data; 
+                return data;
             },
             /**
              * @param {Number} ID ID Number of Issue
