@@ -17,7 +17,7 @@ const options = {
 // Client Object used in the authdClients Protocol as a login method
 class application {
     constructor() {
-        this.ASSETMAN = new dbman("../db/computrack-database.mdb");
+        this.ASSETMAN = new dbman("./db/computrack-database.mdb");
         this.webserver = https.createServer(options);
         this.websocketserver = new ws.Server({
             server:this.webserver,
@@ -33,24 +33,16 @@ class application {
 
 
     // Time to Initalize Databases
-        this.database = {
-            LoginInfo: [],
-            UserInfo: [],
-            Assets: [],
-            Issues: {
-                All: [],
-                Unresolved: [],
-                Resolved: []
-            }
-        }
+        var database = {Issues:{}}
         // Hugemongeous Block of code to dictate loading of all database items
-        this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Assets.fetchAll().then(r=>{this.database.Assets = Array.from(r);console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Issues.fetchAll().then(r=>{this.database.Issues.All = Array.from(r);console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = Array.from(r);console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = Array.from(r);console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Assets.fetchAll().then(r=>{database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Issues.fetchAll().then(r=>{database.Issues.All = r;console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        this.ASSETMAN.Issues.fetchAllResolved().then(r=>{database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
 
+        this.ASSETMAN.Assets.fetchAll().then(e => {e})
 
         // I TRUST Students to not abuse this, so for simplicity's sake I am allowing all requests to be direct paths.
         this.webserver.on("request", (request, response) => {
@@ -108,17 +100,17 @@ class application {
 
                 req.forEach(element => {
                     if (element == "stats") {
-                        res = res + `stats:${JSON.stringify(this.database.Statistics)}`
+                        res = res + `stats:${JSON.stringify(database.Statistics)}`
                     } else if (element == "reqassets") {
-                        res = res + `reqassets:${JSON.stringify(this.database.Assets)}`
+                        res = res + `reqassets:${JSON.stringify(database.Assets)}`
                     } else if (element == "reqissuesall") {
-                        res = res + `reqissuesall:${JSON.stringify(this.database.Issues.All)}`
+                        res = res + `reqissuesall:${JSON.stringify(database.Issues.All)}`
                     } else if (element == "reqissuesunresolved") {
-                        res = res + `reqissuesunresolved:${JSON.stringify(this.database.Issues.Unresolved)}`
+                        res = res + `reqissuesunresolved:${JSON.stringify(database.Issues.Unresolved)}`
                     } else if (element == "reqissuesresolved") {
-                        res = res + `reqissuesresolved:${JSON.stringify(this.database.Issues.Resolved)}`
+                        res = res + `reqissuesresolved:${JSON.stringify(database.Issues.Resolved)}`
                     } else if (element == "currentuser") {
-                        res = res + `"userinfo":${JSON.stringify(this.database.UserInfo)}`
+                        res = res + `"userinfo":${JSON.stringify(database.UserInfo)}`
                     } else {
                         console.log("client sent uh oh!")
                     }
@@ -197,7 +189,7 @@ class application {
 
                     var auth = 0;
                     // Check database for client
-                    this.database.LoginInfo.forEach(item => {
+                    database.LoginInfo.forEach(item => {
                         if ((cred[0].toLowerCase() == item.Username.toLowerCase()) && (cred[1] == item.Password)) {
                             console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Validated.`)
                             var Username = item.Username.toLowerCase();

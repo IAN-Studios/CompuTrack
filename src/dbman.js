@@ -13,8 +13,8 @@ class dbman {
                 SELECT ASSETS.*
                 FROM ASSETS;
                 `
-                var data = await nmdb.query.sql({database, sql})
-                return data;
+                var e = await nmdb.query.sql({database,sql})
+                return e;
             },
             fetch: async function(sql) {
                 var data = "NOT IMPLEMENTED"
@@ -93,5 +93,5 @@ class dbman {
         }
     }
 }
-
+new dbman("./db/computrack-database.mdb").Assets.fetchAll()
 module.exports = dbman;
