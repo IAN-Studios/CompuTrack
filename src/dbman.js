@@ -54,7 +54,7 @@ class dbman {
                 var data = await nmdb.query.sql({database, sql})
                 return data;
             },
-            /**
+            /** 
              * @param {Number} ID ID Number of Issue
              * @param {String} AssetTag Asset Tag of Item
              * @param {String} value New Status of Issue
