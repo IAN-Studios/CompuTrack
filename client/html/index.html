@@ -18,11 +18,21 @@
         </div>
         <div class="body">
             <div class="dashboard">
-                <div class="dashboard-title">Dashboard</div>
+                <div class="dashboard-title" id="title">Dashboard</div>
+                <span>
                 <div class="dashboard-statistics">
                   <div class="dashboard-statistics-title">STATISTICS</div>
                   <div id="stats"></div>
                 </div>
+                <div class="actions">
+                  <div class="actions-title">Actions</div>
+                  <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
+                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
+                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Manage Issues</div>
+                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Create an Issue</div>
+                  <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
+                </div>
+                </span>
             </div>
         </div>
         <script>
