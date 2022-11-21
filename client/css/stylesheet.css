@@ -51,7 +51,8 @@ div.header-logout {
 }
 
 div.header-text:hover {
-    background-color: var(--header-text-hover)
+    background-color: var(--header-text-hover);
+    text-decoration: underline
 }
 div.header-selected {
     text-decoration: underline;

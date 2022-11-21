@@ -83,7 +83,8 @@
                     if (message.data == "[AUTH]200OK") {
                         status.innerHTML = "Authentication Successful. Welcome Back!"
                         window.location.href = window.location.href;
-                        document.cookie = `account=${username}`
+                        document.cookie = 'account=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
+                        document.cookie = `account=${username}; path=/;`
                         socket.removeEventListener("message", () => {});
                     }
                     if (message.data == "[AUTH]401UNAUTHORIZED") {

@@ -64,12 +64,20 @@ class dbman {
         }
 
         this.Credentials = {
-            fetchUserInfo: async function() {
+            fetchUserLoginInfo: async function() {
                 var sql = `
                 SELECT Credentials.UUID, Credentials.Username, Credentials.Displayname, Auth.Password, Auth.PermissionLevel
                 FROM Auth INNER JOIN Credentials ON Auth.UUID = Credentials.UUID;
                 `
                 const data = await nmdb.query.sql({database, sql})
+                return data;
+            },
+            fetchUserInfo : async function() {
+                var sql = `
+                SELECT Credentials.UUID, Credentials.Username, Credentials.Displayname, Auth.PermissionLevel
+                FROM Auth INNER JOIN Credentials ON Auth.UUID = Credentials.UUID;
+                `
+                const data = await nmdb.query.sql({database, sql});
                 return data;
             }
         }

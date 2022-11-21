@@ -34,19 +34,19 @@ class application {
 
     // Time to Initalize Databases
         this.database = {
-            LoginInfo,
-            UserInfo,
-            Assets,
+            LoginInfo: [],
+            UserInfo: [],
+            Assets: [],
             Issues: {
-                All,
-                Unresolved,
-                Resolved
+                All: [],
+                Unresolved: [],
+                Resolved: []
             }
         }
         // this.database.LoginInfo Fetch
-        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.LoginInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Information From Database`)});
+        this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)});
         // this.database.UserInfo
-
+        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = Array.from(r);console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)})
         // this.database.Assets
 
         // this.database.Issues.All
@@ -73,8 +73,12 @@ class application {
                 return;
             }
 
+            var authorized = 0;
+            this._authdClients.forEach(element => {  
+                if (element.address == request.socket.remoteAddress) authorized = 1;
+            })
             // Check if client is on authenticated list
-            if (!this._authdClients.includes(request.socket.remoteAddress)) {
+            if (authorized == 0) {
                 var deeta = fs.readFileSync(`./client/html/login.html`)
                 response.statusCode = 401;
                 response.setHeader('Access-Control-Allow-Origin', '*')
@@ -105,13 +109,17 @@ class application {
 
                 req.forEach(element => {
                     if (element == "stats") {
-                        res = res + "STATS"
+                        res = res + `stats:${JSON.stringify(this.database.Statistics)}`
                     } else if (element == "reqassets") {
-                        res = res + "REQASSETS"
-                    } else if (element == "reqissues") {
-                        res = res + "REQISSUES"
+                        res = res + `reqassets:${JSON.stringify(this.database.Assets)}`
+                    } else if (element == "reqissuesall") {
+                        res = res + `reqissuesall:${JSON.stringify(this.database.Issues.All)}`
+                    } else if (element == "reqissuesunresolved") {
+                        res = res + `reqissuesunresolved:${JSON.stringify(this.database.Issues.Unresolved)}`
+                    } else if (element == "reqissuesresolved") {
+                        res = res + `reqissuesresolved:${JSON.stringify(this.database.Issues.Resolved)}`
                     } else if (element == "currentuser") {
-                        res = res + JSON.stringify(this.UserInfo);
+                        res = res + `"userinfo":${JSON.stringify(this.database.UserInfo)}`
                     } else {
                         console.log("client sent uh oh!")
                     }
@@ -188,11 +196,12 @@ class application {
 
                     var auth = 0;
                     // Check database for client
-                    console.log(cred)
-                    this.UserInfo.forEach(item => {
+                    this.database.LoginInfo.forEach(item => {
                         if ((cred[0].toLowerCase() == item.Username.toLowerCase()) && (cred[1] == item.Password)) {
-                            console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Authorized.`)
-                            this._authdClients.push(client.socket.remoteAddress)
+                            console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Validated.`)
+                            var Username = item.Username.toLowerCase();
+                            var addr = client.socket.remoteAddress;
+                            this._authdClients.push({address:addr, username:Username})
                             websocket.send("[AUTH]200OK")
                             auth = 1;
                         }
