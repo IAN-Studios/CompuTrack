@@ -3,14 +3,15 @@
     <head>
         <title>CompuTrack</title>
         <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
-        <link rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
+        <link id="theme" rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
+        <script src="/client/js/header.js"></script>
     </head>
     <body> 
         <div class="header">
             <img class="header-icon" src="/client/assets/icon.png" height="40px" width="40px"/>
-            <div class="header-icontext">CompuTrack</div>
+            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
             <div onclick="window.location.href = '/client/html/index.html'" class="header-selected header-text header-dashboard">Dashboard</div>
             <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
             <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
@@ -18,21 +19,21 @@
         </div>
         <div class="body">
             <div class="dashboard">
-                <div class="dashboard-title" id="title">Dashboard</div>
-                <span>
-                <div class="dashboard-statistics">
-                  <div class="dashboard-statistics-title">STATISTICS</div>
-                  <div id="stats"></div>
+                <div class="dashboard-title" id="title">Dashboard=</div>
+                <div class="dashboard-body" id dashboardbody>
+                  <div class="dashboard-statistics">
+                    <div class="dashboard-statistics-title">STATISTICS</div>
+                    <div id="stats"></div>
+                  </div>
+                  <div class="actions">
+                    <div class="actions-title">Actions</div>
+                    <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
+                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
+                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Manage Issues</div>
+                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Create an Issue</div>
+                    <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
+                  </div>
                 </div>
-                <div class="actions">
-                  <div class="actions-title">Actions</div>
-                  <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
-                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
-                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Manage Issues</div>
-                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Create an Issue</div>
-                  <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
-                </div>
-                </span>
             </div>
         </div>
         <script>

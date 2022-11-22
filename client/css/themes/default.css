@@ -2,6 +2,8 @@
     --header-primary: #cecece;
     --header-secondary: #dedede;
     --header-text: #404040;
-    --header-text-hover :#aaaaaa;   
+    --header-text-hover :#42424262;   
     --palette-orange: #ff6a00a1;
+    --pg-bg: #fafafa;
+    --button-text-disabled:#767676;
 }

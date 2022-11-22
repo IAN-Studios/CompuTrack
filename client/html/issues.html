@@ -3,14 +3,15 @@
     <head>
         <title>CompuTrack - Issue Manager</title>
         <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
-        <link rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
+        <link id="theme" rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/issues.css"/>
+        <script src="/client/js/header.js"></script>
     </head>
     <body>
         <div class="header">
             <img class="header-icon" src="/client/assets/icon.png" height="40px" width="40px"/>
-            <div class="header-icontext">CompuTrack</div>
+            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
             <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard">Dashboard</div>
             <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
             <div onclick="window.location.href = '/client/html/issues.html'" class="header-selected header-text header-issues">Issues Manager</div>
@@ -20,6 +21,7 @@
           <table class="table">
             <thead>
               <th class="table-header" colspan="6">CompuTrack Issue Manager</th>
+                <button class="table-header-manage disabled" id="MANAGE" disabled onclick="manage()">Manage</button>
             </thead>
             <tbody id="issuelist">
               <tr class="issues-header">

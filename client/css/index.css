@@ -7,40 +7,38 @@ div.dashboard-title {
     text-align: center;
 }
 div.dashboard {
-    background-color: var(--palette-orange);
-    margin:20px;
+    background-color: var(--pg-bg);
     width: auto;
-    height:87%
+    height:100%
 }
-div.dashboard-statistics {
+span.dashboard-statistics {
     background-color: grey;
     width:500px;
-    height:475px;
+    height:70%;
     margin:20px;
     padding:10px;
 }
 div.dashboard-statistics-title {
-    text-align: center;
+    text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-    font-size: 32pt;
-    margin-bottom: 50px;
+    font-size: 24pt;
+    padding:10px;
     user-select: none;
 }
 div.dashboard-statistic {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20pt;
-    margin-top:40px;
+    font-size: 14pt;
     background-color: var(--header-primary);
     padding:10px;
 }
-div.actions {
+span.actions {
     position: relative;
     background-color: grey;
     width:300px;
     top:-515px;
     left:600px;
-    height:475px;
+    height:70%;
 }
 div.actions-title {
     font-size: 24pt;

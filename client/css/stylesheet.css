@@ -1,5 +1,6 @@
 body {
     overflow:hidden;
+    transition: background-color 0.25s;
 }
 
 /* Navigation Header */
@@ -7,6 +8,7 @@ div.header {
     height:50px;
     width:100%;
     background-color: var(--header-primary);
+    color:var(--header-text);
     position: absolute;
     left:0;
     top:0;

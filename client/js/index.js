@@ -12,7 +12,7 @@ fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
     data.userinfo.forEach(element => {
         if (element.Username.toLowerCase() == getCookie("account")) {
             displayname = element.Displayname;
-            document.getElementById("title").innerHTML = `Dashboard<div style="font-size:12pt;margin:0">Welcome back, ${displayname}</div>`
+            document.getElementById("title").innerHTML = `<div style="font-size:24pt;text-align:left;padding:10px">Welcome back, ${displayname}.</div>`
         }
     });
 })})
