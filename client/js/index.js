@@ -15,4 +15,4 @@ fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
             document.getElementById("title").innerHTML = `<div style="font-size:24pt;text-align:left;padding:10px">Welcome back, ${displayname}.</div>`
         }
     });
-})})
+})}) 
