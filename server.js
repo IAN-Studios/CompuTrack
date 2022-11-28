@@ -90,7 +90,7 @@ class application {
                 const req = request.url.slice(11).split("&")
 
                 // Types of Requests
-                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user", "update", "new" ];
+                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user"];
                 var res = "{"
 
                 req.forEach(element => {
@@ -238,7 +238,7 @@ class application {
                         var updatedata = trim2.split(";,;");
                         this.ASSETMAN.Issues.new(updatedata[0],updatedata[1],updatedata[2]).then(() => {this.updateDB().then(setTimeout(() => {websocket.send("200OK")},1000))})
                     }
-                    websocket.send("[DATABASE]500INTERNALSERVERERROR")
+                    websocket.send("[DATABASE]500INTERNALSERVERERROR");
                 }
 
 
