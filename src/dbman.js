@@ -55,16 +55,27 @@ class dbman {
              * @param {String} property Asset Tag of Item
              * @param {String} newValue New Status of Issue
              **/
-            update: function(ID, property, newValue) {
-
+            update: async function(ID, setvalue) {
+                var sql = `
+                UPDATE ISSUES
+                SET ${setvalue}
+                WHERE ID = ${ID}
+                `
+                var data = await nmdb.query.sql({database, sql})
             },
             /** 
              * @param {String} AssetTag Asset Tag of Item
              * @param {String} Severity Severity of Issue
              * @param {String} Description Description for Issue
              **/
-            new: function(AssetTag, Severity, Description) {
-
+            new: async function(AssetTag, Severity, Description) {
+                var now = new Date();
+                var date = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`
+                var sql = `
+                INSERT INTO ISSUES([Asset Tag] , [Severity (Optional)], [Date Added], [Resolved?], [Problem Description])
+                VALUES (${AssetTag},'${Severity}','${date}',false,'${Description}')
+                `
+                await nmdb.query.sql({database, sql})
             }
         }
 

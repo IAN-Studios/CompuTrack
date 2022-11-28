@@ -70,7 +70,7 @@ button.disabled {
 
 iframe.creator-window {
     width:40%;
-    height:60%;
+    height:70%;
     position: absolute;
     z-index: 1000;
     top:10%;

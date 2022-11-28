@@ -7,6 +7,7 @@ const fs = require("fs");
 
 const config = require("./config.json");
 const { runInThisContext } = require("vm");
+const { throws } = require("assert");
 
 wsp = config.Websocketserver.port
 const options = {
@@ -31,18 +32,12 @@ class application {
             return stamp;
         }
 
-
     // Time to Initalize Databases
-        var database = {Issues:{}}
+        this.database = {Issues:{}}
         // Hugemongeous Block of code to dictate loading of all database items
-        this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Assets.fetchAll().then(r=>{database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Issues.fetchAll().then(r=>{database.Issues.All = r;console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        this.ASSETMAN.Issues.fetchAllResolved().then(r=>{database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
 
-        this.ASSETMAN.Assets.fetchAll().then(e => {e})
+        this.updateDB()
+
 
         // I TRUST Students to not abuse this, so for simplicity's sake I am allowing all requests to be direct paths.
         this.webserver.on("request", (request, response) => {
@@ -95,22 +90,22 @@ class application {
                 const req = request.url.slice(11).split("&")
 
                 // Types of Requests
-                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user" ];
+                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user", "update", "new" ];
                 var res = "{"
 
                 req.forEach(element => {
                     if (element == "stats") {
-                        res = res + `"stats":${JSON.stringify(database.Statistics)}`
+                        res = res + `"stats":${JSON.stringify(this.database.Statistics)}`
                     } else if (element == "reqassets") {
-                        res = res + `"reqassets":${JSON.stringify(database.Assets)}`
+                        res = res + `"reqassets":${JSON.stringify(this.database.Assets)}`
                     } else if (element == "reqissuesall") {
-                        res = res + `"reqissuesall":${JSON.stringify(database.Issues.All)}`
+                        res = res + `"reqissuesall":${JSON.stringify(this.database.Issues.All)}`
                     } else if (element == "reqissuesunresolved") {
-                        res = res + `"reqissuesunresolved":${JSON.stringify(database.Issues.Unresolved)}`
+                        res = res + `"reqissuesunresolved":${JSON.stringify(this.database.Issues.Unresolved)}`
                     } else if (element == "reqissuesresolved") {
-                        res = res + `"reqissuesresolved":${JSON.stringify(database.Issues.Resolved)}`
+                        res = res + `"reqissuesresolved":${JSON.stringify(this.database.Issues.Resolved)}`
                     } else if (element == "currentuser") {
-                        res = res + `"userinfo":${JSON.stringify(database.UserInfo)}`
+                        res = res + `"userinfo":${JSON.stringify(this.database.UserInfo)}`
                     } else {
                         console.log("client sent uh oh!")
                     }
@@ -143,6 +138,17 @@ class application {
             if (request.url.startsWith("/client/html/issues.html")) {
                 var deeta = fs.readFileSync(`./client/html/issues.html`)
                 var deetatype = mime.getType(`./client/html/issues.html`)
+                var statuscode = 200
+                response.statusCode = statuscode;
+                response.setHeader('Access-Control-Allow-Origin', '*')
+                response.setHeader('Content-Type', `${deetatype}`)
+                response.write(deeta);
+                response.end();
+                return
+            }
+            if (request.url.startsWith("/client/html/issueman.html")) {
+                var deeta = fs.readFileSync(`./client/html/issueman.html`)
+                var deetatype = mime.getType(`./client/html/issueman.html`)
                 var statuscode = 200
                 response.statusCode = statuscode;
                 response.setHeader('Access-Control-Allow-Origin', '*')
@@ -202,7 +208,7 @@ class application {
 
                     var auth = 0;
                     // Check database for client
-                    database.LoginInfo.forEach(item => {
+                   this.database.LoginInfo.forEach(item => {
                         if ((cred[0].toLowerCase() == item.Username.toLowerCase()) && (cred[1] == item.Password)) {
                             console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Validated.`)
                             var Username = item.Username.toLowerCase();
@@ -219,6 +225,17 @@ class application {
                     }
                 }
 
+                // Database Handler
+                if (data.toString().startsWith("DATABASE")) {
+                    if (data.toString().startsWith("DATABASE.UPDATE")) {
+                        var trim1 = data.toString().replace("DATABASE.UPDATE(data=[", "")
+                        var trim2 = trim1.substring(0, trim1.length-2);
+                        var updatedata = trim2.split(";,;");
+                        this.ASSETMAN.Issues.update(updatedata[0], `[Asset Tag] = ${updatedata[1]}, [Severity (Optional)] = '${updatedata[2]}', [Resolved?] = ${updatedata[3]}, [Problem Description] = '${updatedata[4]}'`).then(() => {this.updateDB().then(setTimeout(() => {websocket.send("200OK")},1000))})
+                    }
+                    websocket.send("[DATABASE]500INTERNALSERVERERROR")
+                }
+
 
             
             })
@@ -232,6 +249,17 @@ class application {
         this.webserver.listen(port);
         console.log(this.stamp() + `[HTTP] Webserver Listening on port ${port}, marking as READY.`);
     }
+    async updateDB() {
+        await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Assets.fetchAll().then(r=>{this.database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Issues.fetchAll().then(r=>{this.database.Issues.All = r;console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+
+        await this.ASSETMAN.Assets.fetchAll().then(e => {e})
+    }
+
 }
 
 // It's Servering Time.

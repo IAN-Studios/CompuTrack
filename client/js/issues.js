@@ -24,7 +24,7 @@ function manage() {
         data.reqissuesall.forEach(element => {
             if (element.ID == Array.from(ele.children)[0].innerHTML) issue = element;
         });
-        window.location.href = "/client/html/issueman.html"
+        window.location.search = `?mode=MODIFY&ID=${issue.ID}`
     })})
 }
 
@@ -46,8 +46,27 @@ function onload() {
         issueman.className = 'creator-window'
         issueman.src = "/client/html/issuecreator.html";
         issueman.hidden = false;
-    } else if (window.location.search.substr(1).split("&")[0] == "mode=MODIFY") {
-        var IDNUM = window.location.search.substr(1).split("&")[1]
+    } else if (window.location.search.startsWith("?mode=MODIFY")) {
+        var ID = window.location.search.split('&')[1].split("=")[1];
+        fetch(new Request("/request?q=reqissuesall")).then(a => {a.text().then(b=>{
+            data = JSON.parse(b);
+            data.reqissuesall.forEach(element => {
+                if (element.ID == ID) {
+                    var issue = element;
+                    console.log(issue);
+                    console.log("Modifying Issue");
+                    dialogopen = 1;
+                    document.getElementById("Create").disabled = true;
+                    document.getElementById("Create").className = "table-header-create disabled"
+                    document.getElementById("MANAGE").disabled = true;
+                    var issueman = document.getElementById('issue-manager')
+                    issueman.className = 'creator-window'
+                    issueman.src = `/client/html/issueman.html?id=${ID}`;
+                    issueman.hidden = false;
+
+                }
+            });
+        })});
     }
 }
 
