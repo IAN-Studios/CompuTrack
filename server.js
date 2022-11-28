@@ -232,6 +232,11 @@ class application {
                         var trim2 = trim1.substring(0, trim1.length-2);
                         var updatedata = trim2.split(";,;");
                         this.ASSETMAN.Issues.update(updatedata[0], `[Asset Tag] = ${updatedata[1]}, [Severity (Optional)] = '${updatedata[2]}', [Resolved?] = ${updatedata[3]}, [Problem Description] = '${updatedata[4]}'`).then(() => {this.updateDB().then(setTimeout(() => {websocket.send("200OK")},1000))})
+                    } else if (data.toString().startsWith("DATABASE.NEWISSUE")) {
+                        var trim1 = data.toString().replace("DATABASE.NEWISSUE(data=[", "")
+                        var trim2 = trim1.substring(0, trim1.length-2);
+                        var updatedata = trim2.split(";,;");
+                        this.ASSETMAN.Issues.new(updatedata[0],updatedata[1],updatedata[2]).then(() => {this.updateDB().then(setTimeout(() => {websocket.send("200OK")},1000))})
                     }
                     websocket.send("[DATABASE]500INTERNALSERVERERROR")
                 }
