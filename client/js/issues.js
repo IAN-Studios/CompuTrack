@@ -1,3 +1,6 @@
+var dialogopen = 0;
+
+
 fetch(new Request("/request?q=reqissuesall")).then(a => {a.text().then(b=>{
     data = JSON.parse(b);
     data.reqissuesall.forEach(element => {
@@ -14,11 +17,38 @@ function selectIssue(elementid) {
 }
 
 function manage() {
+    if (dialogopen == 1) {alert("No Paradoxes");return;}
     var ele= Array.from(document.getElementsByClassName("Selected"))[0]
     fetch(new Request("/request?q=reqissuesall")).then(a => {a.text().then(b=>{
         data = JSON.parse(b);
         data.reqissuesall.forEach(element => {
             if (element.ID == Array.from(ele.children)[0].innerHTML) issue = element;
         });
+        window.location.href = "/client/html/issueman.html"
     })})
 }
+
+
+
+function CreateIssue(issueobj) {
+    console.log(issueobj);
+    
+}
+
+function onload() {
+    if (window.location.search == "?mode=CREATE") {
+        console.log("Creating new Issue");
+        dialogopen = 1;
+        document.getElementById("Create").disabled = true;
+        document.getElementById("Create").className = "table-header-create disabled"
+        document.getElementById("MANAGE").disabled = true;
+        var issueman = document.getElementById('issue-manager')
+        issueman.className = 'creator-window'
+        issueman.src = "/client/html/issuecreator.html";
+        issueman.hidden = false;
+    } else if (window.location.search.substr(1).split("&")[0] == "mode=MODIFY") {
+        var IDNUM = window.location.search.substr(1).split("&")[1]
+    }
+}
+
+onload();

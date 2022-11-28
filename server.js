@@ -139,6 +139,18 @@ class application {
                     response.end()
                     return;
             }
+
+            if (request.url.startsWith("/client/html/issues.html")) {
+                var deeta = fs.readFileSync(`./client/html/issues.html`)
+                var deetatype = mime.getType(`./client/html/issues.html`)
+                var statuscode = 200
+                response.statusCode = statuscode;
+                response.setHeader('Access-Control-Allow-Origin', '*')
+                response.setHeader('Content-Type', `${deetatype}`)
+                response.write(deeta);
+                response.end();
+                return
+            }
         
             // Main Request Handler
             try {
@@ -146,7 +158,7 @@ class application {
                 var deetatype = mime.getType(`.${request.url}`)
                 var statuscode = 200
             } catch {
-                if ((request.url == "/")||(request.url == "/client/html/index.html?")||(request.url == "/?")) {
+                if ((request.url == "/")||(request.url.startsWith("/client/html/index.html"))||(request.url == "/?")) {
                     var deeta = fs.readFileSync(`./client/html/index.html`)
                     var deetatype = mime.getType(`./client/html/index.html`)
                     response.setHeader('Location', `/client/html/index.html`)

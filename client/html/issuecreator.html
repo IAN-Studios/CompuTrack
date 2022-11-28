@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/client/css/issuecreator.css"/>
+        <link rel="stylesheet" href="/client/css/themes/default.css"/>
+        <script>
+            function submitForm() {
+                document.getElementById("buttn").disabled = true;
+                assettag = document.getElementById('assettag').value;
+                const levelz = document.querySelectorAll('input[name="level"]')
+                for (const l of levelz) {
+                    if (l.checked) severity = l.value; 
+                }
+                var now = new Date()
+                var date = `${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}`
+                resolved = false;
+                description = document.getElementById('desc').value;
+                var newIssue = {
+                    'Asset Tag': assettag,
+                    'Severity (Optional)': severity,
+                    'Date Added': date,
+                    'Resolved?': resolved,
+                    'Problem Description': description
+                }
+                console.log(newIssue)
+                window.top.CreateIssue(newIssue)
+                window.parent.location.search=''
+            }
+        </script>
+    </head>
+    <body>
+        <div class="IssueCreator-header">
+            <span class="IssueCreator-header-Title">Create a New Issue Form</span>
+            <span class="IssueCreator-header-exit" onclick="window.parent.location.search=''">X</span>
+        </div>
+        <div class="Form">
+            <form>
+            <div class="Form-AssetTag">
+                Asset Tag: <input type="text" id="assettag" placeholder="Asset Tag..."/>
+            </div>
+            <div class="Form-Severity">
+                <p>Please select a severity level:</p>
+                    <input type="radio" id="level-normal" name="level" value="NORMAL">
+                    <label for="level-normal">Normal Issue (Default)</label><br>
+                    <input type="radio" id="level-urgent" name="level" value="URGENT">
+                    <label for="level-urgent">Urgent Level (Emergency Only)</label><br>
+
+            </div>
+                <input type="text" class="Form-Description" id="desc" placeholder="Write a Description about the Issue....."/>
+            </form>
+        </div>
+        <div>
+            <button class="submitForm" id="buttn" onclick="submitForm()">Create Issue</button>
+        </div>
+    </body>
+</html>

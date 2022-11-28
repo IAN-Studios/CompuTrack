@@ -41,6 +41,20 @@ button.table-header-manage {
     background-color: var(--header-secondary);
     color:var(--header-text)
 }
+button.table-header-create {
+    position: absolute;
+    right:150px;
+    margin:10px;
+    font-size: 16pt;
+    padding:5px;
+    border-radius: 0px;
+    border: 0px;
+    background-color: var(--header-secondary);
+    color:var(--header-text)
+}
+button.table-header-create:hover {
+    background-color: var(--header-text-hover);
+}
 button.table-header-manage:hover {
     background-color: var(--header-text-hover);
 }
@@ -51,4 +65,28 @@ button.table-header-manage:hover {
 button.disabled {
     color: var(--button-text-disabled);
     background-color: var(--header-text-hover)
+}
+
+
+iframe.creator-window {
+    width:40%;
+    height:60%;
+    position: absolute;
+    z-index: 1000;
+    top:10%;
+    left:30%;
+    right:30%;
+    bottom:10%;
+    border: 5px solid var(--header-secondary)
+}
+iframe.manager-window {
+    width:80%;
+    height:60%;
+    position: absolute;
+    z-index: 1000;
+    top:10%;
+    left:10%;
+    right:10%;
+    bottom:10%;
+    border: 5px solid var(--header-secondary)
 }

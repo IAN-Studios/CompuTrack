@@ -50,17 +50,12 @@ class dbman {
                 var data = await nmdb.query.sql({database, sql})
                 return data;
             },
-            /**@param {String} sql SQL Code to run (DEPRECIATED)*/
-            query: async function(sql) {
-                var data = await nmdb.query.sql({database, sql})
-                return data;
-            },
             /** 
              * @param {Number} ID ID Number of Issue
-             * @param {String} AssetTag Asset Tag of Item
-             * @param {String} value New Status of Issue
+             * @param {String} property Asset Tag of Item
+             * @param {String} newValue New Status of Issue
              **/
-            updateStatus: function(ID, AssetTag, value) {
+            update: function(ID, property, newValue) {
 
             },
             /** 

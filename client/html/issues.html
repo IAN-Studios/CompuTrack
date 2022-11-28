@@ -18,10 +18,12 @@
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
         <div class="body">
+          <iframe class="manager-window" id="issue-manager" hidden></iframe>
           <table class="table">
             <thead>
               <th class="table-header" colspan="6">CompuTrack Issue Manager</th>
-                <button class="table-header-manage disabled" id="MANAGE" disabled onclick="manage()">Manage</button>
+                <button class="table-header-create" id="Create" onclick="window.location.search = '?mode=CREATE'">Create New Issue</button>
+                <button class="table-header-manage disabled" id="MANAGE" disabled onclick="manage()">Modify Issue</button>
             </thead>
             <tbody id="issuelist">
               <tr class="issues-header">
