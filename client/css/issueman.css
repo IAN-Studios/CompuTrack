@@ -42,7 +42,7 @@ span.IssueCreator-header-exit:hover {
 .Form-input {
     margin:20px;
     padding:10px;
-    background-color: var(--header-text-hover);
+    background-color: var(--pg-bg);
     color:var(--header-text);
     text-align:center;
 }
