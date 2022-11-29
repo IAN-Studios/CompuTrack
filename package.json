@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@el3um4s/node-mdb": "^0.1.2",
+    "@el3um4s/run-vbs": "^1.1.2",
     "mime": "^3.0.0",
     "pkg": "^5.8.0",
     "rcedit": "^3.0.1",
