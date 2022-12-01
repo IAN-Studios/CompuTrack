@@ -48,8 +48,8 @@ class application {
 
             //Favicon Load Before Client Authentication
             if (request.url == "/client/assets/icon.png") {
-                var deeta = fs.readFileSync(`.${request.url}`)
-                var deetatype = mime.getType(`.${request.url}`)
+                var deeta = fs.readFileSync(`./client/assets/icon.svg`)
+                var deetatype = mime.getType(`./client/assets/icon.svg`)
 
                 response.statusCode = 200
                 response.setHeader('Access-Control-Allow-Origin', '*')
@@ -254,6 +254,12 @@ class application {
         this.webserver.listen(port);
         console.log(this.stamp() + `[HTTP] Webserver Listening on port ${port}, marking as READY.`);
     }
+
+
+
+
+
+    
     async updateDB() {
         await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})

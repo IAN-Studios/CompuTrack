@@ -5,18 +5,22 @@ div.dashboard-title {
     font-size:36pt;
     font-weight: bold;
     text-align: center;
+    color:var(--header-text)
 }
 div.dashboard {
     background-color: var(--pg-bg);
     width: auto;
     height:100%
 }
-span.dashboard-statistics {
-    background-color: grey;
+div.dashboard-statistics {
     width:500px;
     height:70%;
     margin:20px;
     padding:10px;
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    background-color: var(--header-secondary);
 }
 div.dashboard-statistics-title {
     text-align: left;
@@ -25,12 +29,19 @@ div.dashboard-statistics-title {
     font-size: 24pt;
     padding:10px;
     user-select: none;
+    cursor:move;
+    color: var(--header-text);
 }
 div.dashboard-statistic {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14pt;
     background-color: var(--header-primary);
     padding:10px;
+    color:var(--header-text);
+    background-color: var(--header-text-hover);
+}
+div.dashboard-statistic:hover {
+    background-color: var(--button-text-disabled);
 }
 span.actions {
     position: relative;

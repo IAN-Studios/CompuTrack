@@ -2,7 +2,9 @@ body {
     overflow:hidden;
     transition: background-color 0.25s;
 }
-
+div {
+    transition: background-color 0.5s;
+}
 /* Navigation Header */
 div.header {
     height:50px;
@@ -12,6 +14,7 @@ div.header {
     position: absolute;
     left:0;
     top:0;
+    z-index: 100;
 }
 .header-icon {
     margin:5px;  
@@ -26,6 +29,12 @@ div.header-text {
     user-select: none;
     padding: 5px;
     transition: background-color 0.25s;
+}
+.header-icontext {
+    transition: background-color 0.25s;
+}
+.header-icontext:hover {
+    background-color: var(--header-text-hover)
 }
 div.header-icontext {
     left:50px;
@@ -42,20 +51,32 @@ div.header-icontext {
 div.header-dashboard {
     left:200px;
 }
+div.header-dashboard:hover {
+    background-color: var(--header-text-hover);
+    text-decoration: underline
+}
 div.header-assets {
     left:350px;
+}
+div.header-assets:hover {
+    background-color: var(--header-text-hover);
+    text-decoration: underline
 }
 div.header-issues {
     left:475px;
 }
-div.header-logout {
-    right:5px;
-}
-
-div.header-text:hover {
+div.header-issues:hover {
     background-color: var(--header-text-hover);
     text-decoration: underline
 }
+div.header-logout {
+    right:5px;
+}
+div.header-logout:hover {
+    background-color: var(--logout-button-hover);
+    text-decoration: underline
+}
+
 div.header-selected {
     text-decoration: underline;
 }
