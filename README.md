@@ -7,5 +7,4 @@ It kind of sucks, it was written in javascript.
 The end goal is to make a reliable way for students to access large quantities of data, without the nuisance of learning MS-Access as a Database manager.
 
 ## Developers
-Currently, me (Aspectious) is the only one on this repo.
-
+Currently, Me (aka Aspectious) is the only one on this repo.
