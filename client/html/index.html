@@ -2,13 +2,14 @@
 <html>
     <head>
         <title>CompuTrack</title>
+        <!-- Imports; NOTE: for some reason, the "type" field is required alongside the appropiate MIME file type for certain imports to work! - Siebert -->
         <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
         <link id="theme" rel="stylesheet" type="text/css" href=""/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
-        <script src="/client/js/header.js"></script>
     </head>
     <body> 
+        <!-- Header very cool lol-->
         <div class="header">
             <img class="header-icon" onclick="changetheme()"src="/client/assets/icon.png" height="40px" width="40px" />
             <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
@@ -17,6 +18,9 @@
             <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
+
+
+        <!-- Although the body tag exists, this is a "body body" of the webpage, serving as the content underneath the header.-->
         <div class="body">
             <div class="dashboard">
                 <div class="dashboard-title" id="title">Welcome back</div>
@@ -25,21 +29,26 @@
                     <div class="dashboard-statistics-title" id="statsheader">STATISTICS</div>
                     <div id="statslist"></div>
                   </div>
-                  <!--
+
+                  
+                  <!-- Don't worry about it, its a clock, but I made a typo, so i stuck with it. - Siebert -->
+                  <div class="dashboard-cock" id="cock">
+                    <iframe id="ifrm" src="/client/html/cock.html" seamless></iframe>
+                  </div>
                   <div class="actions">
                     <div class="actions-title">Actions</div>
                     <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
                     <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
-                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Manage Issues</div>
-                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Create an Issue</div>
+                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Open a Search</div>
+                    <div onclick="window.location.href='/client/html/issues.html?mode=CREATE'" class="actions-item">Create an Issue</div>
                     <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
                   </div>
-                -->
-
                 </div>
             </div>
         </div>
 
+        <!-- Certain script imports are needed at the bottom of the page so that they can be accessed last, so that they have access to manipulate DOM Elements above it.-->
+        <script src="/client/js/header.js"></script>
         <script src="/client/js/index.js"></script>
     </body>
 </html>

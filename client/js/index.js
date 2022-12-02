@@ -1,3 +1,5 @@
+
+// Basic Function for fetching Cookies (Yum) (Used for fetching user prefrences such as account details and theme color)
 function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -13,9 +15,16 @@ function getCookie(cname) {
     }
     return "";
   }
-  document.getElementById("logoutbutton").innerHTML = `Logout ${getCookie("account")}`
+  document.getElementById("logoutbutton").innerHTML = `Logout ${getCookie("account")}` // Fetches account name for the welcome message and logout button
+
+
+
+// Fetches database information for use in the statistics pane
 fetch(new Request("/request?q=reqissuesunresolved&reqissuesresolved&reqassets&reqissuesall")).then(a => {a.text().then(b=>{
     data = JSON.parse(b);
+
+
+    // Shut up if you are thinking about how this method of HTML DOM Element addition is "inefficient", it's a little impractical, easier than a loop, and I like it.
     document.getElementById('stats').innerHTML = document.getElementById('stats').innerHTML
     + `<div class="dashboard-statistic">Items Asseted:<span style="float:right">${data.reqassets.length}</span></div>`
     + `<div class="dashboard-statistic">Issue Count:<span style="float:right">${data.reqissuesall.length}</span></div>`
@@ -23,6 +32,10 @@ fetch(new Request("/request?q=reqissuesunresolved&reqissuesresolved&reqassets&re
     + `<div class="dashboard-statistic">Resolved Issues:<span style="float:right">${data.reqissuesall.length-data.reqissuesunresolved.length}</span></div>` 
     + `<div class="dashboard-statistic">Issue Resolution %:<span style="float:right">${(data.reqissuesresolved.length/data.reqissuesall.length)*100}%</span></div>` 
 })})
+
+
+
+// Yet Another Fetch for the welcome message
 var displayname
 fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
     data = JSON.parse(b);
@@ -34,9 +47,19 @@ fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
     });
 })}) 
 
-function dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    
+
+
+
+
+
+
+
+
+
+
+// legacy Code for movable parts of the dashboard, may be implemented lated -siebert
+/*
+function dragElement(elmnt) {  
       elmnt.onmousedown = dragMouseDown;
   
     function dragMouseDown(e) {
@@ -70,5 +93,8 @@ function dragElement(elmnt) {
       document.onmousemove = null;
     }
   }
-  dragElement(document.getElementById("stats"));
-  //dragElement(document.getElementById("actions"));
+
+  */
+  //  dragElement(document.getElementById("stats"));
+  //  dragElement(document.getElementById("cock"));
+  //  dragElement(document.getElementById("actions"));

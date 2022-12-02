@@ -2,34 +2,63 @@
 <html>
     <head>
         <title>cock</title>
+        <link rel="stylesheet" type="text/css" id="theme" href=""/>
+        <style>
+            rect {
+                transition: background-color 0.25s;
+            }
+            circle {
+                transition: background-color 0.25s;
+            }
+            svg {
+                transition: background-color 0.25s;
+            }
+        </style>
     </head>
     <body>
         <svg height="256px" width="256px">
-            <circle r="110px" cx="128" cy="128" fill-opacity="100" fill="grey" stroke="white" stroke-width="10px"/>
-            <rect height="10px" width="25px" x="200" y="125" fill="black"/>
-            <rect height="10px" width="25px" x="32" y="125" fill="black"/>
-            <rect height="10px" width="25px" x="30" y="-134" transform="rotate(90)" fill="black"/>
-            <rect height="10px" width="25px" x="200" y="-134" transform="rotate(90)" fill="black"/>
-            <rect height="10px" width="25px" x="85" y="45" transform="rotate(30)" fill="black"/>
-            <rect height="10px" width="25px" x="86" y="-50" transform="rotate(60)" fill="black"/>
-            <rect height="10px" width="25px" x="245" y="41" transform="rotate(30)" fill="black"/>
-            <rect height="10px" width="25px" x="245" y="-52" transform="rotate(60)" fill="black"/>
-            <rect height="10px" width="25px" x="-48" y="172" transform="rotate(-30)" fill="black"/>
-            <rect height="10px" width="25px" x="-140" y="170" transform="rotate(-60)" fill="black"/>
-            <rect height="10px" width="25px" x="115" y="175" transform="rotate(-30)" fill="black"/>
-            <rect height="10px" width="25px" x="20" y="175" transform="rotate(-60)" fill="black"/>
-            <circle r="10" transform="translate(128,128)" />
-            <rect width="5" height="100" transform="translate(128,128),rotate(180,2.5,0)" class="hand-minutes" id="min"/>
-            <rect width="5" height="50" transform="translate(128,128),rotate(180,5,0)" class="hand-Math.round(hr/60)s" id="hr"/>
-            <rect width="2" height="100" transform="translate(128,128),rotate(180,1,0)" class="hand-seconds" id="sec" fill="red"/>
+            <circle r="110px" cx="128" cy="128" fill-opacity="100" fill="var(--cock-face)" stroke="black" stroke-width="10px"/>
+            <rect height="5px" width="25px" x="200" y="125" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="32" y="125" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="30" y="-131" transform="rotate(90)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="200" y="-131" transform="rotate(90)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="85" y="45" transform="rotate(30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="86" y="-50" transform="rotate(60)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="245" y="41" transform="rotate(30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="245" y="-50" transform="rotate(60)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="-48" y="172" transform="rotate(-30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="-140" y="170" transform="rotate(-60)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="115" y="175" transform="rotate(-30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="20" y="175" transform="rotate(-60)" fill="var(--cock-dialcolor)"/>
+            <circle r="10" transform="translate(128,128)" fill="black"/>
+            <rect width="5" height="100" transform="translate(128,128),rotate(180,2.5,0)" class="hand-minutes" fill="var(--cock-hands)" id="min"/>
+            <rect width="5" height="50" transform="translate(128,128),rotate(180,5,0)" class="hand-Math.round(hr/60)s" fill="var(--cock-hands)" id="hr"/>
+            <rect width="2" height="100" transform="translate(128,128),rotate(180,1,0)" class="hand-seconds" id="sec" fill="var(--cock-secondhand)"/>
         </svg>
         <script>
-            var hr = 0
-            var min = 0
-            var sec = 0
+            
+            var cock = newcock(1000)
+
+            function newcock(speed) {
+            var start = new Date()
+            var starthr = start.getHours();
+            if (starthr > 12) starthr = starthr - 12;
+            var startmin = start.getMinutes();
+            var startsec = start.getSeconds();
+
+
+            console.log(starthr, startmin, startsec)
+            var hr = starthr * 72
+            var min = startmin * 6
+            var sec = startsec * 6
+
+            document.getElementById("sec").attributes.transform.value = `translate(128,128),rotate(${sec + 180},1,0)`
+            document.getElementById("min").attributes.transform.value = `translate(128,128),rotate(${min + 180},2.5,0)`
+            document.getElementById("hr").attributes.transform.value = `translate(128,128),rotate(${hr + 180},2.5,0)`
+
             var e = 0
             var d = 0
-            setInterval(() => {
+            return setInterval(() => {
                 sec = sec + 6;
                 e++
                 if (e == 10) {
@@ -77,7 +106,13 @@
                 document.getElementById("sec").attributes.transform.value = `translate(128,128),rotate(${sec + 180},1,0)`
                 document.getElementById("min").attributes.transform.value = `translate(128,128),rotate(${min + 180},2.5,0)`
                 document.getElementById("hr").attributes.transform.value = `translate(128,128),rotate(${hr + 180},2.5,0)`
-            },1000)
+            },speed);
+
+        }
         </script>
+        <script>
+            window.parent.postMessage("E");
+        </script>
+
     </body>
 </html>

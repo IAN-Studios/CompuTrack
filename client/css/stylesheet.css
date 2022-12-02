@@ -3,16 +3,16 @@ body {
     transition: background-color 0.25s;
 }
 div {
-    transition: background-color 0.5s;
+    transition: background-color 0.25s;
 }
 table {
-    transition: background-color 0.5s;
+    transition: background-color 0.25s;
 }
 tr {
-    transition: background-color 0.5s;
+    transition: background-color 0.25s;
 }
 th {
-    transition: background-color 0.5s;
+    transition: background-color 0.25s;
 }
 /* Navigation Header */
 div.header {
