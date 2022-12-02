@@ -48,8 +48,8 @@ class application {
 
             //Favicon Load Before Client Authentication
             if (request.url == "/client/assets/icon.png") {
-                var deeta = fs.readFileSync(`.${request.url}`)
-                var deetatype = mime.getType(`.${request.url}`)
+                var deeta = fs.readFileSync(`./client/assets/icon.svg`)
+                var deetatype = mime.getType(`./client/assets/icon.svg`)
 
                 response.statusCode = 200
                 response.setHeader('Access-Control-Allow-Origin', '*')
@@ -90,7 +90,7 @@ class application {
                 const req = request.url.slice(11).split("&")
 
                 // Types of Requests
-                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user", "update", "new" ];
+                const reqlist = [ "stats", "reqassets", "reqissues", "currentuser", "user"];
                 var res = "{"
 
                 req.forEach(element => {
@@ -232,8 +232,13 @@ class application {
                         var trim2 = trim1.substring(0, trim1.length-2);
                         var updatedata = trim2.split(";,;");
                         this.ASSETMAN.Issues.update(updatedata[0], `[Asset Tag] = ${updatedata[1]}, [Severity (Optional)] = '${updatedata[2]}', [Resolved?] = ${updatedata[3]}, [Problem Description] = '${updatedata[4]}'`).then(() => {this.updateDB().then(setTimeout(() => {websocket.send("200OK")},1000))})
+                    } else if (data.toString().startsWith("DATABASE.NEWISSUE")) {
+                        var trim1 = data.toString().replace("DATABASE.NEWISSUE(data=[", "")
+                        var trim2 = trim1.substring(0, trim1.length-2);
+                        var updatedata = trim2.split(";,;");
+                        this.ASSETMAN.Issues.new(updatedata[0],updatedata[1],updatedata[2]).then(() => {this.updateDB().then(setTimeout(() => {websocket.send("200OK")},1000))})
                     }
-                    websocket.send("[DATABASE]500INTERNALSERVERERROR")
+                    websocket.send("[DATABASE]500INTERNALSERVERERROR");
                 }
 
 
@@ -249,6 +254,12 @@ class application {
         this.webserver.listen(port);
         console.log(this.stamp() + `[HTTP] Webserver Listening on port ${port}, marking as READY.`);
     }
+
+
+
+
+
+    
     async updateDB() {
         await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})

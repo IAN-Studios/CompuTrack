@@ -1,4 +1,4 @@
-
+// TODO: Add more documentation
 
 var issue;
 var ID = (window.location.search.split("=")[1]);
