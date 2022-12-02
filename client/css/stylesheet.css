@@ -5,6 +5,15 @@ body {
 div {
     transition: background-color 0.5s;
 }
+table {
+    transition: background-color 0.5s;
+}
+tr {
+    transition: background-color 0.5s;
+}
+th {
+    transition: background-color 0.5s;
+}
 /* Navigation Header */
 div.header {
     height:50px;

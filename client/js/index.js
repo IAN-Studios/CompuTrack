@@ -21,6 +21,7 @@ fetch(new Request("/request?q=reqissuesunresolved&reqissuesresolved&reqassets&re
     + `<div class="dashboard-statistic">Issue Count:<span style="float:right">${data.reqissuesall.length}</span></div>`
     + `<div class="dashboard-statistic">Unresolved Issues:<span style="float:right">${data.reqissuesunresolved.length}</span></div>`
     + `<div class="dashboard-statistic">Resolved Issues:<span style="float:right">${data.reqissuesall.length-data.reqissuesunresolved.length}</span></div>` 
+    + `<div class="dashboard-statistic">Issue Resolution %:<span style="float:right">${(data.reqissuesresolved.length/data.reqissuesall.length)*100}%</span></div>` 
 })})
 var displayname
 fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
@@ -28,13 +29,14 @@ fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
     data.userinfo.forEach(element => {
         if (element.Username.toLowerCase() == getCookie("account")) {
             displayname = element.Displayname;
-            document.getElementById("title").innerHTML = `<div style="font-size:24pt;text-align:left;padding:10px">Welcome back, ${displayname}.</div>`
+            document.getElementById("title").innerHTML = `<div>Welcome back, ${displayname}.</div>`
         }
     });
 })}) 
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    
       elmnt.onmousedown = dragMouseDown;
   
     function dragMouseDown(e) {
