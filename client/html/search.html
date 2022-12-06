@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CompuTrack</title>
+        <!-- Imports; NOTE: for some reason, the "type" field is required alongside the appropiate MIME file type for certain imports to work! - Siebert -->
+        <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
+        <link id="theme" rel="stylesheet" type="text/css" href=""/>
+        <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
+        <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
+        <script src="/client/js/searchheader.js"></script>
+    </head>
+    <body> 
+        <!-- Header very cool lol-->
+        <div class="header">
+            <img class="header-icon" onclick="changetheme()"src="/client/assets/icon.png" height="40px" width="40px" />
+            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
+            <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard">Dashboard</div>
+            <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
+            <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
+            <div class="header-text header-search" style=>
+                <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+            </div>
+            <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
+        </div>
+
+
+        <!-- Although the body tag exists, this is a "body body" of the webpage, serving as the content underneath the header.-->
+        <div class="body">
+            <div class="results-header" id="header">Search Results</div>
+            <table>
+                <thead>
+                    <th id="resultshead">Loading Results, please wait.....</th>
+                </thead>
+                <tbody id="resultsbody"></tbody>
+            </table>
+        </div>
+
+        <!-- Certain script imports are needed at the bottom of the page so that they can be accessed last, so that they have access to manipulate DOM Elements above it.-->
+        <script src="/client/js/header.js"></script>
+        <script src="/client/js/search.js"></script>
+    </body>
+</html>

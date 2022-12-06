@@ -20,8 +20,12 @@ th.table-header {
     color:var(--header-text);
 }
 tr.Assets-Asset:hover {
+    transition: background-color 0s;
     background-color: var(--header-text-hover);
     color:var(--header-text);
+}
+tr.Assets-Asset {
+    transition: background-color 0s;
 }
 tr.assets-headers {
     font-weight: bold;
@@ -31,4 +35,5 @@ tr.assets-headers {
 }
 .Selected {
     background-color: var(--palette-orange);
+    font-weight: bold;
 }

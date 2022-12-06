@@ -11,6 +11,9 @@ table {
 tr {
     transition: background-color 0.25s;
 }
+td {
+    transition: background-color 0s;
+}
 th {
     transition: background-color 0.25s;
 }
@@ -73,6 +76,23 @@ div.header-assets:hover {
 }
 div.header-issues {
     left:475px;
+}
+div.header-search {
+    float: right;
+    left: 650px;
+    height: 25px;
+    width: 600px;
+    align-self: center;
+    text-align: center;
+}
+input.search {
+    transition: background-color 0.25s;
+    border-radius: 0px;
+    height: 25px;
+    width: 600px;
+    text-align: center;
+    background-color: var(--pg-bg);
+    color:var(--header-text-hover);
 }
 div.header-issues:hover {
     background-color: var(--header-text-hover);

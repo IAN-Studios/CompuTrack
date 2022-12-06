@@ -30,10 +30,10 @@ function requestAutoTheme() {
   if (getCookie("style") == "Dark") {
     var mode = 1;
     document.getElementById("theme").href = "/client/css/themes/darkmode.css";
-    document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/darkmode.css";
+    try {document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/darkmode.css";} catch {}
 } else if (!getCookie("Style")) {
     document.getElementById("theme").href = "/client/css/themes/default.css";
-    document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/default.css";
+    try {document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/default.css";} catch {}
     var mode = 0;
 }
 }
@@ -41,12 +41,12 @@ function changetheme() {
     if (mode == 0) {
         document.cookie = `style=Dark; path=/;`
         document.getElementById("theme").href = "/client/css/themes/darkmode.css";
-        document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/darkmode.css";
+        try {document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/darkmode.css";} catch {}
         mode = 1;
     } else if (mode == 1) {
         document.cookie = 'style=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
         document.getElementById("theme").href = "/client/css/themes/default.css";
-        document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/default.css";
+        try {document.getElementById("ifrm").contentWindow.document.getElementById("theme").href = "/client/css/themes/default.css";} catch {}
         mode = 0;
     }
 }

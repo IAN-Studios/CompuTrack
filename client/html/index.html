@@ -7,6 +7,7 @@
         <link id="theme" rel="stylesheet" type="text/css" href=""/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
+        <script src="/client/js/searchheader.js"></script>
     </head>
     <body> 
         <!-- Header very cool lol-->
@@ -16,6 +17,9 @@
             <div onclick="window.location.href = '/client/html/index.html'" class="header-selected header-text header-dashboard">Dashboard</div>
             <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
             <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
+            <div class="header-text header-search" style=>
+              <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+            </div>
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
 
@@ -39,7 +43,7 @@
                     <div class="actions-title">Actions</div>
                     <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
                     <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
-                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Open a Search</div>
+                    <div onclick="window.location.href='/client/html/search.html'" class="actions-item">Open a Search</div>
                     <div onclick="window.location.href='/client/html/issues.html?mode=CREATE'" class="actions-item">Create an Issue</div>
                     <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
                   </div>

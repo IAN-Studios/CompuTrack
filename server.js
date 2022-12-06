@@ -121,7 +121,6 @@ class application {
 
 
 
-
             // Handle Logout Request
             if (request.url == "/client/logout") {
                     response.statuscode = 200;
@@ -138,6 +137,17 @@ class application {
             if (request.url.startsWith("/client/html/issues.html")) {
                 var deeta = fs.readFileSync(`./client/html/issues.html`)
                 var deetatype = mime.getType(`./client/html/issues.html`)
+                var statuscode = 200
+                response.statusCode = statuscode;
+                response.setHeader('Access-Control-Allow-Origin', '*')
+                response.setHeader('Content-Type', `${deetatype}`)
+                response.write(deeta);
+                response.end();
+                return
+            }
+            if (request.url.startsWith("/client/html/search.html")) {
+                var deeta = fs.readFileSync(`./client/html/search.html`)
+                var deetatype = mime.getType(`./client/html/search.html`)
                 var statuscode = 200
                 response.statusCode = statuscode;
                 response.setHeader('Access-Control-Allow-Origin', '*')
