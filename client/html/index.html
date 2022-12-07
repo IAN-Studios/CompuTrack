@@ -12,16 +12,15 @@
     <body> 
         <!-- Header very cool lol-->
         <div class="header">
-            <img class="header-icon" onclick="changetheme()"src="/client/assets/icon.png" height="40px" width="40px" />
-            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
-            <div onclick="window.location.href = '/client/html/index.html'" class="header-selected header-text header-dashboard">Dashboard</div>
-            <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
-            <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
-            <div class="header-text header-search" style=>
-              <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
-            </div>
-            <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
-        </div>
+          <img class="header-icon" onclick="changetheme()"src="/client/assets/icon.png" height="40px" width="40px" />
+          <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
+          <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard">Dashboard</div>
+          <div onclick="window.location.href = '/client/html/viewer.html'" class="header-text header-selected header-assets">Explorer</div>
+          <div class="header-text header-search" style=>
+            <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+          </div>
+          <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
+      </div>
 
 
         <!-- Although the body tag exists, this is a "body body" of the webpage, serving as the content underneath the header.-->

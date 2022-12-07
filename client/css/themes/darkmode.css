@@ -1,6 +1,7 @@
 :root {
     --header-primary: #383838;
-    --header-secondary: #393939;
+    --header-secondary: #252525;
+    --header-tertiary: #1a1a1a;
     --header-text: #f9f0f0;
     --header-text-hover :#8691c668;   
     --palette-orange: #ff6a00a1;

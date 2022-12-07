@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <!-- The big one, the final updated version of the database explorer, all compilied into one beautiful webpage.-->
+    <head>
+        <title id="title">Explorer - CompuTrack</title>
+        <!-- Global Imports, requirement for items like favicon, header, etc.-->
+        <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
+        <link rel="stylesheet" type="text/css" href="" id="theme"/>
+        <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
+        <link rel="stylesheet" type="text/css" href="/client/css/viewer.css"/>
+        
+
+        <script src="/client/js/viewer.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <img class="header-icon" onclick="changetheme()"src="/client/assets/icon.png" height="40px" width="40px" />
+            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
+            <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard">Dashboard</div>
+            <div onclick="window.location.href = '/client/html/viewer.html'" class="header-text header-selected header-assets">Explorer</div>
+            <div class="header-text header-search" style=>
+              <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+            </div>
+            <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
+        </div>
+
+
+        <!-- The Real Stuff-->
+        <div class="body">
+            <div class="explorer-header">
+                <span class="explorer-header-title" id="header-title">Database Explorer | Home</span>
+            </div>
+            <div>
+                <span class="explorer-sidebar">
+                    <div class="explorer-sidebar-item" id="explorer-home">Explorer Home</div>
+                </span>
+                <span class="explorer-table">
+                    
+                </span>
+            </div>
+        </div>
+
+        <!-- Final Imports -->
+        <script src="/client/js/header.js"></script>
+    </body>
+</html>
