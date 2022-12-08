@@ -18,7 +18,7 @@ function explorerGOTO(location) {
 
     if (location.id == "explorer-home") {
         const welcome = document.createElement("div")
-        welcome.innerHTML = "Welcome to CompuTrack Explorer!";
+        welcome.innerHTML = "Welcome to the Database Explorer!";
         welcome.classList.add("explorer-table-header", "explorer-visual")
         document.getElementById("explorer-table").appendChild(welcome)
         document.getElementById("header-title").innerHTML = "Database Explorer | Home"
@@ -122,21 +122,21 @@ function explorerGOTO(location) {
     }
     if (location.id == "explorer-table-issues") {
         const welcome = document.createElement("div")
-        welcome.innerHTML = "Issues";
+        welcome.remove()
         welcome.classList.add("explorer-table-header", "explorer-visual")
         document.getElementById("explorer-table").appendChild(welcome)
         document.getElementById("header-title").innerHTML = "Database Explorer | Tables / Issues"
     }
     if (location.id == "explorer-table-users") {
         const welcome = document.createElement("div")
-        welcome.innerHTML = "Users";
+        welcome.remove()
         welcome.classList.add("explorer-table-header", "explorer-visual")
         document.getElementById("explorer-table").appendChild(welcome)
         document.getElementById("header-title").innerHTML = "Database Explorer | Tables / Users"
     }
     if (location.id == "explorer-table-hw") {
         const welcome = document.createElement("div")
-        welcome.innerHTML = "Registered Hardware";
+        welcome.remove()
         welcome.classList.add("explorer-table-header", "explorer-visual")
         document.getElementById("explorer-table").appendChild(welcome)
         document.getElementById("header-title").innerHTML = "Database Explorer | Tables / Hardware"

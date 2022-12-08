@@ -38,7 +38,8 @@
     background-color: var(--explorer-item);
     font-weight: bold;
     text-align: center;
-    color: var(--header-text)
+    color: var(--header-text);
+    height:25px;
 }
 .explorer-sidebar-item:hover {
     background-color: var(--explorer-item-hover);

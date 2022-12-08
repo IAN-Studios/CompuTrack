@@ -92,7 +92,7 @@ input.search {
     width: 600px;
     text-align: center;
     background-color: var(--pg-bg);
-    color:var(--header-text-hover);
+    color:var(--search-text-color);
 }
 div.header-issues:hover {
     background-color: var(--header-text-hover);
