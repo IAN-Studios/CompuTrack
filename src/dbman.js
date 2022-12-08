@@ -4,23 +4,39 @@ const nmdb = require("@el3um4s/node-mdb");
 class dbman {
     /**@param {String} database database to manage*/
     constructor(database) {
-        this.database = database;
         
         /**@param Assets Manage Assets */
         this.Assets = {
-            fetchAll: async function() {
-                var sql = `
-                SELECT ASSETS.*
-                FROM ASSETS;
-                `
-                var e = await nmdb.query.sql({database,sql})
-                return e;
+            devices: {
+                fetchAll: async function() {
+                    var sql = `
+                    SELECT DEVICES.*
+                    FROM DEVICES;
+                    `
+                    var e = await nmdb.query.sql({database,sql})
+                    return e;
+                },
+                fetch: async function(sql) {
+                    var data = "NOT IMPLEMENTED"
+                    //var data = await nmdb.query.sql({database, sql})
+                    return data;
+                }
             },
-            fetch: async function(sql) {
-                var data = "NOT IMPLEMENTED"
-                //var data = await nmdb.query.sql({database, sql})
-                return data;
-            }
+            hardware: {
+                fetchAll: async function() {
+                    var sql = `
+                    SELECT HARDWARE.*
+                    FROM HARDWARE;
+                    `
+                    var e = await nmdb.query.sql({database,sql})
+                    return e;
+                },
+                fetch: async function(sql) {
+                    var data = "NOT IMPLEMENTED"
+                    //var data = await nmdb.query.sql({database, sql})
+                    return data;
+                }
+            },
         }
         /**@param Issues Manage Issues */
         this.Issues = {
@@ -99,5 +115,5 @@ class dbman {
         }
     }
 }
-new dbman("./db/computrack-database.mdb").Assets.fetchAll()
+new dbman("./db/computrack-database.mdb")
 module.exports = dbman;

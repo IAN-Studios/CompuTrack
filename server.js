@@ -273,12 +273,10 @@ class application {
     async updateDB() {
         await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Assets.fetchAll().then(r=>{this.database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Assets.devices.fetchAll().then(r=>{this.database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Issues.fetchAll().then(r=>{this.database.Issues.All = r;console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-
-        await this.ASSETMAN.Assets.fetchAll().then(e => {e})
     }
 
 }

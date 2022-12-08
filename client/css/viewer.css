@@ -11,6 +11,14 @@
     font-weight: bold;
 
 }
+.explorer-header-controls {
+    float:right;
+    position: relative;
+    height:40px;
+    width:auto;
+    min-width: 500px;
+    background-color: blue;
+}
 
 
 
@@ -28,13 +36,18 @@
     padding:5px;
     margin:5px;
     background-color: var(--explorer-item);
+    font-weight: bold;
+    text-align: center;
+    color: var(--header-text)
 }
 .explorer-sidebar-item:hover {
     background-color: var(--explorer-item-hover);
 }
 /* Controls a Spacer in the sidebar*/
 .explorer-sidebar-spacer {
-    
+    height:2px;
+    margin:15px;
+    background-color: var(--explorer-seperator)
 }
 .selected {
     background-color: var(--palette-orange);
@@ -48,4 +61,34 @@
     background-color: var(--pg-bg);
     position: absolute;
     left:400px;
+}
+
+.explorer-table-header {
+    color:var(--header-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    padding: 20px;
+    font-size: 24pt;
+}
+.explorer-table-loading {
+    color:var(--header-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    font-size: 18px;
+    
+}
+.explorer-table-col-header {
+    color:var(--header-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.explorer-table-row {
+    color:var(--header-text);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.explorer-table-row-cell {
+    padding-left: 50px;
+    padding-right: 50px;
 }

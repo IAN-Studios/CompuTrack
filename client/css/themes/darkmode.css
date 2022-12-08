@@ -12,4 +12,7 @@
     --cock-face:rgb(28, 28, 28);
     --cock-secondhand:rgba(209, 48, 48, 0.552);
     --cock-hands:rgba(66, 131, 137, 0.642);
+    --explorer-item-hover: #707070;
+    --explorer-item: #383838;
+    --explorer-seperator: #3a3a3a;
 }

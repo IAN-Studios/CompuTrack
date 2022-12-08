@@ -29,18 +29,28 @@
         <div class="body">
             <div class="explorer-header">
                 <span class="explorer-header-title" id="header-title">Database Explorer | Home</span>
+                <div class="explorer-header-controls" id="control"></div>
             </div>
             <div>
                 <span class="explorer-sidebar">
-                    <div class="explorer-sidebar-item" id="explorer-home">Explorer Home</div>
+                    <div class="explorer-sidebar-item" id="explorer-home" onclick="explorerGOTO(this)">Explorer Home</div>
+                    <div class="explorer-sidebar-spacer"></div>
+                    <div class="explorer-sidebar-item" id="explorer-table-computers" onclick="explorerGOTO(this)">  Table DEVICES</div>
+                    <div class="explorer-sidebar-item" id="explorer-table-issues" onclick="explorerGOTO(this)">     Table ISSUES</div>
+                    <div class="explorer-sidebar-item" id="explorer-table-users" onclick="explorerGOTO(this)">      Table USERS</div>
+                    <div class="explorer-sidebar-item" id="explorer-table-hw" onclick="explorerGOTO(this)">         Table HARDWARE</div>
+                    <div class="explorer-sidebar-item" id="explorer-table-misc" onclick="explorerGOTO(this)">       Table MISC</div>
+                    <div class="explorer-sidebar-spacer"></div>
                 </span>
-                <span class="explorer-table">
-                    
+                <span class="explorer-table" id="explorer-table">
                 </span>
             </div>
         </div>
 
         <!-- Final Imports -->
         <script src="/client/js/header.js"></script>
+        <script>
+            const ExplorerOBJ = new DBexplorer()
+        </script>
     </body>
 </html>
