@@ -1,6 +1,10 @@
 body {
     overflow:hidden;
     transition: background-color 0.25s;
+    height: 100%;
+}
+html {
+    height: 100%;
 }
 div {
     transition: background-color 0.25s;
@@ -113,6 +117,28 @@ div.body {
     position: absolute;
     top:50px;
     left:0px;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    background-color: var(--pg-bg);
 }
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--header-primary)
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--button-text-disabled)
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

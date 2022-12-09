@@ -26,10 +26,10 @@ class dbman {
                 fetchAll: async function() {
                     var sql = `
                     SELECT HARDWARE.*
-                    FROM HARDWARE;
+                    FROM HARDWARE
+                    ORDER BY ID ASC;           
                     `
-                    var e = await nmdb.query.sql({database,sql})
-                    return e;
+                    return await nmdb.query.sql({database,sql})
                 },
                 fetch: async function(sql) {
                     var data = "NOT IMPLEMENTED"
@@ -42,8 +42,9 @@ class dbman {
         this.Issues = {
             fetchAll: async function() {
                 var sql = `
-                SELECT ISSUES.*
-                FROM ISSUES;
+                SELECT ISSUES.ID, ISSUES.[Asset Tag], ISSUES.[Severity (Optional)], ISSUES.[Date Added], ISSUES.[Resolved?], ISSUES.[Problem Description], DEVICES.[Item Location]
+                FROM ISSUES INNER JOIN DEVICES ON ISSUES.[Asset Tag] = DEVICES.[JCPS Tag]
+                ORDER BY ISSUES.ID ASC;
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
@@ -115,5 +116,4 @@ class dbman {
         }
     }
 }
-new dbman("./db/computrack-database.mdb")
 module.exports = dbman;
