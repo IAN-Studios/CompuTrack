@@ -1,6 +1,81 @@
 
+// Highly Inefficient System for managing Buttons (HISB)
+const Buttons = {
+    global: [
+        help = {
+            text: "help",
+            icon: "help.svg",
+            click: openhelp("global")
+        }
+    ],
+    devices: [
+        create = {
+            text: "Create New Record",
+            icon: "new.svg",
+            click: createRecord("devices")
+        },
+        properties = {
+            text: "Device Properties",
+            icon: "help.svg",
+            click: openhelp("devices"),
+            startoff: true,
+            customid: "control-properties"
 
+        },
+        newissue = {
+            text: "Create Issue",
+            icon: "help.svg",
+            click: openhelp("devices")
 
+        },
+        help = {
+            text: "Help",
+            icon: "help.svg",
+            click: openhelp("devices")
+        }
+    ],
+    issues: [
+        help = {
+            text: "help",
+            icon: "help.svg",
+            click: openhelp("issues")
+        },
+        create = {
+            text: "New Issue",
+            icon: "new.svg",
+            click: openhelp("issues")
+        },
+        properties = {
+            text: "Issue Properties",
+            icon: "help.svg",
+            click: openhelp("issues"),
+            startoff: true,
+            customid: "control-properties"
+        },
+    ],
+    users: {
+        help: {
+            text: "help",
+            icon: "help.svg",
+            click: openhelp("users")
+        },
+        properties: {
+
+        }
+    },
+    hw: {
+        help: {
+            text: "help",
+            icon: "help.svg",
+            click: openhelp("hw")
+        },
+        new: {
+        },
+        properties: {
+
+        }
+    }
+}
 
 class DBexplorer {
     constructor() {
@@ -17,11 +92,32 @@ function explorerGOTO(location) {
     document.getElementById("header-title").innerHTML = "Database Explorer | Working....."
 
     if (location.id == "explorer-home") {
-        const welcome = document.createElement("div")
-        welcome.innerHTML = "Welcome to the Database Explorer!";
-        welcome.classList.add("explorer-table-header", "explorer-visual")
-        document.getElementById("explorer-table").appendChild(welcome)
         document.getElementById("header-title").innerHTML = "Database Explorer | Home"
+
+        var Content = document.createElement("div")
+        Content.classList.add("explorer-md", "explorer-visual")
+        
+        Content.appendChild(document.createElement("br"));
+
+        var MPComp = document.createElement("script");
+        MPComp.async = true;
+        MPComp.src = "/client/js/MDCompanion.js";
+
+        MPComp.addEventListener("load", () => {
+            var companion = new MDCompanion()
+            companion.Convert.fromMDFile("/client/md/explorer-home.md").then(e => {Content.appendChild(e)})
+        })
+        
+        document.getElementById("explorer-table").appendChild(MPComp);
+        document.getElementById("explorer-table").appendChild(Content);
+
+        Buttons.global.forEach(button => {
+            var buttn = document.createElement("button")
+            buttn.onclick = button.click
+            buttn.innerHTML = button.text
+            buttn.classList.add("explorer-visual", "control-button")
+            document.getElementById("control").appendChild(buttn)
+        })
     }
     if (location.id == "explorer-table-computers") {
         
@@ -114,6 +210,15 @@ function explorerGOTO(location) {
             document.getElementById("loadingpage").remove()
             
             document.getElementById("explorer-table").appendChild(table);
+            Buttons.devices.forEach(button => {
+                var buttn = document.createElement("button")
+                buttn.onclick = button.click
+                buttn.innerHTML = button.text
+                buttn.classList.add("explorer-visual", "control-button")
+                if (button.startoff) {buttn.disabled = true; buttn.classList.add("control-button-disabled")}
+                if (button.customid) buttn.id = button.customid;
+                document.getElementById("control").appendChild(buttn)
+            })
         })});
 
     }
@@ -331,6 +436,25 @@ function explorerGOTO(location) {
     }
 }
 
+function createRecord() {
+
+}
+
+function editRecord() {
+
+}
+
+/**@param {Object} button */
+function drawButton(button) {
+    var buttn = document.createElement("button");
+    buttn.innerHTML = button.text;
+    if (button.startoff) buttn.disabled == true();
+    if (button.customid) buttn.id = button.customid;
+    document.getElementById("control").appendChild(buttn)
+}
+function openhelp(page) {
+
+}
 
 /**@param {HTMLElement} element */
 function selectRecord(element) {

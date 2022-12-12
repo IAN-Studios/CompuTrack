@@ -16,8 +16,7 @@
     position: relative;
     height:40px;
     width:auto;
-    min-width: 500px;
-    background-color: blue;
+    min-width: 150px;
 }
 
 
@@ -81,6 +80,13 @@
     position:relative;
     bottom:0px;
 }
+.explorer-md {
+    color:var(--header-text);
+    padding-left:20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height:max-content;
+    width: auto;
+}
 
 .explorer-table-header {
     color:var(--header-text);
@@ -111,4 +117,31 @@
     width:max-content;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+
+
+.control-button {
+    height: 40px;
+    width: auto;
+    min-width: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+    margin-left:10px;
+    margin-right:10px;
+    background-color: var(--explorer-item);
+    border:0px;
+    color:var(--header-text)
+}
+.control-button:hover {
+    background-color: var(--explorer-item-hover);
+}
+
+.control-button-disabled { 
+    background-color: var(--explorer-item-disabled);
+    color: var(--button-text-disabled);
+}
+.control-button-disabled:hover { 
+    color:var(--button-text-disabled);
+    background-color: var(--explorer-item-disabled);
 }
