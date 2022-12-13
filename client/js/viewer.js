@@ -3,13 +3,15 @@
 
 class DBexplorer {
     constructor() {
-        document.getElementById("explorer-home").classList.add("explorer-tree-selected")
-        explorerGOTO(document.getElementById("explorer-home"))
+        Renderer.renderSideBar();
     }
 }
+const explore = new Event("exploreselected")
 
 /**@param {HTMLElement} location */
 function explorerGOTO(location) {
+    try {
+    location.dispatchEvent(explore)
     document.getElementsByClassName("explorer-tree-selected").item(0).classList.remove("explorer-tree-selected");
     location.classList.add("explorer-tree-selected")
     Array.from(document.getElementsByClassName("explorer-visual")).forEach(element => {element.remove()})
@@ -239,19 +241,79 @@ function explorerGOTO(location) {
     
     }
     if (location.id == "explorer-table-users") {
-        const welcome = document.createElement("div")
-        welcome.remove()
-        welcome.classList.add("explorer-table-header", "explorer-visual")
-        document.getElementById("explorer-table").appendChild(welcome)
+        
+        // Change Headers
         document.getElementById("header-title").innerHTML = "Database Explorer | Tables / Users"
 
-        // Loading Page
+        // Loading Devices
         const loadingpage = document.createElement("div")
         loadingpage.classList.add("explorer-table-loading", "explorer-visual");
         loadingpage.id = "loadingpage"
         loadingpage.innerHTML = "Retrieving Information from database.....";
         document.getElementById("explorer-table").appendChild(loadingpage);
+        fetch(new Request("/request?q=currentuser")).then(a => {a.text().then(b=>{
+            var data = JSON.parse(b);
+            var table = document.createElement("table");
+            table.classList.add("explorer-visual","explorer-data")
+            
+            var tablebody = document.createElement("tbody");
+            tablebody.classList.add("explorer-visual")
+            var cols = document.createElement("tr");
+            cols.classList.add("explorer-visual")
 
+            
+            // Initialize field headers
+            if (Tables.defs.users.selectable == true) {
+                var blank = document.createElement("td");
+                blank.classList.add("explorer-visual","explorer-table-col-header");
+                cols.appendChild(blank)
+            }
+            Tables.Layout.Users.forEach(item => {
+                var ele = document.createElement("td");
+                ele.classList.add("explorer-visual","explorer-table-col-header");
+                ele.innerHTML = item.name
+                cols.appendChild(ele)
+            })
+            tablebody.appendChild(cols);
+            table.appendChild(tablebody);
+
+
+            data.userinfo.forEach(element => {
+                var cols = document.createElement("tr");
+                cols.classList.add("explorer-visual","explorer-table-row")
+
+
+                var col_compliant = document.createElement("td");
+                    col_compliant.classList.add("explorer-visual","explorer-table-row-cell")
+                    col_compliant.innerHTML = element["UUID"]
+                var col_dateadded = document.createElement("td");
+                    col_dateadded.classList.add("explorer-visual","explorer-table-row-cell")
+                    col_dateadded.innerHTML = element['Username']
+                var col_location = document.createElement("td");
+                    col_location.classList.add("explorer-visual","explorer-table-row-cell")
+                    col_location.innerHTML = element['Displayname']
+                var col_netid = document.createElement("td");
+                    col_netid.classList.add("explorer-visual","explorer-table-row-cell")
+                    col_netid.innerHTML = element['PermissionLevel']
+                
+                cols.append(col_compliant,col_dateadded,col_location,col_netid)
+                tablebody.appendChild(cols);
+            })
+
+            // add all to table
+            document.getElementById("loadingpage").remove()
+            
+            document.getElementById("explorer-table").appendChild(table);
+            Controls.Layout.Users.forEach(button => {
+                var buttn = document.createElement("button")
+                buttn.onclick = button.click
+                buttn.innerHTML = button.text
+                buttn.classList.add("explorer-visual", "control-button")
+                if (button.startoff) {buttn.disabled = true; buttn.classList.add("control-button-disabled")}
+                if (button.customid) buttn.id = button.customid;
+                document.getElementById("control").appendChild(buttn)
+            })
+        })});
 
     }
     if (location.id == "explorer-table-hw") {
@@ -358,6 +420,9 @@ function explorerGOTO(location) {
             })
         })});
     }
+} catch (err) {
+    console.log(err)
+}
 }
 
 function createRecord() {

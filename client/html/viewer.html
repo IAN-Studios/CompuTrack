@@ -8,12 +8,6 @@
         <link rel="stylesheet" type="text/css" href="" id="theme"/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/viewer.css"/>
-        
-        <script src="/client/js/comman.js"></script>
-        <script src="/client/js/viewer.js"></script>
-        <script src="/client/js/components/explorer/controls.js"></script>
-        <script src="/client/js/components/explorer/tables.js"></script>
-        <script src="/client/js/components/explorer/renderer.js"></script>
     </head>
     <body>
         <div class="header">
@@ -35,21 +29,8 @@
                 <div class="explorer-header-controls" id="control"></div>
             </div>
             <div>
-                <span class="explorer-sidebar">
-                    <div class="explorer-sidebar-item" id="explorer-home" onclick="explorerGOTO(this)">Explorer Home</div>
-                    <div class="explorer-sidebar-item" id="explorer-table-help" onclick="explorerGOTO(this)">Help</div>
-                    <div class="explorer-sidebar-spacer"></div>
-                    <div class="explorer-sidebar-item" id="explorer-table-computers" onclick="explorerGOTO(this)"><span style="float:left">Table</span><span style="float:right">DEVICES</span></div>
-                    <div class="explorer-sidebar-item" id="explorer-table-issues" onclick="explorerGOTO(this)"><span style="float:left">Table</span><span style="float:right">ISSUES</span></div>
-                    <div class="explorer-sidebar-item" id="explorer-table-users" onclick="explorerGOTO(this)"><span style="float:left">Table</span><span style="float:right">USERS</span></div>
-                    <div class="explorer-sidebar-item" id="explorer-table-hw" onclick="explorerGOTO(this)"><span style="float:left">Table</span><span style="float:right">HARDWARE</span></div>
-                    <div class="explorer-sidebar-item" id="explorer-table-misc" onclick="explorerGOTO(this)"><span style="float:left">Table</span><span style="float:right">MISC</span></div>
-                    <div class="explorer-sidebar-spacer"></div>
-                    <div class="explorer-sidebar-item" id="explorer-table-newrecord" onclick="explorerGOTO(this)">Create Record....</div>
-                    <div class="explorer-sidebar-item" id="explorer-table-settings" onclick="explorerGOTO(this)">Settings & Advanced</div>
-                    <div class="explorer-sidebar-item" id="explorer-table-security" onclick="explorerGOTO(this)">Permissions and Security</div>
-                    <div class="explorer-sidebar-spacer"></div>
-                    <div class="explorer-sidebar-footer">Copyright (C) LOLOLOLOL 2022<br/>EHS Tech Department & IAN Studios</div>
+                <span class="explorer-sidebar" id="sidebar">
+                    <div id="explorer-home" class="explorer-home explorer-sidebar-item explorer-tree-selected" onclick="explorerGOTO(this)">Explorer Home</div>
 
                 </span>
                 <span class="explorer-table" id="explorer-table">
@@ -59,8 +40,12 @@
 
         <!-- Final Imports -->
         <script src="/client/js/header.js"></script>
-        <script>
-            const ExplorerOBJ = new DBexplorer()
-        </script>
+        <script src="/client/js/comman.js"></script>
+        <script src="/client/js/viewer.js"></script>
+        <script src="/client/js/components/explorer/renderer.js"></script>
+        <script src="/client/js/components/explorer/controls.js"></script>
+        <script src="/client/js/components/explorer/tables.js"></script>
+        <script src="/client/js/components/explorer/explorer.js"></script>
+        <script>new DBexplorer()</script>
     </body>
 </html>

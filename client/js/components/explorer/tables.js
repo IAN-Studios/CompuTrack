@@ -36,10 +36,62 @@ class Tables {
             }
         },
         issues: {
+            cols:7,
+            selectable:true,
 
+            headers: {
+                0: {
+                    name: "ID",
+                    sqlfieldname: "ID"
+                },
+                1: {
+                    name: "Asset Tag",
+                    sqlfieldname: "JCPS Tag"
+                },
+                2: {
+                    name: "Severity",
+                    sqlfieldname: "Severity (Optional)"
+                },
+                3: {
+                    name: "Date Added",
+                    sqlfieldname: "Date Added"
+                },
+                4: {
+                    name: "Resolution",
+                    sqlfieldname: "Resolved?"
+                },
+                5: {
+                    name: "Description",
+                    sqlfieldname: "Problem Description"
+                },
+                6: {
+                    name: "Last Known Location",
+                    sqlfieldname: "location"
+                }
+            }
         },
         users: {
-            
+            cols:4,
+            selectable:false,
+
+            headers: {
+                0: {
+                    name: "UUID",
+                    sqlfieldname: "UUID"
+                },
+                1: {
+                    name: "User Name",
+                    sqlfieldname: "Username"
+                },
+                2: {
+                    name: "Display Name",
+                    sqlfieldname: "Displayname"
+                },
+                3: {
+                    name: "Permission Group",
+                    sqlfieldname: "Permissionlevel"
+                }
+            }
         },
         hw: {
 
@@ -54,6 +106,21 @@ class Tables {
             this.defs.devices.headers[4],
             this.defs.devices.headers[5],
             this.defs.devices.headers[6]
+        ],
+        Issues: [
+            this.defs.issues.headers[0],
+            this.defs.issues.headers[1],
+            this.defs.issues.headers[2],
+            this.defs.issues.headers[3],
+            this.defs.issues.headers[4],
+            this.defs.issues.headers[5],
+            this.defs.issues.headers[6]
+        ],
+        Users: [
+            this.defs.users.headers[0],
+            this.defs.users.headers[1],
+            this.defs.users.headers[2],
+            this.defs.users.headers[3]
         ]
     }
 

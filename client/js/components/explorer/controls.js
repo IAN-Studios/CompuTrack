@@ -6,9 +6,11 @@ class Controls {
     static methods = {
         toggleselectmode: function() {
             if (Controls.vars.selectmode == 0) {
-                Controls.vars.selectmode = 1
+                Controls.vars.selectmode = 1;
+                //document.getElementById("control-modeselector").innerHTML = "Select Mode (1)"
             } else {
                 Controls.vars.selectmode = 0
+                //document.getElementById("control-modeselector").innerHTML = "Select Mode (0)"
             }
         }
     }
