@@ -61,7 +61,14 @@
 .selected {
     background-color: var(--palette-orange);
 }
+.explorer-tree-selected {
+    background-color: var(--palette-orange);
+}
 
+
+tr:hover {
+    background-color: var(--button-text-disabled);
+}
 
 
 

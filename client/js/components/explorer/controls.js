@@ -1,10 +1,15 @@
 class Controls {
     static vars = {
-        selectmode:0
+        selectmode:0,
+        selected:[]
     }
     static methods = {
         toggleselectmode: function() {
-
+            if (Controls.vars.selectmode == 0) {
+                Controls.vars.selectmode = 1
+            } else {
+                Controls.vars.selectmode = 0
+            }
         }
     }
     static def = {

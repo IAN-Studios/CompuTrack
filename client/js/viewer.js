@@ -3,15 +3,15 @@
 
 class DBexplorer {
     constructor() {
-        document.getElementById("explorer-home").classList.add("selected")
+        document.getElementById("explorer-home").classList.add("explorer-tree-selected")
         explorerGOTO(document.getElementById("explorer-home"))
     }
 }
 
 /**@param {HTMLElement} location */
 function explorerGOTO(location) {
-    document.getElementsByClassName("selected").item(0).classList.remove("selected");
-    location.classList.add("selected")
+    document.getElementsByClassName("explorer-tree-selected").item(0).classList.remove("explorer-tree-selected");
+    location.classList.add("explorer-tree-selected")
     Array.from(document.getElementsByClassName("explorer-visual")).forEach(element => {element.remove()})
     document.getElementById("header-title").innerHTML = "Database Explorer | Working....."
 
@@ -21,10 +21,11 @@ function explorerGOTO(location) {
         var Content = document.createElement("div")
         Content.classList.add("explorer-md", "explorer-visual")
 
-        ComponentManager.components.fetch("/client/html/components/explorer-home.html").then(e => {Content.appendChild(e.getElementById("TEMPLATE"))})
+        ComponentManager.components.fetch("/client/html/components/explorer/explorer-home.html").then(e => {Content.appendChild(e.getElementById("TEMPLATE"))})
         document.getElementById("explorer-table").appendChild(Content);
 
-        Buttons.global.forEach(button => {
+        
+        Controls.Layout.Global.forEach(button => {
             var buttn = document.createElement("button")
             buttn.onclick = button.click
             buttn.innerHTML = button.text
@@ -53,35 +54,19 @@ function explorerGOTO(location) {
             var cols = document.createElement("tr");
             cols.classList.add("explorer-visual")
 
+            
             // Initialize field headers
-            var col_blank = document.createElement("td");
-            var col_id = document.createElement("td");
-                col_id.classList.add("explorer-visual","explorer-table-col-header")
-                col_id.innerHTML = "ID"
-            var col_assettag = document.createElement("td");
-                col_assettag.classList.add("explorer-visual","explorer-table-col-header")
-                col_assettag.innerHTML = "Asset Tag"
-            var col_type = document.createElement("td");
-                col_type.classList.add("explorer-visual","explorer-table-col-header")
-                col_type.innerHTML = "Type"
-            var col_desc = document.createElement("td");
-                col_desc.classList.add("explorer-visual","explorer-table-col-header")
-                col_desc.innerHTML = "Model/Brand/Description"
-            var col_compliant = document.createElement("td");
-                col_compliant.classList.add("explorer-visual","explorer-table-col-header")
-                col_compliant.innerHTML = "Compliant?"
-            var col_dateadded = document.createElement("td");
-                col_dateadded.classList.add("explorer-visual","explorer-table-col-header")
-                col_dateadded.innerHTML = "Date Added"
-            var col_location = document.createElement("td");
-                col_location.classList.add("explorer-visual","explorer-table-col-header")
-                col_location.innerHTML = "Location"
-            var col_netid = document.createElement("td");
-                col_netid.classList.add("explorer-visual","explorer-table-col-header")
-                col_netid.innerHTML = "NetworkID"
-
-            // add headers to table
-            cols.append(col_blank,col_id, col_assettag,col_type,col_desc,col_compliant,col_dateadded,col_location,col_netid)
+            if (Tables.defs.devices.selectable == true) {
+                var blank = document.createElement("td");
+                blank.classList.add("explorer-visual","explorer-table-col-header");
+                cols.appendChild(blank)
+            }
+            Tables.Layout.Devices.forEach(item => {
+                var ele = document.createElement("td");
+                ele.classList.add("explorer-visual","explorer-table-col-header");
+                ele.innerHTML = item.name
+                cols.appendChild(ele)
+            })
             tablebody.appendChild(cols);
             table.appendChild(tablebody);
 
@@ -131,7 +116,7 @@ function explorerGOTO(location) {
             document.getElementById("loadingpage").remove()
             
             document.getElementById("explorer-table").appendChild(table);
-            Buttons.devices.forEach(button => {
+            Controls.Layout.Devices.forEach(button => {
                 var buttn = document.createElement("button")
                 buttn.onclick = button.click
                 buttn.innerHTML = button.text
@@ -238,7 +223,7 @@ function explorerGOTO(location) {
             // add all to table
             document.getElementById("loadingpage").remove()
             document.getElementById("explorer-table").appendChild(table)
-            Buttons.issues.forEach(button => {
+            Controls.Layout.Issues.forEach(button => {
                 var buttn = document.createElement("button")
                 buttn.onclick = button.click
                 buttn.innerHTML = button.text
@@ -362,7 +347,7 @@ function explorerGOTO(location) {
             // add all to table
             document.getElementById("loadingpage").remove()
             document.getElementById("explorer-table").appendChild(table)
-            Buttons.hw.forEach(button => {
+            Controls.Layout.HW.forEach(button => {
                 var buttn = document.createElement("button")
                 buttn.onclick = button.click
                 buttn.innerHTML = button.text
@@ -397,7 +382,7 @@ function openhelp(page) {
 
 /**@param {HTMLElement} element */
 function selectRecord(element) {
-    if (modes.selectmode == 0) {
+    if (Controls.vars.selectmode == 0) {
         if (element.children[0].checked == false) {element.classList.remove("selected");return;}
         Array.from(document.getElementsByClassName("selected")).forEach(item => {item.classList.remove("selected");item.children[0].checked = false})
         if (element.classList.contains('selected')) {
@@ -405,19 +390,19 @@ function selectRecord(element) {
         } else {
             element.classList.add("selected")
         }
-        modes.selected = [];
+        Controls.vars.selected = [];
         Array.from(document.getElementsByClassName("selected")).forEach(element => {
-            modes.selected.push(element);
+            Controls.vars.selected.push(element);
         })
-    } else if (modes.selectmode == 1) {
+    } else if (Controls.vars.selectmode == 1) {
         if (element.classList.contains('selected')) {
             element.classList.remove("selected")
         } else {
             element.classList.add("selected")
         }
-        modes.selected = [];
+        Controls.vars.selected = [];
         Array.from(document.getElementsByClassName("selected")).forEach(element => {
-            modes.selected.push(element);
+            Controls.vars.selected.push(element);
         })
     }
 

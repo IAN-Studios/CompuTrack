@@ -1,6 +1,0 @@
-class TableRenderer {
-    constructor() {}
-    render() {
-
-    }
-}
