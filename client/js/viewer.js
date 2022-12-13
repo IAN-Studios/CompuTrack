@@ -1,81 +1,5 @@
-
 // Highly Inefficient System for managing Buttons (HISB)
-const Buttons = {
-    global: [
-        help = {
-            text: "help",
-            icon: "help.svg",
-            click: openhelp("global")
-        }
-    ],
-    devices: [
-        create = {
-            text: "Create New Record",
-            icon: "new.svg",
-            click: createRecord("devices")
-        },
-        properties = {
-            text: "Device Properties",
-            icon: "help.svg",
-            click: openhelp("devices"),
-            startoff: true,
-            customid: "control-properties"
 
-        },
-        newissue = {
-            text: "Create Issue",
-            icon: "help.svg",
-            click: openhelp("devices")
-
-        },
-        help = {
-            text: "Help",
-            icon: "help.svg",
-            click: openhelp("devices")
-        }
-    ],
-    issues: [
-        help = {
-            text: "help",
-            icon: "help.svg",
-            click: openhelp("issues")
-        },
-        create = {
-            text: "New Issue",
-            icon: "new.svg",
-            click: openhelp("issues")
-        },
-        properties = {
-            text: "Issue Properties",
-            icon: "help.svg",
-            click: openhelp("issues"),
-            startoff: true,
-            customid: "control-properties"
-        },
-    ],
-    users: {
-        help: {
-            text: "help",
-            icon: "help.svg",
-            click: openhelp("users")
-        },
-        properties: {
-
-        }
-    },
-    hw: {
-        help: {
-            text: "help",
-            icon: "help.svg",
-            click: openhelp("hw")
-        },
-        new: {
-        },
-        properties: {
-
-        }
-    }
-}
 
 class DBexplorer {
     constructor() {
@@ -96,19 +20,8 @@ function explorerGOTO(location) {
 
         var Content = document.createElement("div")
         Content.classList.add("explorer-md", "explorer-visual")
-        
-        Content.appendChild(document.createElement("br"));
 
-        var MPComp = document.createElement("script");
-        MPComp.async = true;
-        MPComp.src = "/client/js/MDCompanion.js";
-
-        MPComp.addEventListener("load", () => {
-            var companion = new MDCompanion()
-            companion.Convert.fromMDFile("/client/md/explorer-home.md").then(e => {Content.appendChild(e)})
-        })
-        
-        document.getElementById("explorer-table").appendChild(MPComp);
+        ComponentManager.components.fetch("/client/html/components/explorer-home.html").then(e => {Content.appendChild(e.getElementById("TEMPLATE"))})
         document.getElementById("explorer-table").appendChild(Content);
 
         Buttons.global.forEach(button => {
@@ -141,6 +54,7 @@ function explorerGOTO(location) {
             cols.classList.add("explorer-visual")
 
             // Initialize field headers
+            var col_blank = document.createElement("td");
             var col_id = document.createElement("td");
                 col_id.classList.add("explorer-visual","explorer-table-col-header")
                 col_id.innerHTML = "ID"
@@ -167,7 +81,7 @@ function explorerGOTO(location) {
                 col_netid.innerHTML = "NetworkID"
 
             // add headers to table
-            cols.append(col_id, col_assettag,col_type,col_desc,col_compliant,col_dateadded,col_location,col_netid)
+            cols.append(col_blank,col_id, col_assettag,col_type,col_desc,col_compliant,col_dateadded,col_location,col_netid)
             tablebody.appendChild(cols);
             table.appendChild(tablebody);
 
@@ -175,6 +89,13 @@ function explorerGOTO(location) {
             data.reqassets.forEach(element => {
                 var cols = document.createElement("tr");
                 cols.classList.add("explorer-visual","explorer-table-row")
+
+                var selectionbutton = document.createElement('input')
+                selectionbutton.type = 'checkbox'
+                cols.id = element['ID'];
+                selectionbutton.onclick = function() {
+                    selectRecord(cols);
+                }
 
                 
                 var col_id = document.createElement("td");
@@ -202,7 +123,7 @@ function explorerGOTO(location) {
                     col_netid.classList.add("explorer-visual","explorer-table-row-cell")
                     col_netid.innerHTML = element['Network ID']
                 
-                cols.append(col_id, col_assettag,col_type,col_desc,col_compliant,col_dateadded,col_location,col_netid)
+                cols.append(selectionbutton, col_assettag,col_type,col_desc,col_compliant,col_dateadded,col_location,col_netid)
                 tablebody.appendChild(cols);
             })
 
@@ -317,6 +238,15 @@ function explorerGOTO(location) {
             // add all to table
             document.getElementById("loadingpage").remove()
             document.getElementById("explorer-table").appendChild(table)
+            Buttons.issues.forEach(button => {
+                var buttn = document.createElement("button")
+                buttn.onclick = button.click
+                buttn.innerHTML = button.text
+                buttn.classList.add("explorer-visual", "control-button")
+                if (button.startoff) {buttn.disabled = true; buttn.classList.add("control-button-disabled")}
+                if (button.customid) buttn.id = button.customid;
+                document.getElementById("control").appendChild(buttn)
+            })
         })});
     
     
@@ -432,6 +362,15 @@ function explorerGOTO(location) {
             // add all to table
             document.getElementById("loadingpage").remove()
             document.getElementById("explorer-table").appendChild(table)
+            Buttons.hw.forEach(button => {
+                var buttn = document.createElement("button")
+                buttn.onclick = button.click
+                buttn.innerHTML = button.text
+                buttn.classList.add("explorer-visual", "control-button")
+                if (button.startoff) {buttn.disabled = true; buttn.classList.add("control-button-disabled")}
+                if (button.customid) buttn.id = button.customid;
+                document.getElementById("control").appendChild(buttn)
+            })
         })});
     }
 }
@@ -458,10 +397,35 @@ function openhelp(page) {
 
 /**@param {HTMLElement} element */
 function selectRecord(element) {
-    if (element.classList.contains('selected')) {
-        element.classList.remove("selected")
-    } else {
-        element.classList.add("selected")
+    if (modes.selectmode == 0) {
+        if (element.children[0].checked == false) {element.classList.remove("selected");return;}
+        Array.from(document.getElementsByClassName("selected")).forEach(item => {item.classList.remove("selected");item.children[0].checked = false})
+        if (element.classList.contains('selected')) {
+            element.classList.remove("selected")
+        } else {
+            element.classList.add("selected")
+        }
+        modes.selected = [];
+        Array.from(document.getElementsByClassName("selected")).forEach(element => {
+            modes.selected.push(element);
+        })
+    } else if (modes.selectmode == 1) {
+        if (element.classList.contains('selected')) {
+            element.classList.remove("selected")
+        } else {
+            element.classList.add("selected")
+        }
+        modes.selected = [];
+        Array.from(document.getElementsByClassName("selected")).forEach(element => {
+            modes.selected.push(element);
+        })
     }
 
+
 }
+
+function toggleselectmode() {
+    //if (modes.selectmode == 0) {modes.selectmode = 1;document.getElementById("control-modeselector").innerHTML = "Select Mode (1)"}
+    //if (modes.selectmode == 1) {modes.selectmode = 0;document.getElementById("control-modeselector").innerHTML = "Select Mode (0)"}     
+}
+
