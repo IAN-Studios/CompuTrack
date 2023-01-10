@@ -122,7 +122,9 @@ div.body {
     background-color: var(--pg-bg);
 }
 
-
+.working {
+    cursor:progress;
+}
 
 ::-webkit-scrollbar {
     width: 10px;

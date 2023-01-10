@@ -39,9 +39,11 @@
     text-align: center;
     color: var(--header-text);
     height:25px;
+    transition: background-color 0.25s;
 }
 .explorer-sidebar-item:hover {
     background-color: var(--explorer-item-hover);
+    cursor:pointer
 }
 /* Controls a Spacer in the sidebar*/
 .explorer-sidebar-spacer {

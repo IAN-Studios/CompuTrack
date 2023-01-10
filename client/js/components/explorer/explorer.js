@@ -13,7 +13,8 @@ class Explorer {
             help: {
                 text: "Help",
                 id: "explorer-help",
-                type: "PAGE"
+                type: "PAGE",
+                click: function() {alert("Not Implemented")}
                 
             },
             devices: {
@@ -39,18 +40,20 @@ class Explorer {
             createRecord: {
                 text: "Create Record...",
                 id: "explorer-crecord",
-                type: "PANEL"
+                type: "PANEL",
+                click: function() {Panels.LoadPanel("CreateRecord")}
             },
             advancedSettings: {
                 text: "Advanced Settings",
                 id: "explorer-advset",
                 type: "PANEL",
-                click: function() {console.log("PENIS")}
+                click: function() {alert("Not Implemented")}
             },
             securityPermissions: {
                 text: "Security & Permissions",
                 id: "explorer-securitypanel",
-                type: "PANEL"
+                type: "PANEL",
+                click: function() {alert("Not Implemented")}
             }
 
 

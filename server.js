@@ -87,6 +87,7 @@ class application {
             // (Uses specific parameters to control data flow, and the SQL Queries are predefined & server-side only)
 
             if (request.url.startsWith("/request?q=")) {
+                console.log(`[WARN] Warning - Database Use Requested by User [${request.socket.remoteAddress}]`)
                 const req = request.url.slice(11).split("&")
 
                 // Types of Requests
@@ -211,10 +212,10 @@ class application {
                     if (cred.length != 2) {
                         // INTERNAL SERVER ERROR: PASSWORDS SHOULD NOT INCLUDE: () OR ,
                         console.log("Uh oh");
-                        websocket.send("[ERR]Uhoh")
+                        websocket.send("[ERR] Uhoh")
                         return;
                     }
-                    console.log(this.stamp() + `[WSS] Validating Credentials of user ${cred[0]}`)
+                    console.log(`[WSS]` + this.stamp() + `[WSS] Validating Credentials of user ${cred[0]}`)
 
                     var auth = 0;
                     // Check database for client
@@ -229,7 +230,7 @@ class application {
                         }
                     })
                     if (auth == 0) {
-                        console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Unauthorized`)
+                        console.log(`[WARN]` + this.stamp() + `[WSS] Credientials of user ${cred[0]} Unauthorized, invalid credentials`);
                         websocket.send("[AUTH]401UNAUTHORIZED")
                         return;
                     }
@@ -271,13 +272,13 @@ class application {
 
     
     async updateDB() {
-        await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Assets.devices.fetchAll().then(r=>{this.database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets.computers From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Issues.fetchAll().then(r=>{this.database.Issues.All = r;console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
-        await this.ASSETMAN.Assets.hardware.fetchAll().then(r=>{this.database.hardware = r;console.log(this.stamp() + `[APP] Loaded Assets.hardware from Database`)}).catch((err) => {console.log(this.stamp() + `[APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Assets.devices.fetchAll().then(r=>{this.database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets.computers From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Issues.fetchAll().then(r=>{this.database.Issues.All = r;console.log(this.stamp() + `[APP] Loaded Issues.ALL From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        await this.ASSETMAN.Assets.hardware.fetchAll().then(r=>{this.database.hardware = r;console.log(this.stamp() + `[APP] Loaded Assets.hardware from Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
     }
 
 }
