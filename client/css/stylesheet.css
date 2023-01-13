@@ -1,29 +1,29 @@
 body {
     overflow:hidden;
-    transition: background-color 0.25s;
+    transition: background-color 0s;
     height: 100%;
 }
 html {
     height: 100%;
 }
 div {
-    transition: background-color 0.25s;
+    transition: background-color 0s;
 }
 table {
-    transition: background-color 0.25s;
+    transition: background-color 0s;
 }
 tr {
-    transition: background-color 0.25s;
+    transition: background-color 0s;
 }
 td {
     transition: background-color 0s;
 }
 th {
-    transition: background-color 0.25s;
+    transition: background-color 0s;
 }
 /* Navigation Header */
 div.header {
-    height:50px;
+    height:40px;
     width:100%;
     background-color: var(--header-primary);
     color:var(--header-text);
@@ -35,12 +35,13 @@ div.header {
 .header-icon {
     margin:5px;  
     user-select: none;  
+    background-color: var(--pg-bg);
 }
 div.header-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position:absolute;
     margin-bottom :5px;
-    font-size:20px;
+    font-size:var(--text-default);
     top:5px;
     user-select: none;
     padding: 5px;
@@ -53,11 +54,11 @@ div.header-text {
     background-color: var(--header-text-hover)
 }
 div.header-icontext {
-    left:50px;
+    left:15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position:absolute;
     margin-bottom :5px;
-    font-size:20px;
+    font-size:var(--text-default);
     top:5px;
     user-select: none;
     padding: 5px;
@@ -65,14 +66,14 @@ div.header-icontext {
     user-select: none;
 }
 div.header-dashboard {
-    left:200px;
+    left:150px;
 }
 div.header-dashboard:hover {
     background-color: var(--header-text-hover);
     text-decoration: underline
 }
 div.header-assets {
-    left:350px;
+    left:300px;
 }
 div.header-assets:hover {
     background-color: var(--header-text-hover);
@@ -84,7 +85,7 @@ div.header-issues {
 div.header-search {
     float: right;
     left: 650px;
-    height: 25px;
+    height: 5px;
     width: 600px;
     align-self: center;
     text-align: center;
@@ -92,8 +93,11 @@ div.header-search {
 input.search {
     transition: background-color 0.25s;
     border-radius: 0px;
-    height: 25px;
+    border-color:var(--pg-bg);
+    height: 20px;
     width: 600px;
+    position: relative;
+    top:-3px;
     text-align: center;
     background-color: var(--pg-bg);
     color:var(--search-text-color);
@@ -115,7 +119,7 @@ div.header-selected {
 }
 div.body {
     position: absolute;
-    top:50px;
+    top:40px;
     left:0px;
     width: 100%;
     height: 100%;
