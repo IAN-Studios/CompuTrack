@@ -30,7 +30,7 @@ fetch(new Request("/request?q=reqissuesunresolved&reqissuesresolved&reqassets&re
     + `<div class="dashboard-statistic">Issue Count:<span style="float:right">${data.reqissuesall.length}</span></div>`
     + `<div class="dashboard-statistic">Unresolved Issues:<span style="float:right">${data.reqissuesunresolved.length}</span></div>`
     + `<div class="dashboard-statistic">Resolved Issues:<span style="float:right">${data.reqissuesall.length-data.reqissuesunresolved.length}</span></div>` 
-    + `<div class="dashboard-statistic">Issue Resolution %:<span style="float:right">${(data.reqissuesresolved.length/data.reqissuesall.length)*100}%</span></div>` 
+    + `<div class="dashboard-statistic">Issue Resolution %:<span style="float:right">${Math.round((data.reqissuesresolved.length/data.reqissuesall.length) *10000)/100}%</span></div>` 
 })})
 
 

@@ -1,0 +1,8 @@
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\bin\Debug\SRV-CompuTrack.exe.config
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\bin\Debug\SRV-CompuTrack.exe
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\bin\Debug\SRV-CompuTrack.pdb
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\obj\Debug\SRV-CompuTrack.csproj.AssemblyReference.cache
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\obj\Debug\SRV-CompuTrack.csproj.SuggestedBindingRedirects.cache
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\obj\Debug\SRV-CompuTrack.csproj.CoreCompileInputs.cache
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\obj\Debug\SRV-CompuTrack.exe
+C:\Users\Host\Documents\Dev\SRV-CompuTrack\obj\Debug\SRV-CompuTrack.pdb

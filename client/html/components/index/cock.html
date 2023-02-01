@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cock</title>
+        <link rel="stylesheet" type="text/css" id="theme" href=""/>
+        <style>
+            rect {
+                transition: background-color 0.25s;
+            }
+            circle {
+                transition: background-color 0.25s;
+            }
+            svg {
+                transition: background-color 0.25s;
+            }
+        </style>
+    </head>
+    <body>
+        <svg height="256px" width="256px">
+            <circle r="110px" cx="128" cy="128" fill-opacity="100" fill="var(--cock-face)" stroke="black" stroke-width="10px"/>
+            <rect height="5px" width="25px" x="200" y="125" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="32" y="125" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="30" y="-131" transform="rotate(90)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="200" y="-131" transform="rotate(90)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="85" y="45" transform="rotate(30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="86" y="-50" transform="rotate(60)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="245" y="41" transform="rotate(30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="245" y="-50" transform="rotate(60)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="-48" y="172" transform="rotate(-30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="-140" y="170" transform="rotate(-60)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="115" y="175" transform="rotate(-30)" fill="var(--cock-dialcolor)"/>
+            <rect height="5px" width="25px" x="20" y="175" transform="rotate(-60)" fill="var(--cock-dialcolor)"/>
+            <circle r="10" transform="translate(128,128)" fill="black"/>
+            <rect width="5" height="100" transform="translate(128,128),rotate(180,2.5,0)" class="hand-minutes" fill="var(--cock-hands)" id="min"/>
+            <rect width="5" height="50" transform="translate(128,128),rotate(180,5,0)" class="hand-Math.round(hr/60)s" fill="var(--cock-hands)" id="hr"/>
+            <rect width="2" height="100" transform="translate(128,128),rotate(180,1,0)" class="hand-seconds" id="sec" fill="var(--cock-secondhand)"/>
+        </svg>
+        <script>
+            
+            var cock = newcock(1000)
+
+            function newcock(speed) {
+            var start = new Date()
+            var starthr = start.getHours();
+            if (starthr > 12) starthr = starthr - 12;
+            var startmin = start.getMinutes();
+            var startsec = start.getSeconds();
+
+
+            console.log(starthr, startmin, startsec)
+            var hr = starthr * 72
+            var min = startmin * 6
+            var sec = startsec * 6
+
+            document.getElementById("sec").attributes.transform.value = `translate(128,128),rotate(${sec + 180},1,0)`
+            document.getElementById("min").attributes.transform.value = `translate(128,128),rotate(${min + 180},2.5,0)`
+            document.getElementById("hr").attributes.transform.value = `translate(128,128),rotate(${hr + 180},2.5,0)`
+
+            var e = 0
+            var d = 0
+            return setInterval(() => {
+                sec = sec + 6;
+                e++
+                if (e == 10) {
+                    e=0
+                    min=min+1
+                    d++
+                }
+                if (d == 12) {
+                    d=0
+                    hr = hr + 1
+                }
+                if (sec == 360) sec = 0;
+                if (min == 360) min = 0;
+                if (hr == 360) hr = 0;
+                var hour
+                var minute;
+                var second;
+                if (Math.round(hr/60) >= 55) {
+                    hour = "11"
+                } else if (Math.round(hr/60) >= 50) {
+                    hour = "10"
+                } else if (Math.round(hr/60) >= 45) {
+                    hour = "9"
+                } else if (Math.round(hr/60) >= 40) {
+                    hour = "8"
+                } else if (Math.round(hr/60) >= 35) {
+                    hour = "7"
+                } else if (Math.round(hr/60) >= 30) {
+                    hour = "6"
+                } else if (Math.round(hr/60) >= 25) {
+                    hour = "5"
+                } else if (Math.round(hr/60) >= 20) {
+                    hour = "4"
+                } else if (Math.round(hr/60) >= 15) {
+                    hour = "3"
+                } else if (Math.round(hr/60) >= 10) {
+                    hour = "2"
+                } else if (Math.round(hr/60) >= 5) {
+                    hour = "1"
+                } else if (Math.round(hr/60) >= 0) {
+                    hour = "12"
+                }
+                console.log(sec, min, hr, d,  e)
+                console.log(`${hour}:${Math.round(min/6)}:${Math.round(sec/6)}`)
+                document.getElementById("sec").attributes.transform.value = `translate(128,128),rotate(${sec + 180},1,0)`
+                document.getElementById("min").attributes.transform.value = `translate(128,128),rotate(${min + 180},2.5,0)`
+                document.getElementById("hr").attributes.transform.value = `translate(128,128),rotate(${hr + 180},2.5,0)`
+            },speed);
+
+        }
+        </script>
+        <script>
+            window.parent.postMessage("E");
+        </script>
+
+    </body>
+</html>

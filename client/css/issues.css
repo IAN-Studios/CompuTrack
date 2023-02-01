@@ -18,11 +18,13 @@ th.table-header {
     color:var(--header-text);
 }
 tr.Issues-Issue:hover {
+    transition: background-color 0s;
     background-color: var(--header-text-hover);
     color:var(--header-text);
 }
 tr.Issues-Issue {
     padding:0px;
+    transition: background-color 0s;
 }
 tr.issues-header {
     font-weight: bold;

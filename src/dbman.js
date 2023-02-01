@@ -4,30 +4,47 @@ const nmdb = require("@el3um4s/node-mdb");
 class dbman {
     /**@param {String} database database to manage*/
     constructor(database) {
-        this.database = database;
         
         /**@param Assets Manage Assets */
         this.Assets = {
-            fetchAll: async function() {
-                var sql = `
-                SELECT ASSETS.*
-                FROM ASSETS;
-                `
-                var e = await nmdb.query.sql({database,sql})
-                return e;
+            devices: {
+                fetchAll: async function() {
+                    var sql = `
+                    SELECT DEVICES.*
+                    FROM DEVICES;
+                    `
+                    var e = await nmdb.query.sql({database,sql})
+                    return e;
+                },
+                fetch: async function(sql) {
+                    var data = "NOT IMPLEMENTED"
+                    //var data = await nmdb.query.sql({database, sql})
+                    return data;
+                }
             },
-            fetch: async function(sql) {
-                var data = "NOT IMPLEMENTED"
-                //var data = await nmdb.query.sql({database, sql})
-                return data;
-            }
+            hardware: {
+                fetchAll: async function() {
+                    var sql = `
+                    SELECT HARDWARE.*
+                    FROM HARDWARE
+                    ORDER BY ID ASC;           
+                    `
+                    return await nmdb.query.sql({database,sql})
+                },
+                fetch: async function(sql) {
+                    var data = "NOT IMPLEMENTED"
+                    //var data = await nmdb.query.sql({database, sql})
+                    return data;
+                }
+            },
         }
         /**@param Issues Manage Issues */
         this.Issues = {
             fetchAll: async function() {
                 var sql = `
-                SELECT ISSUES.*
-                FROM ISSUES;
+                SELECT ISSUES.ID, ISSUES.[Asset Tag], ISSUES.[Severity (Optional)], ISSUES.[Date Added], ISSUES.[Resolved?], ISSUES.[Problem Description], DEVICES.[Item Location]
+                FROM ISSUES INNER JOIN DEVICES ON ISSUES.[Asset Tag] = DEVICES.[JCPS Tag]
+                ORDER BY ISSUES.ID ASC;
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
@@ -99,5 +116,4 @@ class dbman {
         }
     }
 }
-new dbman("./db/computrack-database.mdb").Assets.fetchAll()
 module.exports = dbman;

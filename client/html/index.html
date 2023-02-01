@@ -7,17 +7,19 @@
         <link id="theme" rel="stylesheet" type="text/css" href=""/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
+        <script src="/client/js/searchheader.js"></script>
     </head>
     <body> 
         <!-- Header very cool lol-->
         <div class="header">
-            <img class="header-icon" onclick="changetheme()"src="/client/assets/icon.png" height="40px" width="40px" />
-            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
-            <div onclick="window.location.href = '/client/html/index.html'" class="header-selected header-text header-dashboard">Dashboard</div>
-            <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
-            <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
-            <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
-        </div>
+          <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
+          <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard header-selected">Dashboard</div>
+          <div onclick="window.location.href = '/client/html/viewer.html'" class="header-text header-assets">Explorer</div>
+          <div class="header-text header-search" style=>
+            <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+          </div>
+          <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
+      </div>
 
 
         <!-- Although the body tag exists, this is a "body body" of the webpage, serving as the content underneath the header.-->
@@ -33,13 +35,13 @@
                   
                   <!-- Don't worry about it, its a clock, but I made a typo, so i stuck with it. - Siebert -->
                   <div class="dashboard-cock" id="cock">
-                    <iframe id="ifrm" src="/client/html/cock.html" seamless></iframe>
+                    <iframe id="ifrm" src="/client/html/components/index/cock.html" seamless></iframe>
                   </div>
                   <div class="actions">
                     <div class="actions-title">Actions</div>
                     <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
                     <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
-                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Open a Search</div>
+                    <div onclick="window.location.href='/client/html/search.html'" class="actions-item">Open a Search</div>
                     <div onclick="window.location.href='/client/html/issues.html?mode=CREATE'" class="actions-item">Create an Issue</div>
                     <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
                   </div>

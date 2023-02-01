@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <!-- The big one, the final updated version of the database explorer, all compilied into one beautiful webpage.-->
+    <head id="document-header">
+        <title id="title">Explorer - CompuTrack</title>
+        <!-- Global Imports, requirement for items like favicon, header, etc.-->
+        <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
+        <link rel="stylesheet" type="text/css" href="" id="theme"/>
+        <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
+        <link rel="stylesheet" type="text/css" href="/client/css/viewer.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
+            <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard">Dashboard</div>
+            <div onclick="window.location.href = '/client/html/viewer.html'" class="header-text header-selected header-assets">Explorer</div>
+            <div class="header-text header-search" style=>
+              <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+            </div>
+            <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
+        </div>
+
+
+        <!-- The Real Stuff-->
+        <div class="body">
+            <div class="explorer-header">
+                <span class="explorer-header-title" id="header-title">Database Explorer | Home</span>
+                <div class="explorer-header-controls" id="control"></div>
+            </div>
+            <div>
+                <span class="explorer-sidebar" id="sidebar">
+                    <div id="explorer-home" class="explorer-home explorer-sidebar-item explorer-tree-selected" onclick="explorerGOTO(this)">Explorer Home</div>
+
+                </span>
+                <span class="explorer-table" id="explorer-table">
+                </span>
+            </div>
+        </div>
+
+        <!-- Final Imports -->
+        <script src="/client/js/header.js"></script>
+        <script src="/client/js/comman.js"></script>
+        <script src="/client/js/viewer.js"></script>
+        <script src="/client/js/components/explorer/objects.js"></script>
+        <script src="/client/js/components/explorer/renderer.js"></script>
+        <script src="/client/js/components/explorer/panels.js"></script>
+        <script src="/client/js/components/explorer/controls.js"></script>
+        <script src="/client/js/components/explorer/tables.js"></script>
+        <script src="/client/js/components/explorer/explorer.js"></script>
+        <script>new DBexplorer()</script>
+    </body>
+</html>
