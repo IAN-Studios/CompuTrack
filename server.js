@@ -5,9 +5,7 @@ const mime = require("mime");
 const dbman = require("./src/dbman")
 const fs = require("fs");
 
-const config = require("./config.json");
-const { runInThisContext } = require("vm");
-const { throws } = require("assert");
+const config = require("./config.json");  
 
 wsp = config.Websocketserver.port
 const options = {
