@@ -2,21 +2,38 @@ table.table {
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
+    border-collapse: collapse;
 }
 div.body {
     overflow: scroll;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
 }
 th.table-header {
     position: relative;
     font-size: 24pt;
     font-weight: bold;
     text-align: center;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
 }
 tr.Assets-Asset:hover {
-    background-color: #494949;
-    color:white;
+    transition: background-color 0s;
+    background-color: var(--header-text-hover);
+    color:var(--header-text);
+}
+tr.Assets-Asset {
+    transition: background-color 0s;
 }
 tr.assets-headers {
     font-weight: bold;
     text-decoration: underline;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
+}
+.Selected {
+    background-color: var(--palette-orange);
+    font-weight: bold;
 }

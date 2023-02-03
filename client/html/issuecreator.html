@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/client/css/issuecreator.css"/>
+        <link rel="stylesheet" id="theme" href="/client/css/themes/default.css"/>
+        <script src="/client/js/header.js"></script>
+        <script>
+            const socket = new WebSocket(`wss://${window.location.hostname}`);
+            function submitForm() {
+                document.getElementById("buttn").disabled = true;
+                var assettag = document.getElementById('assettag').value;
+                const levelz = document.querySelectorAll('input[name="level"]')
+                for (const l of levelz) {
+                    if (l.checked) var severity = l.value; 
+                }
+                var now = new Date()
+                var date = `${now.getMonth()+1}/${now.getDate()}/${now.getFullYear()}`
+                resolved = false;
+                var description = document.getElementById('desc').value;
+                var newIssue = {
+                    'Asset Tag': assettag,
+                    'Severity (Optional)': severity,
+                    'Date Added': date,
+                    'Resolved?': resolved,
+                    'Problem Description': description
+                }
+                console.log(newIssue)
+                console.log(assettag);
+                console.log(severity);
+                console.log(description)
+                socket.send(`DATABASE.NEWISSUE(data=[${assettag};,;${severity};,;${description}])`);
+                socket.addEventListener("message", (e) => {
+                    console.log(e.data);
+                    if (e.data == "200OK") {
+                        console.log("Update Sucessful")
+                        window.parent.location.search = ""
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div class="IssueCreator-header">
+            <span class="IssueCreator-header-Title">Create a New Issue Form</span>
+            <span class="IssueCreator-header-exit" onclick="window.parent.location.search=''">X</span>
+        </div>
+        <div class="Form">
+            <form>
+            <div class="Form-AssetTag">
+                Asset Tag: <input type="text" id="assettag" placeholder="Asset Tag..."/>
+            </div>
+            <div class="Form-Severity">
+                <p>Please select a severity level:</p>
+                    <input type="radio" id="level-normal" name="level" value="Normal">
+                    <label for="level-normal">Normal Issue (Default)</label><br>
+                    <input type="radio" id="level-urgent" name="level" value="Urgent">
+                    <label for="level-urgent">Urgent Level (Emergency Only)</label><br>
+
+            </div>
+                <input type="text" class="Form-Description" id="desc" placeholder="Write a Description about the Issue....."/>
+            </form>
+        </div>
+        <div>
+            <button class="submitForm" id="buttn" onclick="submitForm()">Create Issue</button>
+        </div>
+    </body>
+</html>

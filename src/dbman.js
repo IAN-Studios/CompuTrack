@@ -4,30 +4,47 @@ const nmdb = require("@el3um4s/node-mdb");
 class dbman {
     /**@param {String} database database to manage*/
     constructor(database) {
-        this.database = database;
         
         /**@param Assets Manage Assets */
         this.Assets = {
-            fetchAll: async function() {
-                var sql = `
-                SELECT ASSETS.*
-                FROM ASSETS;
-                `
-                var e = await nmdb.query.sql({database,sql})
-                return e;
+            devices: {
+                fetchAll: async function() {
+                    var sql = `
+                    SELECT DEVICES.*
+                    FROM DEVICES;
+                    `
+                    var e = await nmdb.query.sql({database,sql})
+                    return e;
+                },
+                fetch: async function(sql) {
+                    var data = "NOT IMPLEMENTED"
+                    //var data = await nmdb.query.sql({database, sql})
+                    return data;
+                }
             },
-            fetch: async function(sql) {
-                var data = "NOT IMPLEMENTED"
-                //var data = await nmdb.query.sql({database, sql})
-                return data;
-            }
+            hardware: {
+                fetchAll: async function() {
+                    var sql = `
+                    SELECT HARDWARE.*
+                    FROM HARDWARE
+                    ORDER BY ID ASC;           
+                    `
+                    return await nmdb.query.sql({database,sql})
+                },
+                fetch: async function(sql) {
+                    var data = "NOT IMPLEMENTED"
+                    //var data = await nmdb.query.sql({database, sql})
+                    return data;
+                }
+            },
         }
         /**@param Issues Manage Issues */
         this.Issues = {
             fetchAll: async function() {
                 var sql = `
-                SELECT ISSUES.*
-                FROM ISSUES;
+                SELECT ISSUES.ID, ISSUES.[Asset Tag], ISSUES.[Severity (Optional)], ISSUES.[Date Added], ISSUES.[Resolved?], ISSUES.[Problem Description], DEVICES.[Item Location]
+                FROM ISSUES INNER JOIN DEVICES ON ISSUES.[Asset Tag] = DEVICES.[JCPS Tag]
+                ORDER BY ISSUES.ID ASC;
                 `
                 var data = await nmdb.query.sql({database, sql})
                 return data;
@@ -50,26 +67,32 @@ class dbman {
                 var data = await nmdb.query.sql({database, sql})
                 return data;
             },
-            /**@param {String} sql SQL Code to run (DEPRECIATED)*/
-            query: async function(sql) {
-                var data = await nmdb.query.sql({database, sql})
-                return data;
-            },
             /** 
              * @param {Number} ID ID Number of Issue
-             * @param {String} AssetTag Asset Tag of Item
-             * @param {String} value New Status of Issue
+             * @param {String} property Asset Tag of Item
+             * @param {String} newValue New Status of Issue
              **/
-            updateStatus: function(ID, AssetTag, value) {
-
+            update: async function(ID, setvalue) {
+                var sql = `
+                UPDATE ISSUES
+                SET ${setvalue}
+                WHERE ID = ${ID}
+                `
+                var data = await nmdb.query.sql({database, sql})
             },
             /** 
              * @param {String} AssetTag Asset Tag of Item
              * @param {String} Severity Severity of Issue
              * @param {String} Description Description for Issue
              **/
-            new: function(AssetTag, Severity, Description) {
-
+            new: async function(AssetTag, Severity, Description) {
+                var now = new Date();
+                var date = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`
+                var sql = `
+                INSERT INTO ISSUES([Asset Tag] , [Severity (Optional)], [Date Added], [Resolved?], [Problem Description])
+                VALUES (${AssetTag},'${Severity}','${date}',false,'${Description}')
+                `
+                await nmdb.query.sql({database, sql})
             }
         }
 
@@ -93,5 +116,4 @@ class dbman {
         }
     }
 }
-new dbman("./db/computrack-database.mdb").Assets.fetchAll()
 module.exports = dbman;

@@ -1,0 +1,60 @@
+body {
+    background-color: var(--header-primary);
+    color:var(--header-text)
+}
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div.IssueCreator-header {
+    font-size: 24pt;
+    text-align: center;
+    font-weight: bold;
+}
+span.IssueCreator-header-exit {
+    float:right;
+    width:48px;
+    height:48px;
+    font-size: 36px;
+    font-weight: normal;
+    user-select: none;
+    background-color: var(--header-secondary);
+}
+span.IssueCreator-header-exit:hover {
+    background-color: var(--header-text-hover);
+}
+
+.submitForm {
+    bottom:0px;
+    position: absolute;
+    right:0px;
+    font-size: 18pt;
+    width:300px;
+    height:50px;
+    margin:5px;
+    border:1px solid var(--header-secondary);
+    background-color: var(--header-secondary);
+    color:var(--header-text);
+    border-radius: 0;
+}
+.submitForm:hover {
+    background-color: var(--header-text-hover);
+}
+.Form-AssetTag {
+    text-align: center;
+    margin-top: 50px;
+}
+.Form-Severity {
+    text-align: center;
+    margin-top: 50px;
+}
+.Form-Description {
+    float:right;
+    position:fixed ;
+    bottom:75px;
+    width:auto;
+    left:10px;
+    right:10px;
+    height:100px;
+    text-align: center;
+}

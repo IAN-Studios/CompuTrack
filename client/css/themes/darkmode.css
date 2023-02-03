@@ -1,3 +1,41 @@
 :root {
+    /* Colors */
+        /* Header Colors */
+        --header-primary: #383838;
+        --header-secondary: #252525;
+        --header-tertiary: #1a1a1a;
+        --header-text: #f9f0f0;
+        --header-text-hover :#8691c668;   
     
+        /* Root Colors (Available every*/
+        --root-orange: #ff6a00a1;
+        --pg-bg: #1e1e1e;
+        --text-color:#8691c668;
+        --text-color-hover: #42424262;
+        --button-text-disabled:#767676;
+        --logout-button-hover:#ff000094;
+
+        /* Cock Colors */
+        --cock-dialcolor: rgb(23, 107, 90);
+        --cock-face:rgb(28, 28, 28);
+        --cock-secondhand:rgba(209, 48, 48, 0.552);
+        --cock-hands:rgba(66, 131, 137, 0.642);
+
+        /* Explorer Colors */
+        --explorer-header: #252525;
+        --explorer-sidebar: #242424;
+        
+        --explorer-item-hover: #707070;
+        --explorer-item: #383838;
+        --explorer-seperator: #3a3a3a;
+        --search-text-color:#dbdbdb;
+        --explorer-item-disabled: #141212;
+        --explorer-record-hover: #85848461;
+    
+    /* Text Variables*/
+    --text-small:12pt;
+    --text-default:16px;
+    --text-big:24px;
+    --text-title:32px;
+
 }

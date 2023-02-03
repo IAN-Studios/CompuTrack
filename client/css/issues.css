@@ -1,24 +1,94 @@
 div.body {
-    overflow:scroll
+    overflow:scroll;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
 }
 table.table {
     width: 100%;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
+    border-collapse: collapse;
 }
 th.table-header {
     width: 100%;
     font-size: 24pt;
-}
-tr.Assets-Asset:hover {
-    background-color: #494949;
-    color:white;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
 }
 tr.Issues-Issue:hover {
-    background-color: #494949;
-    color:white;
+    transition: background-color 0s;
+    background-color: var(--header-text-hover);
+    color:var(--header-text);
+}
+tr.Issues-Issue {
+    padding:0px;
+    transition: background-color 0s;
 }
 tr.issues-header {
     font-weight: bold;
     text-decoration: underline;
+    background-color:var(--pg-bg);
+    color:var(--header-text);
+}
+button.table-header-manage {
+    position: absolute;
+    right:0px;
+    margin:10px;
+    font-size: 16pt;
+    padding:5px;
+    border-radius: 0px;
+    border: 0px;
+    background-color: var(--header-secondary);
+    color:var(--header-text)
+}
+button.table-header-create {
+    position: absolute;
+    right:150px;
+    margin:10px;
+    font-size: 16pt;
+    padding:5px;
+    border-radius: 0px;
+    border: 0px;
+    background-color: var(--header-secondary);
+    color:var(--header-text)
+}
+button.table-header-create:hover {
+    background-color: var(--header-text-hover);
+}
+button.table-header-manage:hover {
+    background-color: var(--header-text-hover);
+}
+.Selected {
+    background-color: var(--palette-orange);
+}
+
+button.disabled {
+    color: var(--button-text-disabled);
+    background-color: var(--header-text-hover)
+}
+
+
+iframe.creator-window {
+    width:40%;
+    height:70%;
+    position: absolute;
+    z-index: 1000;
+    top:10%;
+    left:30%;
+    right:30%;
+    bottom:10%;
+    border: 5px solid var(--header-secondary)
+}
+iframe.manager-window {
+    width:80%;
+    height:60%;
+    position: absolute;
+    z-index: 1000;
+    top:10%;
+    left:10%;
+    right:10%;
+    bottom:10%;
+    border: 5px solid var(--header-secondary)
 }

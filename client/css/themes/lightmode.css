@@ -1,2 +1,20 @@
 :root {
+    --header-primary: #cecece;
+    --header-secondary: #adadad;
+    --header-tertiary: #929292;
+    --header-text: #404040;
+    --header-text-hover :#42424262;   
+    --palette-orange: #ff6a00a1;
+    --pg-bg: #fafafa;
+    --button-text-disabled:#767676;
+    --logout-button-hover:#ff000094;
+    --cock-dialcolor: black;
+    --cock-face:white;
+    --cock-secondhand:red;
+    --cock-hands:gray;
+    --explorer-item-hover: #707070;
+    --explorer-item: #c9c9c9;
+    --explorer-seperator: #3a3a3a;
+    --search-text-color:#202020;
+    --explorer-item-disabled: #4b4b4b;
 }

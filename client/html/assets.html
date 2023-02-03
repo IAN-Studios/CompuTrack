@@ -3,18 +3,22 @@
     <head>
         <title>CompuTrack - Assets</title>
         <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
-        <link rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
+        <link id="theme" rel="stylesheet" type="text/css" href=""/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/assets.css"/>
-        <script src="/client/js/index.js"></script>
+        <script src="/client/js/header.js"></script>
+        <script src="/client/js/searchheader.js"></script>
     </head>
     <body>
         <div class="header">
-            <img class="header-icon" src="/client/assets/icon.png" height="40px" width="40px"/>
-            <div class="header-icontext">CompuTrack</div>
+            <img class="header-icon" onclick="changetheme()" src="/client/assets/icon.png" height="30px" width="30px"/>
+            <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
             <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard">Dashboard</div>
             <div onclick="window.location.href = '/client/html/assets.html'" class="header-selected header-text header-assets">Asset List</div>
             <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
+            <div class="header-text header-search" style=>
+              <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+            </div>
             <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
         </div>
         <div class="body">

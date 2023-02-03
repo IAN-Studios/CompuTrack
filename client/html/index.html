@@ -2,57 +2,55 @@
 <html>
     <head>
         <title>CompuTrack</title>
+        <!-- Imports; NOTE: for some reason, the "type" field is required alongside the appropiate MIME file type for certain imports to work! - Siebert -->
         <link rel="icon" type="image/png" href="/client/assets/icon.png"/>
-        <link rel="stylesheet" type="text/css" href="/client/css/themes/default.css"/>
+        <link id="theme" rel="stylesheet" type="text/css" href=""/>
         <link rel="stylesheet" type="text/css" href="/client/css/stylesheet.css"/>
         <link rel="stylesheet" type="text/css" href="/client/css/index.css"/>
+        <script src="/client/js/searchheader.js"></script>
     </head>
-    <body>
+    <body> 
+        <!-- Header very cool lol-->
         <div class="header">
-            <img class="header-icon" src="/client/assets/icon.png" height="40px" width="40px"/>
-            <div class="header-icontext">CompuTrack</div>
-            <div onclick="window.location.href = '/client/html/index.html'" class="header-selected header-text header-dashboard">Dashboard</div>
-            <div onclick="window.location.href = '/client/html/assets.html'" class="header-text header-assets">Asset List</div>
-            <div onclick="window.location.href = '/client/html/issues.html'" class="header-text header-issues">Issues Manager</div>
-            <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
-        </div>
+          <div class="header-icontext" onclick="changetheme()">CompuTrack</div>
+          <div onclick="window.location.href = '/client/html/index.html'" class="header-text header-dashboard header-selected">Dashboard</div>
+          <div onclick="window.location.href = '/client/html/viewer.html'" class="header-text header-assets">Explorer</div>
+          <div class="header-text header-search" style=>
+            <input class="search" id="search" onkeyup="if (event.keyCode == 13) search(this.value)" placeholder="Type here and press enter to open a search.....">
+          </div>
+          <div onclick="window.location.href = '/client/logout'" id="logoutbutton" class="header-text header-logout">Logout</div>
+      </div>
+
+
+        <!-- Although the body tag exists, this is a "body body" of the webpage, serving as the content underneath the header.-->
         <div class="body">
             <div class="dashboard">
-                <div class="dashboard-title" id="title">Dashboard</div>
-                <span>
-                <div class="dashboard-statistics">
-                  <div class="dashboard-statistics-title">STATISTICS</div>
-                  <div id="stats"></div>
+                <div class="dashboard-title" id="title">Welcome back</div>
+                <div class="dashboard-body">
+                  <div class="dashboard-statistics" id="stats">
+                    <div class="dashboard-statistics-title" id="statsheader">STATISTICS</div>
+                    <div id="statslist"></div>
+                  </div>
+
+                  
+                  <!-- Don't worry about it, its a clock, but I made a typo, so i stuck with it. - Siebert -->
+                  <div class="dashboard-cock" id="cock">
+                    <iframe id="ifrm" src="/client/html/components/index/cock.html" seamless></iframe>
+                  </div>
+                  <div class="actions">
+                    <div class="actions-title">Actions</div>
+                    <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
+                    <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
+                    <div onclick="window.location.href='/client/html/search.html'" class="actions-item">Open a Search</div>
+                    <div onclick="window.location.href='/client/html/issues.html?mode=CREATE'" class="actions-item">Create an Issue</div>
+                    <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
+                  </div>
                 </div>
-                <div class="actions">
-                  <div class="actions-title">Actions</div>
-                  <div onclick="window.location.href='/client/html/assets.html'" class="actions-item">View Assets</div>
-                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">View Issues</div>
-                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Manage Issues</div>
-                  <div onclick="window.location.href='/client/html/issues.html'" class="actions-item">Create an Issue</div>
-                  <div onclick="window.location.href='/client/logout'" class="actions-item">Logout</div>
-                </div>
-                </span>
             </div>
         </div>
-        <script>
-            function getCookie(cname) {
-                let name = cname + "=";
-                let decodedCookie = decodeURIComponent(document.cookie);
-                let ca = decodedCookie.split(';');
-                for(let i = 0; i <ca.length; i++) {
-                  let c = ca[i];
-                  while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                  }
-                  if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                  }
-                }
-                return "";
-              }
-              document.getElementById("logoutbutton").innerHTML = `Logout ${getCookie("account")}`
-        </script>
+
+        <!-- Certain script imports are needed at the bottom of the page so that they can be accessed last, so that they have access to manipulate DOM Elements above it.-->
+        <script src="/client/js/header.js"></script>
         <script src="/client/js/index.js"></script>
     </body>
 </html>

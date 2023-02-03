@@ -1,2 +1,2 @@
 @echo off
-pkg --targets latest-win-x64 -o CompuTrack.exe server.js
+pkg --targets latest-win-x64 -o "./build/CompuTrack.exe" server.js
