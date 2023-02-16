@@ -5,9 +5,7 @@ const mime = require("mime");
 const dbman = require("./src/dbman")
 const fs = require("fs");
 
-const config = require("./config.json");
-const { runInThisContext } = require("vm");
-const { throws } = require("assert");
+const config = require("./config.json");  
 
 wsp = config.Websocketserver.port
 const options = {
@@ -24,6 +22,8 @@ class application {
             server:this.webserver,
         })
         this._authdClients = [];
+
+        this.isReady = false;
 
         // Used for timestamps when logging
         this.stamp = function() {
@@ -45,6 +45,17 @@ class application {
             var deeta;
             var deetatype
 
+            if (this.isReady == false) {
+                var deeta = fs.readFileSync(`./client/html/error/202.html`)
+                var deetatype = mime.getType(`./client/html/error/202.html`)
+
+                response.statusCode = 202
+                response.setHeader('Access-Control-Allow-Origin', '*')
+                response.setHeader('Content-Type', `${deetatype}`)
+                response.write(deeta);
+                response.end();
+                return;
+            }
 
             //Favicon Load Before Client Authentication
             if (request.url == "/client/assets/icon.png") {
@@ -220,7 +231,7 @@ class application {
                     var auth = 0;
                     // Check database for client
                    this.database.LoginInfo.forEach(item => {
-                        if ((cred[0].toLowerCase() == item.Username.toLowerCase()) && (cred[1] == item.Password)) {
+                        if ((cred[0].toLowerCase() == item.Username) && (cred[1] == item.Password)) {
                             console.log(this.stamp() + `[WSS] Credientials of user ${cred[0]} Validated.`)
                             var Username = item.Username.toLowerCase();
                             var addr = client.socket.remoteAddress;
@@ -272,6 +283,7 @@ class application {
 
     
     async updateDB() {
+        this.isReady = false;
         await this.ASSETMAN.Credentials.fetchUserLoginInfo().then(r=>{this.database.LoginInfo = r;console.log(this.stamp() + `[APP] Loaded User Login Information From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Credentials.fetchUserInfo().then(r=>{this.database.UserInfo = r;console.log(this.stamp() + `[APP] Loaded User Profiles From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Assets.devices.fetchAll().then(r=>{this.database.Assets = r;console.log(this.stamp() + `[APP] Loaded Assets.computers From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
@@ -279,6 +291,8 @@ class application {
         await this.ASSETMAN.Issues.fetchAllUnresolved().then(r=>{this.database.Issues.Unresolved = r;console.log(this.stamp() + `[APP] Loaded Issues.UNRESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Issues.fetchAllResolved().then(r=>{this.database.Issues.Resolved = r;console.log(this.stamp() + `[APP] Loaded Issues.RESOLVED From Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
         await this.ASSETMAN.Assets.hardware.fetchAll().then(r=>{this.database.hardware = r;console.log(this.stamp() + `[APP] Loaded Assets.hardware from Database`)}).catch((err) => {console.log(this.stamp() + `[ERR][APP] ${err} Failed to load Database`)})
+        console.log(this.stamp() + "[APP] Ready!")
+        this.isReady = true;
     }
 
 }

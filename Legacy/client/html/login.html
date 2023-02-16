@@ -94,21 +94,18 @@
                     console.log(`Message Recieved: ${message.data}`);
                     if (message.data == "[AUTH]200OK") {
                         status.innerHTML = "Authentication Successful. Welcome Back!"
-                        window.location.href = window.location.href;
+                        alert(message.data);
+                        //window.location.href = window.location.href;
                         document.cookie = 'account=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
                         document.cookie = `account=${username}; path=/;`
                         socket.removeEventListener("message", () => {});
-                    }
-                    if (message.data == "[AUTH]401UNAUTHORIZED") {
+                    } else if (message.data == "[AUTH]401UNAUTHORIZED") {
                         status.innerHTML = "Invalid Credentials."
                         socket.removeEventListener("message", () => {});
                     }
                 });
                 status.innerHTML = `Authorizing credentials with server.....`;
                 socket.send(`[AUTH]AUTHENTICATE(${username},${password})`);
-                console.log("Sending Credentials for Authentication.....");
-
-                setTimeout(() => {if (authstatus == 0) {status.innerHTML = "Request Timed Out. Please Try Again.";socket.removeEventListener("message", () => {});}}, 5000)
             }
         </script>
     </head>
