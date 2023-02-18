@@ -5,12 +5,148 @@
       "PackagePath": "staticwebassets\\CompuTrackNeo.bundle.scp.css"
     },
     {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\CompuTrack-old.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\CompuTrack-old.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\CompuTrack.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\CompuTrack.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\issue-blue.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-blue.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\issue-generic.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-generic.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\issue-green.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-green.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\issue-red.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-red.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\issue-yellow.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-yellow.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\warning-blue.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-blue.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\warning-generic.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-generic.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\warning-green.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-green.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\warning-red.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-red.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\icons\\warning-yellow.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-yellow.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\CompuTrack.png",
+      "PackagePath": "staticwebassets\\assets\\images\\CompuTrack.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\CompuTrack_NEO_Banner.png",
+      "PackagePath": "staticwebassets\\assets\\images\\CompuTrack_NEO_Banner.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\issue-blue.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-blue.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\issue-generic.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-generic.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\issue-green.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-green.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\issue-red.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-red.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\issue-yellow.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-yellow.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\warning-blue.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-blue.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\warning-generic.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-generic.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\warning-green.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-green.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\warning-red.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-red.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\images\\warning-yellow.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-yellow.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\CompuTrack.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\CompuTrack.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack.xcf"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\ComputrackNEO.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\ComputrackNEO.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\Warning-generic.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\Warning-generic.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\computrack-neo.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\computrack-neo.xcf"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\assets\\photoshop\\issue-generic.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\issue-generic.psd"
+    },
+    {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\cert\\cert.cer",
       "PackagePath": "staticwebassets\\cert\\cert.cer"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\cert\\cert.key",
       "PackagePath": "staticwebassets\\cert\\cert.key"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\css\\pages\\Index.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Index.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\css\\pages\\Settings.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Settings.css"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\css\\site.css",
@@ -23,10 +159,6 @@
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
-    },
-    {
-      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\legacy-favicon.ico",
-      "PackagePath": "staticwebassets\\legacy-favicon.ico"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\CompuTrackNeo\\wwwroot\\lib\\bootstrap\\LICENSE",
