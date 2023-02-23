@@ -1,0 +1,61 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "CompuTrack";
+}
+<head>
+    <link rel="stylesheet" href="~/css/site.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/pages/Index.css" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="~/assets/icons/CompuTrack.ico" />
+</head>
+
+
+
+<div class="index-welcome-text text-start">
+    <h1 class="display-4">Welcome,  @User.Identity?.Name.Split("@")[0].Split(".")[0][0].ToString().ToUpper()@User.Identity?.Name.Split("@")[0].Split(".")[0].Substring(1).</h1>
+</div>
+<div class="index-getstarted-text text-start">
+    <h2 class="display-6">Get Started</h2>
+</div>
+<ul class="index-started-panels">
+    <li class="index-getstarted-panel index-getstarted-panel1">
+        <img src="~/assets/images/issue-red.png" height="128" width="128" />
+        <br />
+        <p class="text-center index-getstarted-panel-header">Create or Open an Issue</p>
+        <p class="text-center">Make a new Issue to begin tracking it.</p>
+        <a class="hyperlink-button" href="/Issues/New">Create</a>
+    </li>
+    <li class="index-getstarted-panel index-getstarted-panel2 align-self-center">
+        <img src="~/assets/images/CompuTrack.png"height="128" width="128"/>
+        <br />
+        <p class="text-center index-getstarted-panel-header">Get Started with Database Explorer</p>
+        <p class="text-center">View, Manage, and Create everything data-related</p>
+        <a class="hyperlink-button" href="/Explorer">Manage</a>
+    </li>
+    <li class="index-getstarted-panel index-getstarted-panel3">
+        <img src="~/assets/images/issue-green.png" height="128" width="128" />
+        <br />
+        <p class="text-center index-getstarted-panel-header">Checkup or Close an Issue</p>
+        <p class="text-center">Discover and Resolve end-user Issues</p>
+        <a class="hyperlink-button" href="/Issues">Explore</a>
+    </li>
+</ul>
+<div class="index-alertcenter">
+    @foreach (CompuTrack.src.alert alert in CompuTrack.src.alerts.alertlist)
+    {
+        <div style="height:45px; margin-top:5px; border: 3px solid @alert.bkcolor; background-color: @alert.bdrcolor;">
+            <ul style="padding-top:5px">
+                <li style="display:inline">
+                    <img src="~/assets/images/@alert.imagesrc" height="32" width="32" style="top:-3px;position:relative"/>
+                </li>
+                <li style="display:inline;font-size:12pt">
+                    @alert.message 
+                    @if (alert.LearnMoreURL != "NaN")
+                    {
+                        <a href="@alert.LearnMoreURL">Learn More</a>
+                    }
+                </li>
+            </ul>
+        </div>
+    }
+</div>
