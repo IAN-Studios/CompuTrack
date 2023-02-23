@@ -9,8 +9,6 @@ namespace CompuTrack.src
         {
             new alert("YELLOW", "Note: As of February 22nd, 2023, Computrack is in stage Development/NEO and will be periodically online and offline."),
             new alert("RED", "Failed to fetch black box data from database.", "https://google.com"),
-            new alert("GREEN","GREENTOASTTEST"),
-            new alert("BLUE","BLUETOASTTEST")
         };
     }
     public class alert
