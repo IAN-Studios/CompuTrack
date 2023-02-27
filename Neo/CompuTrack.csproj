@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -14,9 +14,12 @@
 
   <ItemGroup>
     <None Include="wwwroot\js\explorer.js" />
+    <None Include="wwwroot\xmltempl\IssueTemplate.xml" />
+    <None Include="wwwroot\xmltempl\settings_template.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\alerts.cs"/>
+    <Content Include="src\alerts.cs" />
+    <Content Include="src\datamgmt\dbman.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +28,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.11" NoWarn="NU1605" />
     <PackageReference Include="Microsoft.Identity.Web" Version="1.24.1" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.16.0" />
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
 </Project>

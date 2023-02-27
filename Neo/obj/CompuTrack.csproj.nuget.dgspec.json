@@ -65,6 +65,14 @@
             "Microsoft.Identity.Web.UI": {
               "target": "Package",
               "version": "[1.16.0, )"
+            },
+            "System.Data.OleDb": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

@@ -18399,6 +18399,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues\\New.cshtml",
+      "TargetPath": "Pages\\Issues\\New.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\docs\\home.cshtml",
       "TargetPath": "Pages\\docs\\home.cshtml",
       "FileKind": "mvc"
@@ -18406,6 +18411,11 @@
     {
       "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml",
+      "TargetPath": "Pages\\Issues.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -18421,6 +18431,11 @@
     {
       "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues\\Issue.cshtml",
+      "TargetPath": "Pages\\Issues\\Issue.cshtml",
       "FileKind": "mvc"
     },
     {

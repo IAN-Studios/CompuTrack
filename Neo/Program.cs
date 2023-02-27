@@ -26,6 +26,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddRazorPages()
 	.AddMicrosoftIdentityUI();
 
+Console.WriteLine("Heheheha");
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,3 +50,4 @@ app.MapRazorPages();
 app.MapControllers();
 
 app.Run();
+

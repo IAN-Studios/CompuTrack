@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KimQP3JO+7IovDh8/Zvqqp6yC/L4XzIid8h9KorcI8g=",
+  "Hash": "AAE4vlQN886OwPsUbOogaa/qyaiYDOsZPLh6oQP79f4=",
   "Source": "CompuTrack",
   "BasePath": "_content/CompuTrack",
   "Mode": "Default",
@@ -1766,6 +1766,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\xmltempl\\IssueTemplate.xml",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "xmltempl/IssueTemplate.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\xmltempl\\IssueTemplate.xml"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\xmltempl\\settings_template.xml",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "xmltempl/settings_template.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\xmltempl\\settings_template.xml"
     }
   ]
 }

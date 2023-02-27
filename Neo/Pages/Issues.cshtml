@@ -1,10 +1,97 @@
 ﻿@page
 @model CompuTrack.Pages.IssuesModel
+@using CompuTrack.src.datamgmt;
+@using System.Xml;
+@using System.Text;
+@using CompuTrack.Pages;
+@using System.Web;
+@using CompuTrack.src.Client;
 @{
 	ViewData["Title"] = "Issue Center - CompuTrack";
 }
+@{
+
+}
+
+<script>
+	document.getElementById("LayoutContent").classList.remove("container");
+	document.getElementById("LayoutContent").classList.add("container-wide");
+</script>
 
 <div>
 	<h1 class="text-start display-1">Issue Center</h1>
 	<a asp-area="" asp-page="/Issues/New">New Issue</a>
+
+	@{
+		StringWriter sw = new Utf8StringWriter();
+		XmlWriter xw = XmlWriter.Create(sw);
+		dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST").WriteContentTo(xw);
+		xw.Close();
+	}
+	<table>
+		<thead
+			<tr>
+			<th>ID</th>
+			<th>GUID</th>
+			<th>Status</th>
+			<th>Assettag</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>UserGUID</th>
+			<th>CreationDateTime</th>
+			</tr>
+		</thead>
+		<tbody id="issuelist-container">>
+
+		</tbody>
+	</table>
+	<script>
+		class Issue {
+
+
+			constructor(id, guid, status, assettag, displaytext, description, userguid, creationdate, creationtime) {
+				this.ID = id;
+				this.GUID = guid;
+				this.Status = status;
+				this.AssetTag = assettag;
+				this.DisplayText = displaytext;
+				this.Description = description;
+				this.UserGUID = userguid;
+				this.CreationDate = creationdate;
+				this.CreationTime = creationtime;
+			}
+		}
+		var XMLDAT = new DOMParser().parseFromString("@HttpUtility.JavaScriptStringEncode(sw.ToString())".replace("&quot;", "\"").replace("&quot;", "\"").replace("&quot;", "\"").replace("&quot;", "\""),"text/xml")
+		var XmlData = {
+			IssueList: [
+
+			]
+		}
+		var IssueList = XMLDAT.children[0];
+		for (i=0; i!=IssueList.childElementCount; i++) {
+			var issue = IssueList.children[i].children;
+			XmlData.IssueList.push(new Issue(issue[0].innerHTML, issue[1].innerHTML, issue[2].innerHTML, issue[3].innerHTML, issue[4].innerHTML, issue[5].innerHTML, issue[6].innerHTML, issue[7].innerHTML, issue[8].innerHTML));
+			var issueelem = document.createElement("tr");
+
+			var issue_id = document.createElement("td")
+			issue_id.innerHTML = issue[0].innerHTML;
+			var issue_guid = document.createElement("td")
+			issue_guid.innerHTML = issue[1].innerHTML;
+			var issue_status = document.createElement("td")
+			issue_status.innerHTML = issue[2].innerHTML;
+			var issue_assettag = document.createElement("td")
+			issue_assettag.innerHTML = issue[3].innerHTML;
+			var issue_DisplayText = document.createElement("td")
+			issue_DisplayText.innerHTML = issue[4].innerHTML;
+			var issue_Description = document.createElement("td")
+			issue_Description.innerHTML = issue[5].innerHTML;
+			var issue_UserGuid = document.createElement("td")
+			issue_UserGuid.innerHTML = issue[6].innerHTML;
+			var issue_creationdate = document.createElement("td")
+			issue_creationdate.innerHTML = issue[7].innerHTML;
+
+			issueelem.append(issue_id, issue_guid,issue_status,issue_assettag,issue_DisplayText,issue_Description,issue_UserGuid,issue_creationdate);
+			document.getElementById("issuelist-container").appendChild(issueelem);
+		}
+	</script>
 </div>
