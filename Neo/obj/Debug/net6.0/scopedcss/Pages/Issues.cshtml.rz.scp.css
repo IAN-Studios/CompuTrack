@@ -1,2 +1,60 @@
-body[b-pb86f05ye5] {
+:root[b-pb86f05ye5] {
+    --issues-status-open: #ff0000af;
+    --issues-status-closed: #00ff00af;
+
 }
+
+table.issues-table[b-pb86f05ye5] {
+    width:100%;
+}
+
+.issues-table-section[b-pb86f05ye5] {
+    text-align: center;
+    border: 1px solid black;
+    user-select:none;
+}
+
+.issues-table-container[b-pb86f05ye5] {
+    border: 1px solid black;
+    min-height:300px;
+    padding:10px
+}
+.issues-table-section:hover[b-pb86f05ye5] {
+    cursor:pointer;
+    background-color: #7d9fe541;
+}
+
+.issues-table-selected[b-pb86f05ye5] {
+    font-weight:bold;
+    text-decoration:underline;
+    background-color:#3b3aff8c
+}
+
+.issues-placeholder[b-pb86f05ye5] {
+    text-align:center;
+    font-size:24px;
+    padding:125px 0;
+}
+.issues-table-content-container[b-pb86f05ye5] {
+    min-height: 300px;
+}
+
+.issues-issue[b-pb86f05ye5] {
+}
+.issues-issue-id[b-pb86f05ye5] {
+
+}
+.issues-issue-title[b-pb86f05ye5] {
+
+}
+.issues-issue-date[b-pb86f05ye5] {
+    float: right
+}
+
+.OPEN[b-pb86f05ye5] {
+    background-color: #ff0000af;
+}
+.CLOSED[b-pb86f05ye5] {
+    background-color: #00ff00af;
+}
+

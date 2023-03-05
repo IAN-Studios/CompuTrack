@@ -16,7 +16,6 @@ namespace CompuTrack.Pages
             XmlWriter xw = XmlWriter.Create(sw);
             dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST").WriteContentTo(xw);
             xw.Close();
-            Console.WriteLine(sw.ToString());
         }
     }
 }

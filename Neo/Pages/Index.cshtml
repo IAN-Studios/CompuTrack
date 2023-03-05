@@ -1,5 +1,7 @@
 ﻿@page
 @model IndexModel
+@using System.Xml;
+@using CompuTrack.src.datamgmt;
 @{
     ViewData["Title"] = "CompuTrack";
 }
@@ -8,7 +10,10 @@
     <link rel="stylesheet" href="~/css/pages/Index.css" type="text/css" />
     <link rel="icon" type="image/x-icon" href="~/assets/icons/CompuTrack.ico" />
 </head>
-
+@{
+    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+    if (Profile.FirstChild.ChildNodes[1] is null) dbman.CreateNewGUIDForUser(User.Identity.Name);
+}
 
 
 <div class="index-welcome-text text-start">

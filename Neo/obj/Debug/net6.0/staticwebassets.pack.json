@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
-      "PackagePath": "staticwebassets\\Pages\\Issues.cshtml.js"
-    },
-    {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css",
       "PackagePath": "staticwebassets\\CompuTrack.bundle.scp.css"
     },
@@ -171,6 +167,10 @@
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",
+      "PackagePath": "staticwebassets\\js\\Issues.js"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",

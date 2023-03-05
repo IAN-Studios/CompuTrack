@@ -24,7 +24,7 @@ namespace CompuTrack.src.Client
 			XmlWriter xw = XmlWriter.Create(sw);
 			dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST").WriteContentTo(xw);
 			xw.Close();
-			return new DataType[] {new Issue()};
+			return new DataType[] { };
 		}
 	}
 }

@@ -36,7 +36,7 @@ namespace CompuTrack.src
             if (colorscheme == "YELLOW")
             {
                 this.bkcolor = "yellow";
-                this.bdrcolor = "#caf542";
+                this.bdrcolor = "#ddff73";
                 this.imagesrc = "issue-yellow.png";
             } else
             if (colorscheme == "GREEN")
@@ -73,7 +73,7 @@ namespace CompuTrack.src
             if (colorscheme == "YELLOW")
             {
                 this.bkcolor = "yellow";
-                this.bdrcolor = "#caf542";
+                this.bdrcolor = "#ddff73";
                 this.imagesrc = "issue-yellow.png";
             }
             else

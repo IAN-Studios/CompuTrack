@@ -8,14 +8,36 @@ using System.Text;
 using System.Xml;
 
 using CompuTrack.DataTypes;
+using System.Collections.Generic;
+using System.Collections;
+using System.Data.Common;
 
 namespace CompuTrack.src.datamgmt
 {
     public class dbman
     {
 #pragma warning disable CA1416 // Validate platform compatibility
+        public static void CreateNewGUIDForUser(string UserEmail)
+        {
+			Console.WriteLine("User [" + UserEmail + "] Has no GUID! Generating.....");
+            var UserGUID = Guid.NewGuid();
+            Console.WriteLine($"UserGUID: {UserGUID}");
+			OleDbConnection Connection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\db\\db1.accdb");
+            var Query = "INSERT INTO UserPrinciples(UserGUID, UserEmail)\nVALUES (\"" + UserGUID + "\",\""+ UserEmail + "\")";
 
-        public static XmlDocument FetchData(string Databasenumber, string Query, int QueryColumnCount, string QueryType)
+			OleDbCommand command = new OleDbCommand(Query, Connection);
+            try
+            {
+                Connection.Open();
+				command.ExecuteNonQuery();
+                Connection.Close();
+			} catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+		}
+
+		public static XmlDocument FetchData(string Databasenumber, string Query, int QueryColumnCount, string QueryType)
         {
             XmlDocument Response = new XmlDocument();
             Response.CreateXmlDeclaration("1.1", "utf-8", "no");
@@ -85,8 +107,22 @@ namespace CompuTrack.src.datamgmt
                 }
                 else if (QueryType == "USERPROFILE")
                 {
+					XmlElement userprof = Response.CreateElement("UserProfile");
+					Response.AppendChild(userprof);
 
-                }
+					while (reader.Read())
+					{
+                        UserProfile prof = new UserProfile((string)reader[0], (string)reader[1]);
+						var ID = Response.CreateElement("Email");
+                        ID.InnerText = prof.Email;
+						var GUID = Response.CreateElement("GUID");
+						GUID.InnerText = prof.GUID;
+						userprof.AppendChild(ID);
+						userprof.AppendChild(GUID);
+					}
+					reader.Close();
+					Connection.Close();
+				}
                 else if (QueryType == "SETTINGS")
                 {
                 }

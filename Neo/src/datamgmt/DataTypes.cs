@@ -43,7 +43,13 @@ namespace CompuTrack.DataTypes
     }
     public class UserProfile : DataType
 	{
-
+        public string Email;
+        public string GUID;
+        public UserProfile(string email, string GUID)
+        {
+            this.Email = email;
+            this.GUID = GUID;
+        }
     }
     public class Settings : DataType
 	{
