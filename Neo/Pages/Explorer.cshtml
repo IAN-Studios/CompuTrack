@@ -1,0 +1,74 @@
+﻿@page
+@using CompuTrackNeo.Pages.Explorer;
+@model CompuTrackNeo.Pages.ExplorerModel
+@{
+	ViewData["Title"] = "CompuTrack - Explorer";
+}
+
+<script>
+	document.getElementById("LayoutContent").classList.remove("container");
+	document.getElementById("LayoutContent").classList.add("container-wide");
+</script>
+
+<script src="~/js/explorer.js"></script>
+
+<div class="explorer-navbar">
+	<div class="explorer-navbar-controls">
+
+	</div>
+	<table class="explorer-navbar-table">
+		<thead>
+			<tr>
+				<td class="explorer-navbar-header" id="explorer-navbar-header">
+					<span>
+						<img class="explorer-navbar-header-icon" id="explornvbrhdricn" src="/assets/images/computrack.png" height="128" width="128"/>
+						<p id="explorer-navbar-header-text">Explorer - Overview</p>
+					</span>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (NavItem i in Templates.ExplorerNavPanelList)
+			{
+				@if (i.seperator == true)
+				{
+					<tr class="explorer-navbar-seperator">
+						<td><span>@i.DisplayText</span></td>
+					</tr>
+				}
+				else if ((i.IconPath == null) && (i.selected == true))
+				{
+					<tr class="explorer-navbar-item explorer-navbar-item-selected" id="@i.id" onclick="Explorer.navigation_select('@i.id')">
+						<td><span>@i.DisplayText</span></td>
+					</tr>
+				}
+				else if ((i.IconPath != null) && (i.selected == true))
+				{
+					<tr class="explorer-navbar-item explorer-navbar-item-selected" id="@i.id" onclick="Explorer.navigation_select('@i.id')">
+						<td>
+							<span><img class="explorer-icon" src="@i.IconPath" height="24" width="24" />@i.DisplayText</span>
+						</td>
+					</tr>
+				}
+				else if (i.selected == false)
+				{
+					<tr class="explorer-navbar-item" id="@i.id" onclick="Explorer.navigation_select('@i.id')">
+						<td><span>@i.DisplayText</span></td>
+					</tr>
+				}
+				else if (i.IconPath != null)
+				{
+					<tr class="explorer-navbar-item" id="@i.id" onclick="Explorer.navigation_select('@i.id')">
+						<td>
+							<span><img class="explorer-icon" src="@i.IconPath" height="24" width="24" />@i.DisplayText</span>
+						</td>
+					</tr>
+				}
+			}
+		</tbody>
+	</table>
+</div>
+
+<div class="explorer-container">
+	<!-- TODO: Write Dynamic Container code-->
+</div>

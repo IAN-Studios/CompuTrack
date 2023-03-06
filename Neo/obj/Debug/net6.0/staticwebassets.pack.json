@@ -1,0 +1,441 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
+      "PackagePath": "staticwebassets\\Pages\\Issues.cshtml.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CompuTrack.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-old.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\CompuTrack-old.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\CompuTrack.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-blue.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-blue.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-generic.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-generic.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-green.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-green.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-red.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-red.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-yellow.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\issue-yellow.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-blue.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-blue.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-generic.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-generic.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-green.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-green.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-red.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-red.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-yellow.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\warning-yellow.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack.png",
+      "PackagePath": "staticwebassets\\assets\\images\\CompuTrack.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack_NEO_Banner.png",
+      "PackagePath": "staticwebassets\\assets\\images\\CompuTrack_NEO_Banner.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-blue.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-blue.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-generic.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-generic.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-green.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-green.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-red.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-red.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-yellow.png",
+      "PackagePath": "staticwebassets\\assets\\images\\issue-yellow.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-blue.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-blue.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-generic.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-generic.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-green.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-green.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-red.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-red.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-yellow.png",
+      "PackagePath": "staticwebassets\\assets\\images\\warning-yellow.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack.xcf"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\ComputrackNEO.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\ComputrackNEO.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\Warning-generic.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\Warning-generic.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\computrack-neo.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\computrack-neo.xcf"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\issue-generic.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\issue-generic.psd"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\cert\\cert.cer",
+      "PackagePath": "staticwebassets\\cert\\cert.cer"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\cert\\cert.key",
+      "PackagePath": "staticwebassets\\cert\\cert.key"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Index.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Index.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Settings.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Settings.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-dark.css",
+      "PackagePath": "staticwebassets\\css\\themes\\theme-dark.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-default.css",
+      "PackagePath": "staticwebassets\\css\\themes\\theme-default.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-light.css",
+      "PackagePath": "staticwebassets\\css\\themes\\theme-light.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",
+      "PackagePath": "staticwebassets\\js\\Issues.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",
+      "PackagePath": "staticwebassets\\js\\explorer.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\xmltempl\\IssueTemplate.xml",
+      "PackagePath": "staticwebassets\\xmltempl\\IssueTemplate.xml"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\xmltempl\\settings_template.xml",
+      "PackagePath": "staticwebassets\\xmltempl\\settings_template.xml"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.CompuTrack.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.CompuTrack.props",
+      "PackagePath": "build\\CompuTrack.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.CompuTrack.props",
+      "PackagePath": "buildMultiTargeting\\CompuTrack.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.CompuTrack.props",
+      "PackagePath": "buildTransitive\\CompuTrack.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

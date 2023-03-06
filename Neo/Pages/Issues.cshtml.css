@@ -1,0 +1,60 @@
+﻿:root {
+    --issues-status-open: #ff0000af;
+    --issues-status-closed: #00ff00af;
+
+}
+
+table.issues-table {
+    width:100%;
+}
+
+.issues-table-section {
+    text-align: center;
+    border: 1px solid black;
+    user-select:none;
+}
+
+.issues-table-container {
+    border: 1px solid black;
+    min-height:300px;
+    padding:10px
+}
+.issues-table-section:hover {
+    cursor:pointer;
+    background-color: #7d9fe541;
+}
+
+.issues-table-selected {
+    font-weight:bold;
+    text-decoration:underline;
+    background-color:#b1b1b1d4
+}
+
+.issues-placeholder {
+    text-align:center;
+    font-size:24px;
+    padding:125px 0;
+}
+.issues-table-content-container {
+    min-height: 300px;
+}
+
+.issues-issue {
+}
+.issues-issue-id {
+
+}
+.issues-issue-title {
+
+}
+.issues-issue-date {
+    float: right
+}
+
+.OPEN {
+    background-color: #ff0000af;
+}
+.CLOSED {
+    background-color: #00ff00af;
+}
+
