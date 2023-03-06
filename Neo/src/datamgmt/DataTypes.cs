@@ -20,11 +20,10 @@ namespace CompuTrack.DataTypes
         public string DESCRIPTION;
         public string USERGUID;
         public DateTime CREATIONDATE;
-        public DateTime CREATIONTIME;
 
         public Issue (ulong Id, string Guid, string Status,
             int AssetTag, string DisplayText, string Description,
-            string UserGuid, DateTime CreationDate, DateTime CreationTime):base()
+            string UserGuid, DateTime CreationDate):base()
         {
             this.ID = Id;
             this.GUID = Guid;
@@ -34,7 +33,6 @@ namespace CompuTrack.DataTypes
             this.DESCRIPTION = Description;
             this.USERGUID = UserGuid;
             this.CREATIONDATE = CreationDate;
-            this.CREATIONTIME = CreationTime;
         }
     }
     public class Device : DataType

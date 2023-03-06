@@ -5,6 +5,7 @@ using CompuTrack.src.datamgmt;
 using System.Xml;
 using CompuTrack.DataTypes;
 using System.Text;
+using Microsoft.JSInterop;
 
 namespace CompuTrack.Pages
 {

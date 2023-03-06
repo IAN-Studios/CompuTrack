@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
+      "PackagePath": "staticwebassets\\Pages\\Issues.cshtml.js"
+    },
+    {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css",
       "PackagePath": "staticwebassets\\CompuTrack.bundle.scp.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6loHz1lamhpIHWXmtbCuAN/dyT7sPfqeroRx8KKtk08=",
+  "Hash": "e/579M+uqDQhvz1y5XG9HvFLJOFGaua3N12qqIhaLUo=",
   "Source": "CompuTrack",
   "BasePath": "_content/CompuTrack",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "Pages/Issues.cshtml.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "Pages\\Issues.cshtml.js"
     },
     {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\favicon.ico",

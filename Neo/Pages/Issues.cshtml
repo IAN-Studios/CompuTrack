@@ -6,26 +6,27 @@
 @using CompuTrack.Pages;
 @using System.Web;
 @using CompuTrack.src.Client;
+@using Microsoft.JSInterop;
 @{
 	ViewData["Title"] = "Issue Center - CompuTrack";
 }
+
+<script type="text/javascript" src="/Pages/Issues.cshtml.js"></script>
 @{
-	// Fetches ALL Issues
-	StringWriter sw = new Utf8StringWriter();
-	XmlWriter xw = XmlWriter.Create(sw);
-	dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST").WriteContentTo(xw);
-	xw.Close();
+    // Fetches ALL Issues
+    StringWriter sw = new Utf8StringWriter();
+    XmlWriter xw = XmlWriter.Create(sw);
+    dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues\nORDER BY STATUS desc;", 9, "ISSUELIST").WriteContentTo(xw);
+    xw.Close();
 
-	// Fetches User Profile
-	StringWriter userprof = new Utf8StringWriter();
-	XmlWriter usrwr = XmlWriter.Create(userprof);
-	XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
-	if (Profile.FirstChild?.ChildNodes[1] is null) dbman.CreateNewGUIDForUser(User.Identity.Name);
-	Profile.WriteContentTo(usrwr);
-	usrwr.Close();
-
-	Console.WriteLine(userprof.ToString());
-	//if (userprof.ToString() {}
+    // Fetches User Profile
+    StringWriter userprof = new Utf8StringWriter();
+    XmlWriter usrwr = XmlWriter.Create(userprof);
+    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+    if (Profile.FirstChild?.ChildNodes[1] is null) dbman.CreateNewGUIDForUser(User.Identity.Name);
+    Profile.WriteContentTo(usrwr);
+    usrwr.Close();
+    //if (userprof.ToString() {}
 }
 <script src="/js/Issues.js"></script>
 
@@ -48,105 +49,19 @@
 		var description = List.children[i].children[5].innerHTML;
 		var userguid = List.children[i].children[6].innerHTML;
 		var creationdate = List.children[i].children[7].innerHTML;
-		var creationtime = List.children[i].children[8].innerHTML;
-		XmlData.IssueList.push(new Issue(id, guid, status, assettag, displaytext, description, userguid, creationdate, creationtime))
+		XmlData.IssueList.push(new Issue(id, guid, status, assettag, displaytext, description, userguid, creationdate))
 	}
 </script>
-
-
-
 
 
 <!-- Script for loading Table UI Functions as well as control behaviour-->
-<script>
-	function ChangeCenterSelection(newselection) {
-		try{
-			document.getElementById("issues-placeholder").remove()
-		} catch {
-			Array.from(document.getElementsByClassName("issues-table-content")).forEach(item => item.remove());
-		}
 
-
-		Array.from(document.getElementsByClassName("issues-table-selected")).forEach(item => item.classList.remove("issues-table-selected"))
-		newselection.classList.add("issues-table-selected")
-
-
-		//Render the new Issues Pane in the Table; Delete the old items in the table and generate + Display the new ones. Save the data as a achace for later.
-		if (newselection.id == "Issues_UserFilter") {
-			var userissues = XmlData.IssueList.filter(element => element.UserGUID == UsrProf.GUID);
-			if (userissues.length == 0) {
-				var placeholder = document.createElement("p");
-				placeholder.classList.add("issues-placeholder");
-				placeholder.innerHTML = "No Issues Found.";
-				placeholder.id = "issues-placeholder"
-				document.getElementById("issues-table-content-container").appendChild(placeholder);
-			} else {
-				userissues.forEach(element => {
-					var container = document.createElement("div");
-					container.classList.add("issues-table-content", "issues-issue");
-
-					var IDtext = document.createElement("span");
-					IDtext.innerHTML =`#${element.ID}: `;
-					IDtext.setAttribute("b-pb86f05ye5", "")
-					IDtext.classList.add("issues-table-content", "issues-issue-id")
-
-					var TitleText = document.createElement("span");
-					TitleText.innerHTML = element.DisplayText;
-					TitleText.setAttribute("b-pb86f05ye5", "")
-					TitleText.classList.add("issues-table-content", "issues-issue-title")
-
-					var DateNum = document.createElement("span");
-					DateNum.innerHTML = element.CreationDate;
-					DateNum.setAttribute("b-pb86f05ye5", "")
-					DateNum.classList.add("issues-table-content", "issues-issue-date")
-
-					container.append(IDtext, TitleText, DateNum);
-					container.setAttribute("b-pb86f05ye5", "")
-					document.getElementById("issues-table-content-container").appendChild(container);
-				})
-			}
-
-		} else if (newselection.id == "Issues_Global") {
-			if (XmlData.IssueList.length == 0) {
-				var placeholder = document.createElement("p");
-				placeholder.classList.add("issues-placeholder");
-				placeholder.innerHTML = "No Issues Found.";
-				placeholder.id = "issues-placeholder"
-				document.getElementById("issues-table-content-container").appendChild(placeholder);
-			} else {
-				XmlData.IssueList.forEach(element => {
-					var container = document.createElement("div");
-					container.classList.add("issues-table-content", "issues-issue");
-
-					var IDtext = document.createElement("span");
-					IDtext.innerHTML = `#${element.ID}: `;
-					IDtext.setAttribute("b-pb86f05ye5", "")
-					IDtext.classList.add("issues-table-content", "issues-issue-id")
-
-					var TitleText = document.createElement("span");
-					TitleText.innerHTML = element.DisplayText;
-					TitleText.setAttribute("b-pb86f05ye5", "")
-					TitleText.classList.add("issues-table-content", "issues-issue-title")
-
-					var DateNum = document.createElement("span");
-					DateNum.innerHTML = element.CreationDate;
-					DateNum.setAttribute("b-pb86f05ye5", "")
-					DateNum.classList.add("issues-table-content", "issues-issue-date")
-
-					container.append(IDtext, TitleText, DateNum);
-					container.setAttribute("b-pb86f05ye5", "")
-					document.getElementById("issues-table-content-container").appendChild(container);
-				})
-			}
-
-		}
-	}
-</script>
 
 
 
 <!-- HTML Time baby!-->
 <div>
+	<h2>Issue Center</h2>
 	<table class="issues-table">
 		<thead>
 			<tr class="issues-table-sections" id="issuecentertableheader">
@@ -176,7 +91,32 @@
 	</script>
 </div>
 
-<script>
-	// Loads the final UI for the table by setting the selected tab to a default of "My Issues"
-	ChangeCenterSelection(document.getElementById("Issues_UserFilter"));
-</script>
+@if (Request.Query["Tab"] == "New")
+{
+	<script>
+		// Loads the final UI for the table by setting the selected tab to a default of "My Issues"
+		ChangeCenterSelection(document.getElementById("Issues_New"));
+	</script>
+}
+else if (Request.Query["Tab"] == "MyIssues")
+{
+	<script>
+		// Loads the final UI for the table by setting the selected tab to a default of "My Issues"
+		ChangeCenterSelection(document.getElementById("Issues_UserFilter"));
+	</script>
+}
+else if (Request.Query["Tab"] == "Global")
+{
+	<script>
+		// Loads the final UI for the table by setting the selected tab to a default of "My Issues"
+		ChangeCenterSelection(document.getElementById("Issues_Global"));
+	</script>
+}
+
+else
+{
+	<script>
+		// Loads the final UI for the table by setting the selected tab to a default of "My Issues"
+		ChangeCenterSelection(document.getElementById("Issues_UserFilter"));
+	</script>
+}
