@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
-      "PackagePath": "staticwebassets\\Pages\\Issues.cshtml.js"
-    },
-    {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css",
       "PackagePath": "staticwebassets\\CompuTrack.bundle.scp.css"
     },
@@ -15,6 +11,10 @@
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-old.ico",
       "PackagePath": "staticwebassets\\assets\\icons\\CompuTrack-old.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-text-lightmode.ico",
+      "PackagePath": "staticwebassets\\assets\\icons\\CompuTrack-text-lightmode.ico"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack.ico",
@@ -59,6 +59,10 @@
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-yellow.ico",
       "PackagePath": "staticwebassets\\assets\\icons\\warning-yellow.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack-text-lightmode.png",
+      "PackagePath": "staticwebassets\\assets\\images\\CompuTrack-text-lightmode.png"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack.png",
@@ -107,6 +111,14 @@
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-yellow.png",
       "PackagePath": "staticwebassets\\assets\\images\\warning-yellow.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack-text-darkmode.png",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack-text-darkmode.png"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack-text-lightmode.xcf",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\CompuTrack-text-lightmode.xcf"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.psd",
@@ -171,6 +183,14 @@
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issue.js",
+      "PackagePath": "staticwebassets\\js\\Issue.js"
+    },
+    {
+      "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\IssueUI.js",
+      "PackagePath": "staticwebassets\\js\\IssueUI.js"
     },
     {
       "Id": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",

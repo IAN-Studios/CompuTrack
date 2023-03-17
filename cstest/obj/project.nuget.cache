@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "QL6Wd2FTeuyiFP+L1RuUuAWeXwIlSzmJCpaX4pkm0FiezqpHZc2GgVenBjzKt1zuK+j8AXbpjyysueJzSTluiw==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\cstest\\cstest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Host\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Host\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Host\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Host\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

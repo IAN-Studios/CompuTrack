@@ -41,6 +41,9 @@ table.issues-table {
 
 .issues-issue {
 }
+.issues-issue:hover {
+    background-color: #ccccccc7
+}
 .issues-issue-id {
 
 }

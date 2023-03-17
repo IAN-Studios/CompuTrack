@@ -141,13 +141,20 @@ namespace CompuTrack.src.datamgmt
 
 					while (reader.Read())
 					{
-                        UserProfile prof = new UserProfile((string)reader[0], (string)reader[1]);
+                        UserProfile prof = new UserProfile((string)reader[0], (string)reader[1], (bool)reader[2], (bool)reader[3]);
 						var ID = Response.CreateElement("Email");
                         ID.InnerText = prof.Email;
 						var GUID = Response.CreateElement("GUID");
 						GUID.InnerText = prof.GUID;
 						userprof.AppendChild(ID);
 						userprof.AppendChild(GUID);
+                        var isHelpDesk = Response.CreateElement("isHelpDesk");
+                        isHelpDesk.InnerText = reader[2].ToString();
+						var isSysAdmin = Response.CreateElement("isSysAdmin");
+                        isSysAdmin.InnerText = reader[3].ToString();
+                        userprof.AppendChild(isHelpDesk);
+                        userprof.AppendChild(isSysAdmin);
+
 					}
 					reader.Close();
 					Connection.Close();

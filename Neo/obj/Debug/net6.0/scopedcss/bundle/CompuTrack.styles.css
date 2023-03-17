@@ -104,6 +104,9 @@ table.issues-table[b-pb86f05ye5] {
 
 .issues-issue[b-pb86f05ye5] {
 }
+.issues-issue:hover[b-pb86f05ye5] {
+    background-color: #ccccccc7
+}
 .issues-issue-id[b-pb86f05ye5] {
 
 }
@@ -121,6 +124,21 @@ table.issues-table[b-pb86f05ye5] {
     background-color: #00ff00af;
 }
 
+/* _content/CompuTrack/Pages/Issues/Issue.cshtml.rz.scp.css */
+body[b-dgpshijjdl] {
+}
+
+.issue-status-tag[b-dgpshijjdl] {
+    width:150px;
+    text-align: center;
+    border-radius:10px;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.red[b-dgpshijjdl] {background-color: #ff0000}
+.green[b-dgpshijjdl] {background-color:#00ff00}
+.yellow[b-dgpshijjdl] {background-color:#f0f000}
 /* _content/CompuTrack/Pages/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

@@ -41,6 +41,9 @@ table.issues-table[b-pb86f05ye5] {
 
 .issues-issue[b-pb86f05ye5] {
 }
+.issues-issue:hover[b-pb86f05ye5] {
+    background-color: #ccccccc7
+}
 .issues-issue-id[b-pb86f05ye5] {
 
 }

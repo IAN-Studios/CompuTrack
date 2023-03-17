@@ -1,6 +1,36 @@
 ﻿@page
 @model CompuTrack.Pages.Issues.IssueModel
+@using CompuTrack.DataTypes;
+@using CompuTrack.src.datamgmt;
+@using System.Xml;
+@using System;
 @{
-	ViewData["Title"] = "Computrack - #";
-}
 
+	ViewData["Title"] = "Computrack - #";
+
+    XmlDocument deeta = dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST");
+    List<Issue> IssueList = new List<Issue>();
+    for (int i = 0; i != deeta.ChildNodes[0]?.ChildNodes.Count; i++)
+    {
+        XmlNode issueXML = deeta.ChildNodes[0].ChildNodes[i];
+        IssueList.Add(new Issue((ulong)int.Parse(issueXML.ChildNodes[0].InnerText), issueXML.ChildNodes[1].InnerText, issueXML.ChildNodes[2].InnerText, int.Parse(issueXML.ChildNodes[3].InnerText), issueXML.ChildNodes[4].InnerText, issueXML.ChildNodes[5].InnerText, issueXML.ChildNodes[6].InnerText, DateTime.Parse(issueXML.ChildNodes[7].InnerText)));
+    }
+    Predicate<Issue> finder = s => (s.GUID == Request.Query["IssueID"]);
+
+    Issue SelectedIssue = IssueList.Find(finder);
+}
+<head>
+	<script src="/js/Issue.js"></script>
+</head>
+
+
+<a href="/Issues"><= Back to Issue List</a>
+<br/>
+<h1>#@SelectedIssue.ID - @SelectedIssue.DISPLAYTEXT</h1>
+@if (SelectedIssue.STATUS == "OPEN") {
+    <h3 class="issue-status-tag red"> OPEN    </h3>
+} else if (SelectedIssue.STATUS == "CLOSED") {
+    <h3 class="issue-status-tag green">   CLOSED    </h3>
+} else {
+    <h3 class="issue-status-tag yellow">   PENDING    </h3>
+}

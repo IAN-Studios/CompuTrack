@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.issue-status-tag {
+    width:150px;
+    text-align: center;
+    border-radius:10px;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.red {background-color: #ff0000}
+.green {background-color:#00ff00}
+.yellow {background-color:#f0f000}

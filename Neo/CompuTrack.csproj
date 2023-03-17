@@ -1,5 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
@@ -10,11 +18,11 @@
 
   <ItemGroup>
     <Content Include="db\DB2.accdb" />
-    <Content Include="Pages\Issues.cshtml.js" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\js\explorer.js" />
+    <None Include="wwwroot\js\IssueUI.js" />
     <None Include="wwwroot\xmltempl\IssueTemplate.xml" />
     <None Include="wwwroot\xmltempl\settings_template.xml" />
   </ItemGroup>

@@ -62,6 +62,9 @@ function ChangeCenterSelection(newselection) {
 				container.append(icon, TitleText, DateNum);
 				container.setAttribute("b-pb86f05ye5", "")
 				document.getElementById("issues-table-content-container").appendChild(container);
+				container.onclick = function () {
+					window.location.href = `/Issues/Issue?IssueID=${element.GUID}`;
+				};
 			})
 		}
 
@@ -104,6 +107,9 @@ function ChangeCenterSelection(newselection) {
 				container.append(icon, TitleText, DateNum);
 				container.setAttribute("b-pb86f05ye5", "")
 				document.getElementById("issues-table-content-container").appendChild(container);
+				container.onclick = function () {
+					window.location.href = `/Issues/Issue?IssueID=${element.GUID}`;
+				};
 			})
 		}
 

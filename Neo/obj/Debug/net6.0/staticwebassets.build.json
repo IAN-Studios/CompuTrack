@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e/579M+uqDQhvz1y5XG9HvFLJOFGaua3N12qqIhaLUo=",
+  "Hash": "na/OLMgqWkPMtUb5MAUr4w5GWwXLUHdPNl4Ip6jfP7s=",
   "Source": "CompuTrack",
   "BasePath": "_content/CompuTrack",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
-      "SourceId": "CompuTrack",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\",
-      "BasePath": "_content/CompuTrack",
-      "RelativePath": "Pages/Issues.cshtml.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "Pages\\Issues.cshtml.js"
     },
     {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\favicon.ico",
@@ -117,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\icons\\CompuTrack-old.ico"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-text-lightmode.ico",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/icons/CompuTrack-text-lightmode.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons\\CompuTrack-text-lightmode.ico"
     },
     {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-blue.ico",
@@ -321,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\CompuTrack_NEO_Banner.png"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack-text-lightmode.png",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/images/CompuTrack-text-lightmode.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\CompuTrack-text-lightmode.png"
     },
     {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-blue.png",
@@ -578,6 +595,40 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\computrack-neo.xcf"
     },
     {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack-text-darkmode.png",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/photoshop/CompuTrack-text-darkmode.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack-text-darkmode.png"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack-text-lightmode.xcf",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/photoshop/CompuTrack-text-lightmode.xcf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack-text-lightmode.xcf"
+    },
+    {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\issue-generic.psd",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
@@ -782,6 +833,23 @@
       "OriginalItemSpec": "wwwroot\\js\\explorer.js"
     },
     {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issue.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "js/Issue.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Issue.js"
+    },
+    {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
@@ -797,6 +865,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Issues.js"
+    },
+    {
+      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\IssueUI.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "js/IssueUI.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\IssueUI.js"
     },
     {
       "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\site.js",

@@ -1,0 +1,15 @@
+C:\Projects\SRC\JCPS\CompuTrack\cstest\bin\Debug\net6.0\cstest.exe
+C:\Projects\SRC\JCPS\CompuTrack\cstest\bin\Debug\net6.0\cstest.deps.json
+C:\Projects\SRC\JCPS\CompuTrack\cstest\bin\Debug\net6.0\cstest.runtimeconfig.json
+C:\Projects\SRC\JCPS\CompuTrack\cstest\bin\Debug\net6.0\cstest.dll
+C:\Projects\SRC\JCPS\CompuTrack\cstest\bin\Debug\net6.0\cstest.pdb
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.csproj.AssemblyReference.cache
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.AssemblyInfoInputs.cache
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.AssemblyInfo.cs
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.csproj.CoreCompileInputs.cache
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.dll
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\refint\cstest.dll
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.pdb
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\cstest.genruntimeconfig.cache
+C:\Projects\SRC\JCPS\CompuTrack\cstest\obj\Debug\net6.0\ref\cstest.dll

@@ -11,7 +11,7 @@
 	ViewData["Title"] = "Issue Center - CompuTrack";
 }
 
-<script type="text/javascript" src="/Pages/Issues.cshtml.js"></script>
+<script type="text/javascript" src="/js/IssueUI.js"></script>
 @{
     // Fetches ALL Issues
     StringWriter sw = new Utf8StringWriter();
@@ -22,7 +22,7 @@
     // Fetches User Profile
     StringWriter userprof = new Utf8StringWriter();
     XmlWriter usrwr = XmlWriter.Create(userprof);
-    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+	XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
     if (Profile.FirstChild?.ChildNodes[1] is null) dbman.CreateNewGUIDForUser(User.Identity.Name);
     Profile.WriteContentTo(usrwr);
     usrwr.Close();

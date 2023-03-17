@@ -43,10 +43,14 @@ namespace CompuTrack.DataTypes
 	{
         public string Email;
         public string GUID;
-        public UserProfile(string email, string GUID)
+        public bool isHelpDesk;
+        public bool isSysAdmin;
+        public UserProfile(string email, string GUID, bool isHelpDesk, bool isSysAdmin)
         {
             this.Email = email;
             this.GUID = GUID;
+            this.isHelpDesk = isHelpDesk;
+            this.isSysAdmin = isSysAdmin;
         }
     }
     public class Settings : DataType

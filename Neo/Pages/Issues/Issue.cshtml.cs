@@ -7,6 +7,8 @@ namespace CompuTrack.Pages.Issues
     {
         public void OnGet()
         {
-        }
+
+
+		}
     }
 }

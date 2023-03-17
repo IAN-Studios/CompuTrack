@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="~/assets/icons/CompuTrack.ico" />
 </head>
 @{
-    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
     if (Profile.FirstChild.ChildNodes[1] is null) dbman.CreateNewGUIDForUser(User.Identity.Name);
 }
 

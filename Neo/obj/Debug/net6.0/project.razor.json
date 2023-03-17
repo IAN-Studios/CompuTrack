@@ -18404,6 +18404,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\StudentCenter.cshtml",
+      "TargetPath": "Pages\\StudentCenter.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\docs\\home.cshtml",
       "TargetPath": "Pages\\docs\\home.cshtml",
       "FileKind": "mvc"
@@ -18424,11 +18429,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
@@ -18441,6 +18441,11 @@
     {
       "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\AdminCenter.cshtml",
+      "TargetPath": "Pages\\AdminCenter.cshtml",
       "FileKind": "mvc"
     }
   ],
