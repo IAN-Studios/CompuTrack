@@ -185,16 +185,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\DataTypes.js",
+      "PackagePath": "staticwebassets\\js\\DataTypes.js"
+    },
+    {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\Issue.js",
       "PackagePath": "staticwebassets\\js\\Issue.js"
     },
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\IssueUI.js",
       "PackagePath": "staticwebassets\\js\\IssueUI.js"
-    },
-    {
-      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",
-      "PackagePath": "staticwebassets\\js\\Issues.js"
     },
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",

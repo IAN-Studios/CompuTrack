@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Hi1MOFpQwza8yc4q0NJNr95WVZhZifpSOf2Fc6qiuSE=",
+  "Hash": "wN61kKkG48nTxPkrtfm0EGVLhsEJ5A6WtZDpemKXCMU=",
   "Source": "CompuTrack",
   "BasePath": "_content/CompuTrack",
   "Mode": "Default",
@@ -816,6 +816,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\DataTypes.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "js/DataTypes.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\DataTypes.js"
+    },
+    {
       "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
@@ -848,23 +865,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Issue.js"
-    },
-    {
-      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",
-      "SourceId": "CompuTrack",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
-      "BasePath": "_content/CompuTrack",
-      "RelativePath": "js/Issues.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Issues.js"
     },
     {
       "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\IssueUI.js",

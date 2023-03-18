@@ -1,11 +1,13 @@
 ﻿class UserProfile {
-	constructor(email, guid) {
+	constructor(email, guid, isHelpDesk, isAdmin) {
 		this.Email = email;
 		this.GUID = guid;
+		this.isHelpDesk = isHelpDesk;
+		this.isAdmin = isAdmin;
 	}
 }
 class Issue {
-	constructor(id, guid, status, assettag, displaytext, description, userguid, creationdate, creationtime) {
+	constructor(id, guid, status, assettag, displaytext, description, userguid, creationdate) {
 		this.ID = id;
 		this.GUID = guid;
 		this.Status = status;
@@ -14,7 +16,5 @@ class Issue {
 		this.Description = description;
 		this.UserGUID = userguid;
 		this.CreationDate = creationdate;
-		this.CreationTime = creationtime;
 	}
 }
-

@@ -54,6 +54,11 @@ table.issues-table[b-pb86f05ye5] {
     float: right
 }
 
+.issues-issuelist-container[b-pb86f05ye5] {
+    max-height:550px;
+    overflow-x:unset;
+    overflow-y:scroll;
+}
 .OPEN[b-pb86f05ye5] {
     background-color: #ff0000af;
 }

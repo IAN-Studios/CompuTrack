@@ -33,7 +33,7 @@ namespace CompuTrack.Pages.Issues
             string USERGUID = Profile.FirstChild.ChildNodes[1].InnerText;
 			DateTime CreationDateTime = DateTime.Now;
 
-			dbman.CreateNewIssue(GUID.ToString(), STATUS, int.Parse(ASSETTAG), DISPLAYTEXT, DESCRIPTION, USERGUID, CreationDateTime);
+			dbman.Insert.Issue_New(GUID.ToString(), STATUS, int.Parse(ASSETTAG), DISPLAYTEXT, DESCRIPTION, USERGUID, CreationDateTime);
 			Response.StatusCode = 201;
 		}
     }

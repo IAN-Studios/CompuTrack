@@ -39,6 +39,24 @@ namespace CompuTrack.DataTypes
 	{
 
     }
+    public class IssueAssignment : DataType
+    {
+        public string IssueGUID { get; set; }
+        public string AssigneeGUID { get; set; }
+        public bool IsForced { get; set; }
+
+        public IssueAssignment(string issueGUID, string assigneeGUID, bool isForced)
+        {
+            this.IssueGUID = issueGUID;
+            this.AssigneeGUID = assigneeGUID;
+            this.IsForced = isForced;
+        }
+        public IssueAssignment(string issueGUID, string assigneeGUID)
+        {
+            this.IssueGUID = issueGUID;
+            this.AssigneeGUID = assigneeGUID;
+        }
+    }
     public class UserProfile : DataType
 	{
         public string Email;

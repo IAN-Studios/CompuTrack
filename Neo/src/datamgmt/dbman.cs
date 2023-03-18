@@ -12,57 +12,184 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Data.Common;
 using CompuTrack.Pages;
+using Azure;
 
 namespace CompuTrack.src.datamgmt
 {
     public class dbman
     {
         private static string DB1ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\db\\db1.accdb";
-#pragma warning disable CA1416 // Validate platform compatibility
-		public static void CreateNewGUIDForUser(string UserEmail)
-        {
-			Console.WriteLine("User [" + UserEmail + "] Has no GUID! Generating.....");
-            var UserGUID = Guid.NewGuid();
-            Console.WriteLine($"UserGUID: {UserGUID}");
-            OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
-            var Query = "INSERT INTO UserPrinciples(UserGUID, UserEmail)\nVALUES (\"" + UserGUID + "\",\""+ UserEmail + "\")";
+        private static string DB2ConnectionString = "";
+        #pragma warning disable CA1416 // Validate platform compatibility
 
-			OleDbCommand command = new OleDbCommand(Query, Connection);
-            try
+
+        public static class Insert
+        {
+            public static void Issue_New(String GUID, String STATUS, int ASSETTAG, String DISPLAYTEXT, String DESCRIPTION, string USERGUID, DateTime CREATIONDATE)
             {
-                Connection.Open();
-				command.ExecuteNonQuery();
-                Connection.Close();
-			} catch (Exception e)
-            {
-                Console.WriteLine(e);
+                OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
+                string Query = String.Format("INSERT INTO Issues ([GUID], STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE)\nVALUES(\"{0}\", \"{1}\", {2}, \"{3}\", \"{4}\", \"{5}\", \"{6}-{7}-{8} {9}:{10}:{11}\");", GUID, STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE.Year, CREATIONDATE.Month, CREATIONDATE.Day, CREATIONDATE.Hour, CREATIONDATE.Minute, CREATIONDATE.Second);
+                Console.WriteLine(Query);
+                OleDbCommand command = new OleDbCommand(Query, Connection);
+                try
+                {
+                    Connection.Open();
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
-		}
 
 
 
 
 
 
-        public static void CreateNewIssue(String GUID, String STATUS, int ASSETTAG, String DISPLAYTEXT, String DESCRIPTION, string USERGUID, DateTime CREATIONDATE)
+
+
+
+
+            public static void GUID_New(string UserEmail)
+            {
+                Console.WriteLine("User [" + UserEmail + "] Has no GUID! Generating.....");
+                var UserGUID = Guid.NewGuid();
+                Console.WriteLine($"UserGUID: {UserGUID}");
+                OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
+                var Query = "INSERT INTO UserPrinciples(UserGUID, UserEmail)\nVALUES (\"" + UserGUID + "\",\"" + UserEmail + "\")";
+
+                OleDbCommand command = new OleDbCommand(Query, Connection);
+                try
+                {
+                    Connection.Open();
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+        public static class Post
         {
-			OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
-            string Query = String.Format("INSERT INTO Issues ([GUID], STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE)\nVALUES(\"{0}\", \"{1}\", {2}, \"{3}\", \"{4}\", \"{5}\", \"{6}-{7}-{8} {9}:{10}:{11}\");",GUID,STATUS,ASSETTAG,DISPLAYTEXT,DESCRIPTION,USERGUID,CREATIONDATE.Year,CREATIONDATE.Month,CREATIONDATE.Day,CREATIONDATE.Hour,CREATIONDATE.Minute,CREATIONDATE.Second);
-            Console.WriteLine(Query);
-			OleDbCommand command = new OleDbCommand(Query, Connection);
-			try
-			{
-				Connection.Open();
-				command.ExecuteNonQuery();
-				Connection.Close();
+
+        }
+
+
+
+
+
+
+
+
+
+
+        public static class Fetch
+        {
+            public static IssueAssignment[] Assignments()
+            {
+                return new IssueAssignment[] { };
+            }
+            public static Issue[] Issues()
+            {
+                OleDbConnection connection = new OleDbConnection(DB1ConnectionString);
+                string Query = "SELECT Issues.*\nFROM Issues\nORDER BY STATUS desc;";
+                OleDbCommand cmd = new OleDbCommand(Query, connection);
+
+                try
+                {
+                    connection.Open();
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    List<Issue> IssueList = new List<Issue>();
+                    while (reader.Read())
+                    {
+                        IssueList.Add(new Issue((ulong)(int)reader[0], (string)reader[1], (string)reader[2], (int)reader[3], (string)reader[4], (string)reader[5], (string)reader[6], (DateTime)reader[7]));
+                    }
+                    reader.Close();
+                    connection.Close();
+
+                    return IssueList.ToArray();
+
+                } catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                return new Issue[] { };
+            }
+            public static UserProfile User_ByEmail(string email)
+            {
+				OleDbConnection connection = new OleDbConnection(DB1ConnectionString);
+				string Query = "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + email + "'));";
+				OleDbCommand cmd = new OleDbCommand(Query, connection);
+
+				try
+				{
+					connection.Open();
+					OleDbDataReader reader = cmd.ExecuteReader();
+
+					List<UserProfile> ProfileList = new List<UserProfile>();
+					while (reader.Read())
+					{
+						ProfileList.Add(new UserProfile((string)reader[0], (string)reader[1], (bool)reader[2], (bool)reader[3]));
+					}
+                    Console.WriteLine(ProfileList.ToArray().Length);
+					reader.Close();
+					connection.Close();
+
+					return ProfileList[0];
+
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+				}
+				return new UserProfile("Unknown", "Unknown", false, false);
 			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e);
+            public static UserProfile User(string GUID)
+            {
+				OleDbConnection connection = new OleDbConnection(DB1ConnectionString);
+				string Query = "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\\nFROM UserPrinciples\\nWHERE(([UserPrinciples].[UserGUID]='" + GUID + "'));";
+				OleDbCommand cmd = new OleDbCommand(Query, connection);
+
+				try
+				{
+					connection.Open();
+					OleDbDataReader reader = cmd.ExecuteReader();
+
+                    List<UserProfile> ProfileList = new List<UserProfile>();
+					while (reader.Read())
+					{
+                        ProfileList.Add(new UserProfile((string)reader[1], (string)reader[2], bool.Parse((string)reader[3]), bool.Parse((string)reader[4])));
+					}
+					reader.Close();
+					connection.Close();
+
+                    return ProfileList[0];
+
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+				}
+                return new UserProfile("Unknown", "Unknown", false, false);
 			}
-			//  INSERT INTO Issues (Issues.GUID, Issues.STATUS, Issues.ASSETTAG, Issues.DISPLAYTEXT, Issues.DESCRIPTION, Issues.USERGUID, Issues.CREATIONDATE)
-			//  VALUES("aaa", "bbb", 999, "ddd", "eee", "fff", "2023-3-5 9:00:00");
-		}
+        }
+
+
+
 
 
 

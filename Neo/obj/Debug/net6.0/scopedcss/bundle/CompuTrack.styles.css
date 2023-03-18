@@ -117,6 +117,11 @@ table.issues-table[b-pb86f05ye5] {
     float: right
 }
 
+.issues-issuelist-container[b-pb86f05ye5] {
+    max-height:550px;
+    overflow-x:unset;
+    overflow-y:scroll;
+}
 .OPEN[b-pb86f05ye5] {
     background-color: #ff0000af;
 }
@@ -127,18 +132,54 @@ table.issues-table[b-pb86f05ye5] {
 /* _content/CompuTrack/Pages/Issues/Issue.cshtml.rz.scp.css */
 body[b-dgpshijjdl] {
 }
-
+.noselect[b-dgpshijjdl] {
+    user-select:none;
+}
+.selectable[b-dgpshijjdl] {
+    user-select:all;
+}
 .issue-status-tag[b-dgpshijjdl] {
-    width:150px;
+    width:125px;
     text-align: center;
     border-radius:10px;
     padding-right:10px;
     padding-left:10px;
+    user-select:none;
 }
 
 .red[b-dgpshijjdl] {background-color: #ff0000}
 .green[b-dgpshijjdl] {background-color:#00ff00}
 .yellow[b-dgpshijjdl] {background-color:#f0f000}
+
+.issueproperties-table[b-dgpshijjdl] {
+    width:100%
+}
+.issueproperties-panel[b-dgpshijjdl] {
+    width:80%;
+    padding:20px;
+}
+.issueproperties-description[b-dgpshijjdl] {
+    resize:none;
+}
+.issueproperties-commentspanel[b-dgpshijjdl] {
+
+}
+
+.issueproperties-actionpanel[b-dgpshijjdl] {
+    width: 20%;
+}
+.issueproperties-
+.issueproperties-commentspanel-title[b-dgpshijjdl] {
+    text-align:center;
+    font-size:20pt;
+    vertical-align:top
+}
+
+
+/* Tempory Table Border for development*/
+table[b-dgpshijjdl], th[b-dgpshijjdl], td[b-dgpshijjdl] {
+    border: 1px solid black;
+}
 /* _content/CompuTrack/Pages/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

@@ -1,4 +1,4 @@
-﻿
+﻿``
 function submitNewIssue(AssetTag, Title, Description) {
 	if ((AssetTag.length != 6) || (Title == "") || (Description == "")) {
 		console.error("Issue does not meet requirements!");
@@ -23,7 +23,7 @@ function ChangeCenterSelection(newselection) {
 
 	//Render the new Issues Pane in the Table; Delete the old items in the table and generate + Display the new ones. Save the data as a achace for later.
 	if (newselection.id == "Issues_UserFilter") {
-		var userissues = XmlData.IssueList.filter(element => element.UserGUID == UsrProf.GUID);
+		var userissues = issueList.filter(element => element.UserGUID == UsrProf.GUID);
 
 		if (userissues.length == 0) {
 			var placeholder = document.createElement("p");
@@ -69,14 +69,14 @@ function ChangeCenterSelection(newselection) {
 		}
 
 	} else if (newselection.id == "Issues_Global") {
-		if (XmlData.IssueList.length == 0) {
+		if (issueList.length == 0) {
 			var placeholder = document.createElement("p");
 			placeholder.classList.add("issues-placeholder");
 			placeholder.innerHTML = "No Issues Found.";
 			placeholder.id = "issues-placeholder"
 			document.getElementById("issues-table-content-container").appendChild(placeholder);
 		} else {
-			XmlData.IssueList.forEach(element => {
+			issueList.forEach(element => {
 				var container = document.createElement("div");
 				container.classList.add("issues-table-content", "issues-issue");
 

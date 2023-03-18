@@ -54,6 +54,11 @@ table.issues-table {
     float: right
 }
 
+.issues-issuelist-container {
+    max-height:550px;
+    overflow-x:unset;
+    overflow-y:scroll;
+}
 .OPEN {
     background-color: #ff0000af;
 }
