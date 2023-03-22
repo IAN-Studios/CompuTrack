@@ -145,7 +145,7 @@ namespace CompuTrack.src.datamgmt
 					{
 						ProfileList.Add(new UserProfile((string)reader[0], (string)reader[1], (bool)reader[2], (bool)reader[3]));
 					}
-                    Console.WriteLine(ProfileList.ToArray().Length);
+
 					reader.Close();
 					connection.Close();
 
@@ -161,7 +161,7 @@ namespace CompuTrack.src.datamgmt
             public static UserProfile User(string GUID)
             {
 				OleDbConnection connection = new OleDbConnection(DB1ConnectionString);
-				string Query = "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\\nFROM UserPrinciples\\nWHERE(([UserPrinciples].[UserGUID]='" + GUID + "'));";
+				string Query = "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserGUID]='" + GUID + "'));";
 				OleDbCommand cmd = new OleDbCommand(Query, connection);
 
 				try
@@ -172,7 +172,7 @@ namespace CompuTrack.src.datamgmt
                     List<UserProfile> ProfileList = new List<UserProfile>();
 					while (reader.Read())
 					{
-                        ProfileList.Add(new UserProfile((string)reader[1], (string)reader[2], bool.Parse((string)reader[3]), bool.Parse((string)reader[4])));
+                        ProfileList.Add(new UserProfile((string)reader[0], (string)reader[1], (bool)reader[2], (bool)reader[3])); ;
 					}
 					reader.Close();
 					connection.Close();

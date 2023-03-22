@@ -17,9 +17,12 @@
 
     Issue SelectedIssue = IssueList.Find(finder);
     ViewData["Title"] = $"Computrack - #{SelectedIssue.ID}";
+
+    UserProfile IssueCreator = dbman.Fetch.User(SelectedIssue.USERGUID);
 }
 <head>
 	<script src="/js/Issue.js"></script>
+    <link rel="stylesheet" href="/css/pages/Issue.css" />
 </head>
 
 
@@ -45,7 +48,7 @@
                 <div>
                     <span class="noselect">Created: <code class="selectable">@SelectedIssue.CREATIONDATE.ToLongDateString() @@ @SelectedIssue.CREATIONDATE.ToLongTimeString()</code></span>
                         <br />
-                    <span class="noselect">By: <code class="selectable">@SelectedIssue.USERGUID</code></span>
+                    <span class="noselect">By: <code class="selectable">@IssueCreator.Email</code></span>
                 </div>
                 <div>
                     <span class="noselect">Asset Tag: <code style="user-select:all">@SelectedIssue.ASSETTAG</code></span>

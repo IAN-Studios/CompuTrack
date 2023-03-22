@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CompuTrack.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\favicon.ico",
       "PackagePath": "staticwebassets\\assets\\favicon.ico"
     },
@@ -157,8 +153,24 @@
       "PackagePath": "staticwebassets\\cert\\cert.key"
     },
     {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\Layout.css",
+      "PackagePath": "staticwebassets\\css\\Layout.css"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Explorer.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Explorer.css"
+    },
+    {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Index.css",
       "PackagePath": "staticwebassets\\css\\pages\\Index.css"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Issue.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Issue.css"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Issues.css",
+      "PackagePath": "staticwebassets\\css\\pages\\Issues.css"
     },
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Settings.css",

@@ -11,7 +11,9 @@
 @{
 	ViewData["Title"] = "Issue Center - CompuTrack";
 }
-
+<head>
+	<link rel="stylesheet" href="/css/pages/Issues.css"/>
+</head>
 <script type="text/javascript" src="/js/IssueUI.js"></script>
 @{
 	// Fetches ALL Issues
@@ -55,7 +57,10 @@
 
 <!-- HTML Time baby!-->
 <div>
-	<h2>Issue Center</h2>
+	<div>
+		<img src="/assets/images/issue-red.png" height="64" width="64"/>
+		<span style="position:relative; font-size:24pt; bottom:-6px;">Issue Center</span>
+	</div>
 	<table class="issues-table">
 		<thead>
 			<tr class="issues-table-sections" id="issuecentertableheader">

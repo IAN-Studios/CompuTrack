@@ -6,7 +6,7 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CompuTrack.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/Layout.css" asp-append-version="true" />
     <script href="~/CompuTrack.scripts.js" asp-asp-append-version="true"></script>
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
     <link rel="icon" type="image/x-icon" href="~/assets/icons/CompuTrack.ico" />
@@ -49,14 +49,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Explorer">Explorer</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Issues">Issue Center</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
-                        </li>
+
                         @if (UserLevel == 1)
                         {
                             <li class="nav-item">

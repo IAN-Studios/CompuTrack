@@ -2,6 +2,7 @@
 
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
+    <Configurations>Debug;Release;Production</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -17,10 +18,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="db\DB2.accdb" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Include="wwwroot\css\Layout.css" />
+    <None Include="wwwroot\css\pages\Explorer.css" />
+    <None Include="wwwroot\css\pages\Issue.css" />
+    <None Include="wwwroot\css\pages\Issues.css" />
     <None Include="wwwroot\js\explorer.js" />
     <None Include="wwwroot\js\IssueUI.js" />
     <None Include="wwwroot\xmltempl\IssueTemplate.xml" />

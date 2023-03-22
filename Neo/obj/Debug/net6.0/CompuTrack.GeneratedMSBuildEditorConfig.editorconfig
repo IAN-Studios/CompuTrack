@@ -28,8 +28,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Explorer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhwbG9yZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projects/src/jcps/CompuTrack/Neo/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Issues.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXNzdWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Issues/Issue.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXNzdWVzXElzc3VlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projects/src/jcps/CompuTrack/Neo/Pages/Issues/New.cshtml]
@@ -38,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Projects/src/jcps/CompuTrack/Neo/Pages/Settings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projects/src/jcps/CompuTrack/Neo/Pages/Shared/_LoginPartial.cshtml]
@@ -59,19 +75,3 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Projects/src/jcps/CompuTrack/Neo/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Explorer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhwbG9yZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-e53m14e7k3
-
-[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Issues.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXNzdWVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = b-pb86f05ye5
-
-[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Issues/Issue.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSXNzdWVzXElzc3VlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = b-dgpshijjdl
-
-[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-o55n33xtx1
