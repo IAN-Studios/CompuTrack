@@ -1,3 +1,4 @@
+using CompuTrack.src.datamgmt;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,6 +8,6 @@ namespace CompuTrack.Pages.Issues
     {
         public void OnGet()
         {
-        }
+		}
     }
 }

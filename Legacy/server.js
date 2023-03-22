@@ -10,7 +10,8 @@ const config = require("./config.json");
 wsp = config.Websocketserver.port
 const options = {
     key: fs.readFileSync("./cert/cert.key"),
-    cert: fs.readFileSync("./cert/cert.cer")
+    cert: fs.readFileSync("./cert/cert.crt"),
+    passphrase: 'dlrow123'
   };
 
 // Client Object used in the authdClients Protocol as a login method

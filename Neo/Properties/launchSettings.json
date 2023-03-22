@@ -6,7 +6,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://007-103-asus.attlocal.net:443/"
+      "applicationUrl": "https://DESKTOP-9OC9PDE:443/"
     },
     "Run - localhost": {
       "commandName": "Project",

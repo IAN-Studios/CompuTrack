@@ -2872,19 +2872,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Host\\.nuget\\packages\\": {}
+    "C:\\Users\\griff\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\CompuTrack.csproj",
+      "projectUniqueName": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\CompuTrack.csproj",
       "projectName": "CompuTrack",
-      "projectPath": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\CompuTrack.csproj",
-      "packagesPath": "C:\\Users\\Host\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\",
+      "projectPath": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\CompuTrack.csproj",
+      "packagesPath": "C:\\Users\\griff\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Host\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\griff\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2956,24 +2956,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.14, 6.0.14]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2982,7 +2964,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
