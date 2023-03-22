@@ -8,8 +8,7 @@ namespace CompuTrack.src
         public static alert[] alertlist = new alert[]
         {
             new alert("YELLOW", "Note: As of February 22nd, 2023, Computrack is in stage Development/NEO and will be periodically online and offline."),
-            new alert("RED", "Failed to fetch black box data from database.", "https://google.com"),
-            new alert("GREEN", "Computrack has been Updated to Version [v2.1][BETA]. See the Full Changelog There =>", "https://github.com/IAN-Studios/CompuTrack/pull")
+            new alert("GREEN", "Computrack has been Updated to Version [v2.1][BETA]. See the Full Changelog There =>", "https://github.com/IAN-Studios/CompuTrack/releases/tag/v2.1-beta")
         };
     }
     public class alert

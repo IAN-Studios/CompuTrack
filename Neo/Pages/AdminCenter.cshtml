@@ -1,0 +1,78 @@
+﻿@page
+@model CompuTrack.Pages.AdminCenterModel
+@using CompuTrack.System;
+@using CompuTrack.DataTypes;
+@using System.Xml;
+@using CompuTrack.src.datamgmt;
+@{
+	ViewData["Title"] = "Admin Center";
+	XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+
+}
+
+<<head>
+	<style>
+		th {
+			text-align: center;
+
+		}
+		td button {
+			width:100%;
+		}
+	</style>
+</head>
+h
+
+
+
+
+<h1>Admin Center</h1>
+
+
+@if (bool.Parse(Profile.ChildNodes[0].ChildNodes[3].InnerText) == false)
+{
+	<p>You are not authorized to modify CompuTrack's System.</p>
+	<p>If you feel like this is a mistake, contact your System Administrator.</p>
+} else
+{
+
+<p>Welcome Sysadmin, what would you like to do today?</p>
+<table style="width:100%">
+	<thead>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width:50%">
+					<table style="width:100%">
+					<thead>
+						<th>System Variable</th>
+						<th>Status</th>
+						<th>Action</th>
+					</thead>
+					<tbody>
+						@for (int i = 0; i != VARLIST.Variables.Length; i++)
+						{
+							<tr>
+								<td>@VARLIST.Variables[i].Name</td>
+								<td>@VARLIST.Variables[i].Status</td>
+								<td><button>[ MODIFY ] </button></td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</td>
+			<td style="width:50%">
+				<table style="width:100%">
+					<thead>
+						<th>Configuration</th>
+					</thead>
+					<tbody>
+						<tr><td>ee</td></tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+}
+

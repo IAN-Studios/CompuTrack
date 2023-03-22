@@ -1,6 +1,7 @@
 ﻿@page
 @model CompuTrack.Pages.IssuesModel
 @using CompuTrack.src.datamgmt;
+@using CompuTrack.DataTypes;
 @using System.Xml;
 @using System.Text;
 @using CompuTrack.Pages;
@@ -10,58 +11,56 @@
 @{
 	ViewData["Title"] = "Issue Center - CompuTrack";
 }
-
-<script type="text/javascript" src="/Pages/Issues.cshtml.js"></script>
+<head>
+	<link rel="stylesheet" href="/css/pages/Issues.css"/>
+</head>
+<script type="text/javascript" src="/js/IssueUI.js"></script>
 @{
-    // Fetches ALL Issues
-    StringWriter sw = new Utf8StringWriter();
-    XmlWriter xw = XmlWriter.Create(sw);
-    dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues\nORDER BY STATUS desc;", 9, "ISSUELIST").WriteContentTo(xw);
-    xw.Close();
+	// Fetches ALL Issues
+	Issue[] IssueList = dbman.Fetch.Issues();
 
     // Fetches User Profile
     StringWriter userprof = new Utf8StringWriter();
     XmlWriter usrwr = XmlWriter.Create(userprof);
-    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
-    if (Profile.FirstChild?.ChildNodes[1] is null) dbman.CreateNewGUIDForUser(User.Identity.Name);
+	XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+    if (Profile.FirstChild?.ChildNodes[1] is null) dbman.Insert.GUID_New(User.Identity.Name);
     Profile.WriteContentTo(usrwr);
     usrwr.Close();
     //if (userprof.ToString() {}
 }
-<script src="/js/Issues.js"></script>
+<script src="/js/DataTypes.js"></script>
 
-<!-- Converts the C# to JS serverside before we send it to the client. Clientside, they should see a whole lotta data. -->
+<!-- Convert C# Data to JS. Client Side, You should only see the JS, no C#.-->
 <script>
-	var tempprof = new DOMParser().parseFromString("@HttpUtility.JavaScriptStringEncode(userprof.ToString())".replace("&quot;", "\"").replace("&quot;", "\"").replace("&quot;", "\"").replace("&quot;", "\""), "text/xml").children[0];
-	var UsrProf = new UserProfile(tempprof.children[0].innerHTML, tempprof.children[1].innerHTML);
-	var XmlData = {
-		IssueList: [
-
-		]
-	}
-	var List = new DOMParser().parseFromString("@HttpUtility.JavaScriptStringEncode(sw.ToString())".replace("&quot;", "\"").replace("&quot;", "\"").replace("&quot;", "\"").replace("&quot;", "\""), "text/xml").children[0];
-	for (i = 0; i != List.children.length; i++) {
-		var id = List.children[i].children[0].innerHTML;
-		var guid = List.children[i].children[1].innerHTML;
-		var status = List.children[i].children[2].innerHTML;
-		var assettag = List.children[i].children[3].innerHTML;
-		var displaytext = List.children[i].children[4].innerHTML;
-		var description = List.children[i].children[5].innerHTML;
-		var userguid = List.children[i].children[6].innerHTML;
-		var creationdate = List.children[i].children[7].innerHTML;
-		XmlData.IssueList.push(new Issue(id, guid, status, assettag, displaytext, description, userguid, creationdate))
-	}
+	@{UserProfile UsrProf = dbman.Fetch.User_ByEmail(User.Identity.Name);}
+	var issueList = new Array();
+	var UsrProf = new UserProfile("@UsrProf.Email", "@UsrProf.GUID", "@UsrProf.isHelpDesk", "@UsrProf.isSysAdmin")
 </script>
-
-
-<!-- Script for loading Table UI Functions as well as control behaviour-->
-
+	@for (int i = 0; i != IssueList.Length; i++)
+	{
+		Issue issue = IssueList[i];
+		<script>
+			issueList.push(new Issue(
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.ID.ToString()))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.GUID))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.STATUS))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.ASSETTAG.ToString()))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.DISPLAYTEXT))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.DESCRIPTION))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.USERGUID))",
+			"@Html.Raw(HttpUtility.JavaScriptStringEncode(issue.CREATIONDATE.ToLongDateString() + " @ " + @issue.CREATIONDATE.ToLongTimeString()))"
+				))
+		</script>
+	}
 
 
 
 <!-- HTML Time baby!-->
 <div>
-	<h2>Issue Center</h2>
+	<div>
+		<img src="/assets/images/issue-red.png" height="64" width="64"/>
+		<span style="position:relative; font-size:24pt; bottom:-6px;">Issue Center</span>
+	</div>
 	<table class="issues-table">
 		<thead>
 			<tr class="issues-table-sections" id="issuecentertableheader">
@@ -76,8 +75,40 @@
 		<tbody>
 			<tr>
 				<td colspan="5" class="issues-table-container">
-					<div id="issues-table-content-container" class="issues-table-content-container">
-						<p id="issues-placeholder" class="issues-placeholder">No Issues Found.</p>
+					<div id="issues-table-content-container" class="issues-table-content-container issues-issuelist-container">
+						@if (IssueList.Length == 0)
+						{
+							<p id="issues-placeholder" class="issues-placeholder">No Issues Found.</p>
+						} else
+						{
+							<table>
+								<thead>
+
+								</thead>
+								<tbody>
+									<!--
+									@for (int i = 0; i != IssueList.Length; i++)
+									{
+										Issue isue = IssueList[i];
+										<tr>
+											@if (isue.STATUS == "CLOSED") {
+												<td><img src="~/assets/images/issue-green.png" width="25" height="25" /></td>
+											} else if (isue.STATUS == "PENDING")
+											{
+												<td><img src="~/assets/images/issue-yellow.png" width="25" height="25" /></td>
+											} else
+											{
+												<td><img src="~/assets/images/issue-red.png" width="25" height="25" /></td>
+											}
+											<td>#@isue.ID</td>
+											<td class="">@isue.DISPLAYTEXT</td>
+											<td class="issues-issue-date">@isue.CREATIONDATE.ToLongDateString() @isue.CREATIONDATE.ToLongTimeString()</td>
+										</tr>
+									}
+									-->
+								</tbody>
+							</table>
+						}
 					</div>
 				</td>
 			</tr>

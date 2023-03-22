@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e/579M+uqDQhvz1y5XG9HvFLJOFGaua3N12qqIhaLUo=",
+  "Hash": "TJF7AGi7LweN+fUlwyhwJ7IhdELILCYCYHp2trPiaYI=",
   "Source": "CompuTrack",
   "BasePath": "_content/CompuTrack",
   "Mode": "Default",
@@ -10,68 +10,17 @@
     {
       "Name": "CompuTrack\\wwwroot",
       "Source": "CompuTrack",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CompuTrack.styles.css",
-      "SourceId": "CompuTrack",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/CompuTrack",
-      "RelativePath": "CompuTrack.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CompuTrack.styles.css"
-    },
-    {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css",
-      "SourceId": "CompuTrack",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/CompuTrack",
-      "RelativePath": "CompuTrack.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CompuTrack.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\favicon.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\",
-      "BasePath": "_content/CompuTrack",
-      "RelativePath": "Pages/Issues.cshtml.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "Pages\\Issues.cshtml.js"
-    },
-    {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\favicon.ico",
-      "SourceId": "CompuTrack",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/favicon.ico",
       "AssetKind": "All",
@@ -85,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\favicon.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/CompuTrack.ico",
       "AssetKind": "All",
@@ -102,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\CompuTrack.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-old.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-old.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/CompuTrack-old.ico",
       "AssetKind": "All",
@@ -119,10 +68,27 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\CompuTrack-old.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-blue.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\CompuTrack-text-lightmode.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/icons/CompuTrack-text-lightmode.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons\\CompuTrack-text-lightmode.ico"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-blue.ico",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/issue-blue.ico",
       "AssetKind": "All",
@@ -136,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\issue-blue.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-generic.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-generic.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/issue-generic.ico",
       "AssetKind": "All",
@@ -153,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\issue-generic.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-green.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-green.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/issue-green.ico",
       "AssetKind": "All",
@@ -170,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\issue-green.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-red.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-red.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/issue-red.ico",
       "AssetKind": "All",
@@ -187,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\issue-red.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-yellow.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\issue-yellow.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/issue-yellow.ico",
       "AssetKind": "All",
@@ -204,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\issue-yellow.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-blue.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-blue.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/warning-blue.ico",
       "AssetKind": "All",
@@ -221,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\warning-blue.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-generic.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-generic.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/warning-generic.ico",
       "AssetKind": "All",
@@ -238,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\warning-generic.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-green.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-green.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/warning-green.ico",
       "AssetKind": "All",
@@ -255,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\warning-green.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-red.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-red.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/warning-red.ico",
       "AssetKind": "All",
@@ -272,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\warning-red.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-yellow.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\icons\\warning-yellow.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/icons/warning-yellow.ico",
       "AssetKind": "All",
@@ -289,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\icons\\warning-yellow.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/CompuTrack.png",
       "AssetKind": "All",
@@ -306,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\CompuTrack.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack_NEO_Banner.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack_NEO_Banner.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/CompuTrack_NEO_Banner.png",
       "AssetKind": "All",
@@ -323,10 +289,27 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\CompuTrack_NEO_Banner.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-blue.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\CompuTrack-text-lightmode.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/images/CompuTrack-text-lightmode.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\CompuTrack-text-lightmode.png"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-blue.png",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/issue-blue.png",
       "AssetKind": "All",
@@ -340,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\issue-blue.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-generic.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-generic.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/issue-generic.png",
       "AssetKind": "All",
@@ -357,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\issue-generic.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-green.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-green.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/issue-green.png",
       "AssetKind": "All",
@@ -374,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\issue-green.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-red.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-red.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/issue-red.png",
       "AssetKind": "All",
@@ -391,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\issue-red.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-yellow.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-yellow.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/issue-yellow.png",
       "AssetKind": "All",
@@ -408,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\issue-yellow.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-blue.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-blue.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/warning-blue.png",
       "AssetKind": "All",
@@ -425,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\warning-blue.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-generic.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-generic.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/warning-generic.png",
       "AssetKind": "All",
@@ -442,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\warning-generic.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-green.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-green.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/warning-green.png",
       "AssetKind": "All",
@@ -459,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\warning-green.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-red.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-red.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/warning-red.png",
       "AssetKind": "All",
@@ -476,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\warning-red.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-yellow.png",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\warning-yellow.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/images/warning-yellow.png",
       "AssetKind": "All",
@@ -493,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\warning-yellow.png"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.psd",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.psd",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/CompuTrack.psd",
       "AssetKind": "All",
@@ -510,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack.psd"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.xcf",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack.xcf",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/CompuTrack.xcf",
       "AssetKind": "All",
@@ -527,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack.xcf"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/CompuTrack_NEO_Banner.xcf",
       "AssetKind": "All",
@@ -544,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack_NEO_Banner.xcf"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\ComputrackNEO.psd",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\ComputrackNEO.psd",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/ComputrackNEO.psd",
       "AssetKind": "All",
@@ -561,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\ComputrackNEO.psd"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\computrack-neo.xcf",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\computrack-neo.xcf",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/computrack-neo.xcf",
       "AssetKind": "All",
@@ -578,10 +561,44 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\computrack-neo.xcf"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\issue-generic.psd",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack-text-darkmode.png",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/photoshop/CompuTrack-text-darkmode.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack-text-darkmode.png"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\CompuTrack-text-lightmode.xcf",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "assets/photoshop/CompuTrack-text-lightmode.xcf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\photoshop\\CompuTrack-text-lightmode.xcf"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\issue-generic.psd",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/issue-generic.psd",
       "AssetKind": "All",
@@ -595,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\issue-generic.psd"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\Warning-generic.psd",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\Warning-generic.psd",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "assets/photoshop/Warning-generic.psd",
       "AssetKind": "All",
@@ -612,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\assets\\photoshop\\Warning-generic.psd"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\cert\\cert.cer",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\cert\\cert.cer",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "cert/cert.cer",
       "AssetKind": "All",
@@ -629,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\cert\\cert.cer"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\cert\\cert.key",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\cert\\cert.key",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "cert/cert.key",
       "AssetKind": "All",
@@ -646,10 +663,44 @@
       "OriginalItemSpec": "wwwroot\\cert\\cert.key"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Index.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\Layout.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "css/Layout.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Layout.css"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Explorer.css",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "css/pages/Explorer.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\pages\\Explorer.css"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Index.css",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "css/pages/Index.css",
       "AssetKind": "All",
@@ -663,10 +714,44 @@
       "OriginalItemSpec": "wwwroot\\css\\pages\\Index.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Settings.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Issue.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "css/pages/Issue.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\pages\\Issue.css"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Issues.css",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "css/pages/Issues.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\pages\\Issues.css"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\pages\\Settings.css",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "css/pages/Settings.css",
       "AssetKind": "All",
@@ -680,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\css\\pages\\Settings.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\site.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -697,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-dark.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-dark.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "css/themes/theme-dark.css",
       "AssetKind": "All",
@@ -714,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\css\\themes\\theme-dark.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-default.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-default.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "css/themes/theme-default.css",
       "AssetKind": "All",
@@ -731,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\css\\themes\\theme-default.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-light.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\css\\themes\\theme-light.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "css/themes/theme-light.css",
       "AssetKind": "All",
@@ -748,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\css\\themes\\theme-light.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\favicon.ico",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -765,10 +850,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\DataTypes.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "js/DataTypes.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\DataTypes.js"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "js/explorer.js",
       "AssetKind": "All",
@@ -782,12 +884,12 @@
       "OriginalItemSpec": "wwwroot\\js\\explorer.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\Issues.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\Issue.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
-      "RelativePath": "js/Issues.js",
+      "RelativePath": "js/Issue.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -796,13 +898,30 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Issues.js"
+      "OriginalItemSpec": "wwwroot\\js\\Issue.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\IssueUI.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "js/IssueUI.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\IssueUI.js"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\site.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -816,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -833,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -850,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -867,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -884,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -901,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -918,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -935,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -952,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -969,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -986,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1003,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1020,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1037,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1054,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1071,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1088,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1105,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1122,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1139,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1156,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1173,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1190,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1207,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1224,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1241,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1258,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1275,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1292,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1309,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1326,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1343,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1360,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1377,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1394,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1411,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1428,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1445,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1462,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1479,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1496,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1513,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1530,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1547,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1564,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1581,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1598,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1615,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1632,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1649,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1666,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1683,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1700,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1717,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1734,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1751,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1768,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1785,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\xmltempl\\IssueTemplate.xml",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\xmltempl\\IssueTemplate.xml",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "xmltempl/IssueTemplate.xml",
       "AssetKind": "All",
@@ -1802,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\xmltempl\\IssueTemplate.xml"
     },
     {
-      "Identity": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\xmltempl\\settings_template.xml",
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\xmltempl\\settings_template.xml",
       "SourceId": "CompuTrack",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\wwwroot\\",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
       "BasePath": "_content/CompuTrack",
       "RelativePath": "xmltempl/settings_template.xml",
       "AssetKind": "All",

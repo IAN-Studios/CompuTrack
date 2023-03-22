@@ -6,12 +6,33 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CompuTrack.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/Layout.css" asp-append-version="true" />
     <script href="~/CompuTrack.scripts.js" asp-asp-append-version="true"></script>
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
     <link rel="icon" type="image/x-icon" href="~/assets/icons/CompuTrack.ico" />
 </head>
 <!-- This File is brought to you by ASP.NET. ASP.NET, Innovating the Future.-->
+@using System.Xml;
+@using CompuTrack.DataTypes;
+@using CompuTrack.src.datamgmt;
+@{
+    int UserLevel = 0;
+    XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+    try
+    {
+        if(bool.Parse(Profile.ChildNodes[0].ChildNodes[2].InnerText) == true)
+        {
+            UserLevel = 1;   
+        }
+        else if (bool.Parse(Profile.ChildNodes[0].ChildNodes[3].InnerText) == true)
+        {
+            UserLevel = 2;
+        }
+    } catch (Exception e)
+    {
+        Console.WriteLine(e);
+    }
+}
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -28,17 +49,23 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Explorer">Explorer</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Issues">Issue Center</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
+
+                        @if (UserLevel == 1)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/StudentCenter">HelpDesk Center</a>
+                            </li>
+                        } else if (UserLevel == 2)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/AdminCenter">Admin Center</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

@@ -26,7 +26,8 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddRazorPages()
 	.AddMicrosoftIdentityUI();
 
-Console.WriteLine("Heheheha");
+Console.WriteLine("Loading CompuTrack Build.....");
+Console.WriteLine("Welcome to the Backend, Here have some cookies.");
 
 var app = builder.Build();
 
@@ -50,4 +51,3 @@ app.MapRazorPages();
 app.MapControllers();
 
 app.Run();
-

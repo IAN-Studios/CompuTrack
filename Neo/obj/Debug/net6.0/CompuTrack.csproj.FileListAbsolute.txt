@@ -118,17 +118,13 @@ C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\staticwebassets\msbuild.bui
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\staticwebassets.build.json
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\staticwebassets.development.json
-C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\scopedcss\bundle\CompuTrack.styles.css
-C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\scopedcss\projectbundle\CompuTrack.bundle.scp.css
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\CompuTrack.csproj.CopyComplete
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\CompuTrack.dll
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\refint\CompuTrack.dll
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\CompuTrack.pdb
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\CompuTrack.genruntimeconfig.cache
 C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\ref\CompuTrack.dll
-C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\scopedcss\Pages\Explorer.cshtml.rz.scp.css
-C:\Projects\SRC\JCPS\CompuTrack\Neo\obj\Debug\net6.0\scopedcss\Pages\Issues.cshtml.rz.scp.css
 C:\Projects\SRC\JCPS\CompuTrack\Neo\bin\Debug\net6.0\System.Data.SqlClient.dll
 C:\Projects\SRC\JCPS\CompuTrack\Neo\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
 C:\Projects\SRC\JCPS\CompuTrack\Neo\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll

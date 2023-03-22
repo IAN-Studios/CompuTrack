@@ -1,0 +1,47 @@
+﻿body {
+}
+
+div.index-welcome-text {
+    color:black;
+    font-weight:bold;
+    font-size:200px;
+}
+
+.index-started-panels {
+    display: table;
+    top:-25px;
+    height: 350px;
+    width: 100%;
+    list-style: none;
+    border-spacing: 50px;
+    position:relative;
+}
+
+
+.index-getstarted-panel{
+    background-color: #e8e8e8;
+    position: relative;
+    display: table-cell;
+    text-align: center;
+}
+
+.index-getstarted-panel-header {
+    font-weight:bold;
+    font-size:12pt;
+    margin:0px;
+}
+
+.hyperlink-button {
+    background-color:royalblue;
+    color:white;
+    text-decoration:none;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+div.alertcenter-alert {
+    margin-top: 10px;
+    height:45px;
+}

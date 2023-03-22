@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<UserSettings>
+  <setting type="radio" optionnum="3">
+    <DisplayText>Select a Theme:</DisplayText>
+    <Option index="0" default="true">Default</Option>
+    <Option index="1">Light</Option>
+    <Option index="2">Dark</Option>
+    <Option index="3">Midnight</Option>
+  </setting>
+  <setting type="">
+    
+  </setting>
+</UserSettings>

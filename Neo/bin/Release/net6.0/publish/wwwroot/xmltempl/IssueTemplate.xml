@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Issue>
+  <ID>0</ID>
+  <GUID>e8bdae6c-24e7-41b8-b036-f96212fe88d1</GUID>
+  <Status>OPEN</Status>
+  <AssetTag>000000</AssetTag>
+  <DisplayText>Computer won't start</DisplayText>
+  <Description>Computer refuses to start and makes whirring noise</Description>
+  <AccountGUID>aef9cf1f-f0a5-4294-9ce8-5056d580b128</AccountGUID>
+  <Date>2/23/23</Date>
+  <Time>11:23</Time>
+  <IssueComments>
+    <Comment>
+      <Issuer>ff4ecd58-ee83-4f32-92f5-22822ad95382</Issuer>
+      <Parent>e8bdae6c-24e7-41b8-b036-f96212fe88d1</Parent>
+      <Content>Have you tried turning it off and on again?</Content>
+      <Attachments></Attachments>
+      <Date>2/23/23</Date>
+      <Time>13:19</Time>
+    </Comment>
+    <Comment>
+      <Issuer>aef9cf1f-f0a5-4294-9ce8-5056d580b128</Issuer>
+      <Parent>e8bdae6c-24e7-41b8-b036-f96212fe88d1</Parent>
+      <Content>Yes but it still doesn't work. :(</Content>
+      <Attachments></Attachments>
+      <Date>2/23/23</Date>
+      <Time>14:31</Time>
+    </Comment>
+  </IssueComments>
+</Issue>

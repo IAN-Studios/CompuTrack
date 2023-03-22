@@ -23,7 +23,7 @@ namespace CompuTrack.Pages.Issues
 				return;
 			}
 
-			XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
+			XmlDocument Profile = dbman.FetchData("DB1", "SELECT UserPrinciples.UserEmail, UserPrinciples.UserGUID, UserPrinciples.Helpdesk, UserPrinciples.Sysadmin\nFROM UserPrinciples\nWHERE(([UserPrinciples].[UserEmail]='" + User.Identity?.Name + "'));", 9, "USERPROFILE");
 
 			Guid GUID = Guid.NewGuid();
             string STATUS = "OPEN";
@@ -33,7 +33,7 @@ namespace CompuTrack.Pages.Issues
             string USERGUID = Profile.FirstChild.ChildNodes[1].InnerText;
 			DateTime CreationDateTime = DateTime.Now;
 
-			dbman.CreateNewIssue(GUID.ToString(), STATUS, int.Parse(ASSETTAG), DISPLAYTEXT, DESCRIPTION, USERGUID, CreationDateTime);
+			dbman.Insert.Issue_New(GUID.ToString(), STATUS, int.Parse(ASSETTAG), DISPLAYTEXT, DESCRIPTION, USERGUID, CreationDateTime);
 			Response.StatusCode = 201;
 		}
     }

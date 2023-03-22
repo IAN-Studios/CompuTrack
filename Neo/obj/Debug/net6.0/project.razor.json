@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\project.razor.json",
-  "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\CompuTrack.csproj",
+  "SerializedFilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\obj\\Debug\\net6.0\\project.razor.json",
+  "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\CompuTrack.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -18374,73 +18374,78 @@
   "RootNamespace": "CompuTrack",
   "Documents": [
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Settings.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Settings.cshtml",
       "TargetPath": "Pages\\Settings.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Shared\\_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\_ViewStart.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\_ViewImports.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues\\New.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Issues\\New.cshtml",
       "TargetPath": "Pages\\Issues\\New.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\docs\\home.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\StudentCenter.cshtml",
+      "TargetPath": "Pages\\StudentCenter.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\docs\\home.cshtml",
       "TargetPath": "Pages\\docs\\home.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Error.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Issues.cshtml",
       "TargetPath": "Pages\\Issues.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Explorer.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Explorer.cshtml",
       "TargetPath": "Pages\\Explorer.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Index.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Issues\\Issue.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Issues\\Issue.cshtml",
       "TargetPath": "Pages\\Issues\\Issue.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Projects\\SRC\\JCPS\\CompuTrack\\Neo\\Pages\\Shared\\_LoginPartial.cshtml",
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Projects\\src\\jcps\\CompuTrack\\Neo\\Pages\\AdminCenter.cshtml",
+      "TargetPath": "Pages\\AdminCenter.cshtml",
       "FileKind": "mvc"
     }
   ],
