@@ -43,7 +43,13 @@
     vertical-align:top
 }
 
-
+.issueproperties-noelevation {
+    border:2px solid red;
+    background-color:#e9666e;
+    margin:10px;
+    color:black;
+    font-weight:bold;
+}
 /* Tempory Table Border for development*/
 table, th, td {
     border: 1px solid black;

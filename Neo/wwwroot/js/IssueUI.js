@@ -4,8 +4,10 @@ function submitNewIssue(AssetTag, Title, Description) {
 		console.error("Issue does not meet requirements!");
 		return false;
 	} else {
-		alert("Issue Created Sucessfully. Press OK To Continue.");
-		fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``));
+		fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
+			Alert("Issue Created Sucessfully. Press OK to Continue.");
+			window.location.href = "/Issues"
+		})
 		return true;
 	}
 }
@@ -38,8 +40,8 @@ function ChangeCenterSelection(newselection) {
 
 				var icon = document.createElement("img");
 				if (element.Status == "OPEN") icon.src = "/assets/images/issue-red.png";
-				if (element.Status == "CLOSED") icon.src = "/assets/images/issue-green.png";
-				if (element.Status == "PENDING") icon.src = "/assets/images/issue-yellow.png";
+				if (element.Status == "CLOSED") icon.src = "/assets/images/checkmark-green.png";
+				if (element.Status == "PENDING") icon.src = "/assets/images/warning-yellow.png";
 				icon.height = 20;
 				icon.width = 20;
 
@@ -47,7 +49,6 @@ function ChangeCenterSelection(newselection) {
 				IDtext.innerHTML = `#${element.ID}: `;
 				IDtext.setAttribute("b-pb86f05ye5", "")
 				IDtext.classList.add("issues-table-content", "issues-issue-id")
-				icon.append(IDtext);
 
 				var TitleText = document.createElement("span");
 				TitleText.innerHTML = element.DisplayText;
@@ -59,7 +60,7 @@ function ChangeCenterSelection(newselection) {
 				DateNum.setAttribute("b-pb86f05ye5", "")
 				DateNum.classList.add("issues-table-content", "issues-issue-date")
 
-				container.append(icon, TitleText, DateNum);
+				container.append(icon, IDtext, TitleText, DateNum);
 				container.setAttribute("b-pb86f05ye5", "")
 				document.getElementById("issues-table-content-container").appendChild(container);
 				container.onclick = function () {
@@ -82,8 +83,8 @@ function ChangeCenterSelection(newselection) {
 
 				var icon = document.createElement("img");
 				if (element.Status == "OPEN") icon.src = "/assets/images/issue-red.png";
-				if (element.Status == "CLOSED") icon.src = "/assets/images/issue-green.png";
-				if (element.Status == "PENDING") icon.src = "/assets/images/issue-yellow.png";
+				if (element.Status == "CLOSED") icon.src = "/assets/images/checkmark-green.png";
+				if (element.Status == "PENDING") icon.src = "/assets/images/warning-yellow.png";
 				icon.height = 20;
 				icon.width = 20;
 
@@ -104,7 +105,7 @@ function ChangeCenterSelection(newselection) {
 				DateNum.setAttribute("b-pb86f05ye5", "")
 				DateNum.classList.add("issues-table-content", "issues-issue-date")
 
-				container.append(icon, TitleText, DateNum);
+				container.append(icon, IDtext,TitleText, DateNum);
 				container.setAttribute("b-pb86f05ye5", "")
 				document.getElementById("issues-table-content-container").appendChild(container);
 				container.onclick = function () {

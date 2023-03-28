@@ -7,6 +7,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Xml;
 
+using CompuTrack;
 using CompuTrack.DataTypes;
 using System.Collections.Generic;
 using System.Collections;
@@ -27,15 +28,16 @@ namespace CompuTrack.src.datamgmt
         {
             public static void Issue_New(String GUID, String STATUS, int ASSETTAG, String DISPLAYTEXT, String DESCRIPTION, string USERGUID, DateTime CREATIONDATE)
             {
+                Server.app.Logger.LogWarning("WARNING: Database Data Modification Detected.");
                 OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
                 string Query = String.Format("INSERT INTO Issues ([GUID], STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE)\nVALUES(\"{0}\", \"{1}\", {2}, \"{3}\", \"{4}\", \"{5}\", \"{6}-{7}-{8} {9}:{10}:{11}\");", GUID, STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE.Year, CREATIONDATE.Month, CREATIONDATE.Day, CREATIONDATE.Hour, CREATIONDATE.Minute, CREATIONDATE.Second);
-                Console.WriteLine(Query);
                 OleDbCommand command = new OleDbCommand(Query, Connection);
                 try
                 {
                     Connection.Open();
                     command.ExecuteNonQuery();
                     Connection.Close();
+                    Server.app.Logger.LogInformation($"Issue Created: {DISPLAYTEXT}");
                 }
                 catch (Exception e)
                 {

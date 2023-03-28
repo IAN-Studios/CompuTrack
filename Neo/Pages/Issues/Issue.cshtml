@@ -5,29 +5,58 @@
 @using System.Xml;
 @using System;
 @{
-
+    int noIssue = 0;
     XmlDocument deeta = dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST");
     List<Issue> IssueList = new List<Issue>();
+    UserProfile UserLoggedIn = dbman.Fetch.User_ByEmail(User.Identity.Name);
+
     for (int i = 0; i != deeta.ChildNodes[0]?.ChildNodes.Count; i++)
     {
         XmlNode issueXML = deeta.ChildNodes[0].ChildNodes[i];
         IssueList.Add(new Issue((ulong)int.Parse(issueXML.ChildNodes[0].InnerText), issueXML.ChildNodes[1].InnerText, issueXML.ChildNodes[2].InnerText, int.Parse(issueXML.ChildNodes[3].InnerText), issueXML.ChildNodes[4].InnerText, issueXML.ChildNodes[5].InnerText, issueXML.ChildNodes[6].InnerText, DateTime.Parse(issueXML.ChildNodes[7].InnerText)));
     }
     Predicate<Issue> finder = s => (s.GUID == Request.Query["IssueID"]);
-
     Issue SelectedIssue = IssueList.Find(finder);
-    ViewData["Title"] = $"Computrack - #{SelectedIssue.ID}";
+    try
+    {
+        var e = SelectedIssue.ID;
+    } catch
+    {
+        noIssue = 1;
+    }
 
-    UserProfile IssueCreator = dbman.Fetch.User(SelectedIssue.USERGUID);
+
 }
 <head>
 	<script src="/js/Issue.js"></script>
     <link rel="stylesheet" href="/css/pages/Issue.css" />
 </head>
 
+@if (noIssue == 1)
+{
+    <p>ERR 3u321fg6B: Issue data corrupted. Contact your System Administrator with the following information:</p>
+    <code>ERR3u321fg6B@@@Html.Raw(DateTime.Now.ToLongDateString() + "@" + DateTime.Now.ToLongTimeString());</code>
+    <code>Usr[@User.Identity.Name],isAuthenticated=@User.Identity.IsAuthenticated;</code>
+    <code>URLRequest=(@Request.Protocol,@Request.Method,@Request.Host@Request.Path@Request.QueryString)</code>
+    <code><br /><br/>Have A Nice Day!<br/></code>
+    <br />
+    <button onclick="navigator.clipboard.writeText(`RR3u321fg6B@@@Html.Raw(DateTime.Now.ToLongDateString() + "@" + DateTime.Now.ToLongTimeString()),Usr[@User.Identity.Name],isAuthenticated=@User.Identity.IsAuthenticated,URLRequest=(@Request.Protocol,@Request.Method,@Request.Host@Request.Path@Request.QueryString)`)">Copy Error Data to Clipboard</button>
+    <a href="/"><br/>Click here to return to normality</a>
+} else
+{
+    ViewData["Title"] = $"Computrack - #{SelectedIssue.ID}";
+    UserProfile IssueCreator = dbman.Fetch.User(SelectedIssue.USERGUID);
+    int UserElevationLevel = 0;
+    if (UserLoggedIn.isHelpDesk == true) UserElevationLevel = 1;
+    if (UserLoggedIn.GUID == SelectedIssue.USERGUID) UserElevationLevel = 2;
+    if (UserLoggedIn.isSysAdmin == true) UserElevationLevel = 3;
+
 
 <a href="/Issues">Back to Issue List</a>
 <br/>
+<div class="issueproperties-noelevation" id="elevationwarning-noperms" hidden>You must be logged in with elevated permissions to make changes to this Issue.</div>
+<div class="issueproperties-noelevation" id="elevationwarning-noadminperms" hidden>You must be logged in with administrative privlidges to make changes to this Issue.</div>
+
 <table class="issueproperties-table">
     <tbody>
         <tr>
@@ -35,15 +64,15 @@
                 <h1>#@SelectedIssue.ID - @SelectedIssue.DISPLAYTEXT</h1>
                 @if (SelectedIssue.STATUS == "OPEN")
                 {
-                    <h5 class="issue-status-tag red"> OPEN    </h5>
+                    <h5 class="issue-status-tag red">OPEN</h5>
                 }
                 else if (SelectedIssue.STATUS == "CLOSED")
                 {
-                    <h5 class="issue-status-tag green">   CLOSED    </h5>
+                    <h5 class="issue-status-tag green">CLOSED</h5>
                 }
                 else
                 {
-                    <h5 class="issue-status-tag yellow">   PENDING    </h5>
+                    <h5 class="issue-status-tag yellow">PENDING</h5>
                 }
                 <div>
                     <span class="noselect">Created: <code class="selectable">@SelectedIssue.CREATIONDATE.ToLongDateString() @@ @SelectedIssue.CREATIONDATE.ToLongTimeString()</code></span>
@@ -61,8 +90,42 @@
                 </div>
             </td>
             <td rowspan="2" class="issueproperties-actionpanel">
+                <label for="MarkStatus">Change Status...</label>
+                <select id="MarkStatus">
+                    @if (SelectedIssue.STATUS == "OPEN") {<option selected value="OPEN"> Mark as Open</option>}
+                    else
+                    {
+                        <option value="OPEN"> Mark as Open</option>
+                    }
 
-            </td>
+
+                    @if (SelectedIssue.STATUS == "CLOSED")
+                    {
+                        <option selected value="CLOSED">Mark as Closed</option>
+                    }
+                    else
+                    {
+                        <option value="CLOSED">Mark as Closed</option>
+                    }
+                    
+
+                    @if (SelectedIssue.STATUS == "PENDING")
+                    {
+                        <option selected value="PENDING">Mark as Pending</option>
+                    }
+                    else
+                    {
+                        <option value="PENDING">Mark as Pending</option>
+                    }
+                </select>
+                    @if (UserElevationLevel == 0)
+                    {
+                        <button onclick="document.getElementById('elevationwarning-noperms').hidden = false; setTimeout(() => {document.getElementById('elevationwarning-noperms').hidden = true;},2000)">Save Changes</button>
+                    } else
+                    {
+                        <button>Save Changes</button>
+                    }
+                </td>
         </tr>
         <tr>
             <td class="issueproperties-commentspanel">
@@ -74,3 +137,4 @@
         </tr>
     </tbody>
 </table>
+}
