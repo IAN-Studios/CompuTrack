@@ -100,10 +100,6 @@ namespace CompuTrack.src.datamgmt
 
         public static class Fetch
         {
-            public static IssueAssignment[] Assignments()
-            {
-                return new IssueAssignment[] { };
-            }
             public static Issue[] Issues()
             {
                 OleDbConnection connection = new OleDbConnection(DB1ConnectionString);

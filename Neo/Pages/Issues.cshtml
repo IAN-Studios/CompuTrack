@@ -8,8 +8,14 @@
 @using System.Web;
 @using CompuTrack.src.Client;
 @using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiforgery
+@{
+	var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
+}
 @{
 	ViewData["Title"] = "Issue Center - CompuTrack";
+	@Html.AntiForgeryToken()
 }
 <head>
 	<link rel="stylesheet" href="/css/pages/Issues.css"/>

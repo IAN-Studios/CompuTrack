@@ -24,8 +24,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZG9jc1xob21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Endpoints/UpdateIssue.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW5kcG9pbnRzXFVwZGF0ZUlzc3VlLmNzaHRtbA==
+[C:/Projects/src/jcps/CompuTrack/Neo/Pages/Endpoint.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW5kcG9pbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projects/src/jcps/CompuTrack/Neo/Pages/Error.cshtml]

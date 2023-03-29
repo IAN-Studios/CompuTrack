@@ -229,6 +229,10 @@
       "PackagePath": "staticwebassets\\js\\explorer.js"
     },
     {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\js\\jquery.js"
+    },
+    {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

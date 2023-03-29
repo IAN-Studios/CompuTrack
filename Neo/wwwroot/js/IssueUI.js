@@ -4,10 +4,22 @@ function submitNewIssue(AssetTag, Title, Description) {
 		console.error("Issue does not meet requirements!");
 		return false;
 	} else {
-		fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
-			Alert("Issue Created Sucessfully. Press OK to Continue.");
-			window.location.href = "/Issues"
-		})
+		$.ajax({
+			type: "post",
+			url: "/Endpoints/UpdateIssue",
+			dataType: "json",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			},
+			success: function (result) {
+				// do something
+			}
+		});
+		//fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
+		//	Alert("Issue Created Sucessfully. Press OK to Continue.");
+		//	window.location.href = "/Issues"
+		//})
 		return true;
 	}
 }

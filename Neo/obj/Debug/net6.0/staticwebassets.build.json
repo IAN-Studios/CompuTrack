@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VAoRdY3WSx0keiXs8oVjXgg4t7JixyA0hwQbPyWSBsw=",
+  "Hash": "CWdAL6IwCQidfK8FtwX7lpUDLhujBFEOBiIZ7NiJ8EU=",
   "Source": "CompuTrack",
   "BasePath": "_content/CompuTrack",
   "Mode": "Default",
@@ -984,6 +984,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\IssueUI.js"
+    },
+    {
+      "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\jquery.js",
+      "SourceId": "CompuTrack",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\",
+      "BasePath": "_content/CompuTrack",
+      "RelativePath": "js/jquery.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.js"
     },
     {
       "Identity": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\site.js",

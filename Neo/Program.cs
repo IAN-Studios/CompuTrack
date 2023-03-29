@@ -26,12 +26,13 @@ namespace CompuTrack
             builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"));
 
-
+            builder.Services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
             builder.Services.AddAuthorization(options =>
             {
                 // By default, all incoming requests will be authorized according to the default policy.
                 options.FallbackPolicy = options.DefaultPolicy;
             });
+            builder.Services.AddMvc();
             builder.Services.AddRazorPages()
                 .AddMicrosoftIdentityUI();
 
