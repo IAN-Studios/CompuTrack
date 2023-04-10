@@ -1,5 +1,5 @@
 // Module Imports
-const https = require("https");
+const http = require("https");
 const ws = require("ws");
 const mime = require("mime");
 const dbman = require("./src/dbman")
@@ -9,16 +9,13 @@ const config = require("./config.json");
 
 wsp = config.Websocketserver.port
 const options = {
-    key: fs.readFileSync("./cert/cert.key"),
-    cert: fs.readFileSync("./cert/cert.crt"),
-    passphrase: 'dlrow123'
   };
 
 // Client Object used in the authdClients Protocol as a login method
 class application {
     constructor() {
         this.ASSETMAN = new dbman("./db/computrack-database.mdb");
-        this.webserver = https.createServer(options);
+        this.webserver = http.createServer(options);
         this.websocketserver = new ws.Server({
             server:this.webserver,
         })

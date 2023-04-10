@@ -134,13 +134,79 @@
     if (UserLoggedIn.isSysAdmin == true) UserElevationLevel = 3;
 
 
-<a href="/Issues">Back to Issue List</a>
+
 <br/>
 <div class="issueproperties-noelevation" id="elevationwarning-noperms" hidden>You must be logged in with elevated permissions to make changes to this Issue.</div>
 <div class="issueproperties-noelevation" id="elevationwarning-noadminperms" hidden>You must be logged in with administrative privlidges to make changes to this Issue.</div>
 
 <table class="issueproperties-table">
     <tbody>
+        <tr>
+                <td class="issueproperties-actionpanel">
+                    <div class="issueproperties-actionpanel-statuscontrol">
+                        <a href="/Issues" style="float:left; font-size:18px; margin:10px;">&lt;= Back to Issue List</a>
+                        <span class="issueproperties-actionpanel-submitbutton" style="float:right; margin:10px;">
+                            @if ((UserElevationLevel == 0) || ((SelectedIssue.ASSIGNEEGUID != UserLoggedIn.GUID) && (SelectedIssue.ASSIGNEEGUID != "") && (!UserLoggedIn.isSysAdmin) && (SelectedIssue.GUID != "e8bdae6c-24e7-41b8-b036-f96212fe88d1")))
+                            {
+                                <button onclick="document.getElementById('elevationwarning-noperms').hidden = false; setTimeout(() => {document.getElementById('elevationwarning-noperms').hidden = true;},2000)">Save Changes</button>
+                            }
+                            else
+                            {
+                                <button onclick="UpdateIssue()">Save Changes</button>
+                            }
+                        </span>
+                        <select id="MarkAssignee" style="float:right; margin:10px;">
+                            @if (UserLoggedIn.GUID == SelectedIssue.ASSIGNEEGUID)
+                            {
+                                <option value="">Unassigned</option>
+                                <option value="@UserLoggedIn.GUID" selected>Assigned to You</option>
+                            }
+                            else if ((SelectedIssue.ASSIGNEEGUID == "") || (SelectedIssue.ASSIGNEEGUID == null))
+                            {
+                                <option value="" selected>Unassigned</option>
+                                <option value="@UserLoggedIn.GUID">Assign yourself</option>
+                            }
+                            else
+                            {
+                                @if ((UserLoggedIn.isSysAdmin) && (SelectedIssue.GUID != "e8bdae6c-24e7-41b8-b036-f96212fe88d1"))
+                                {
+                                    <option value="">Force Unassignment</option>
+                                }
+                                <option value="@SelectedIssue.ASSIGNEEGUID" disabled selected>Assigned to <br />@IssueAssignee?.Email.Split("@").First().Replace(".", " ")</option>
+                            }
+                        </select>
+                        <select id="MarkStatus" style="float:right; margin:10px;">
+                            @if (SelectedIssue.STATUS == "OPEN")
+                            {
+                                <option selected value="OPEN"> Mark as Open</option>
+                            }
+                            else
+                            {
+                                <option value="OPEN"> Mark as Open</option>
+                            }
+
+
+                            @if (SelectedIssue.STATUS == "CLOSED")
+                            {
+                                <option selected value="CLOSED">Mark as Closed</option>
+                            }
+                            else
+                            {
+                                <option value="CLOSED">Mark as Closed</option>
+                            }
+                            @if (SelectedIssue.STATUS == "PENDING")
+                            {
+                                <option selected value="PENDING">Mark as Pending</option>
+                            }
+                            else
+                            {
+                                <option value="PENDING">Mark as Pending</option>
+                            }
+                        </select>
+                        <span style="font-size:18px; float:right; margin:10px;">Issue Options:  </span>
+                    </div>
+                </td>
+        </tr>
         <tr>
             <td class="issueproperties-panel">
                 <h1>#@SelectedIssue.ID - @SelectedIssue.DISPLAYTEXT</h1>
@@ -173,69 +239,6 @@
                     <textarea id="issue-description"class="issueproperties-description" rows="5" cols="50" disabled>@SelectedIssue.DESCRIPTION</textarea>
                 </div>
             </td>
-            <td rowspan="2" class="issueproperties-actionpanel">
-                    <div class="issueproperties-actionpanel-title">
-                    <h4>Edit Issue</h4>
-                </div>
-                    <div class="issueproperties-actionpanel-statuscontrol">
-                     <select id="MarkStatus">
-                        @if (SelectedIssue.STATUS == "OPEN") {
-                            <option selected value="OPEN"> Mark as Open</option>
-                        }
-                        else
-                        {
-                            <option value="OPEN"> Mark as Open</option>
-                        }
-
-
-                        @if (SelectedIssue.STATUS == "CLOSED")
-                        {
-                            <option selected value="CLOSED">Mark as Closed</option>
-                        }
-                        else
-                        {
-                            <option value="CLOSED">Mark as Closed</option>
-                        }
-                        @if (SelectedIssue.STATUS == "PENDING")
-                        {
-                            <option selected value="PENDING">Mark as Pending</option>
-                        }
-                        else
-                        {
-                            <option value="PENDING">Mark as Pending</option>
-                        }
-                    </select>
-                </div>
-                <div>
-                    <select id="MarkAssignee">
-                            @if (UserLoggedIn.GUID == SelectedIssue.ASSIGNEEGUID)
-                            {
-                                <option value="">Unassigned</option>
-                                <option value="@UserLoggedIn.GUID" selected>Assigned to You</option>
-                            } else if ((SelectedIssue.ASSIGNEEGUID == "")|| (SelectedIssue.ASSIGNEEGUID == null))
-                            {
-                                <option value="" selected>Unassigned</option>
-                                <option value="@UserLoggedIn.GUID">Assign yourself</option>
-                            } else {
-                                @if (UserLoggedIn.isSysAdmin)
-                                {
-                                    <option value="">Force Unassignment</option>
-                                }
-                                <option value="@SelectedIssue.ASSIGNEEGUID" disabled selected>Assigned to <br/>@IssueAssignee?.Email.Split("@").First().Replace(".", " ")</option>
-                            }
-                    </select>
-                </div>
-                    <div class="issueproperties-actionpanel-submitbutton">
-                        @if ((UserElevationLevel == 0) || ((SelectedIssue.ASSIGNEEGUID != UserLoggedIn.GUID) && (SelectedIssue.ASSIGNEEGUID != "") && (!UserLoggedIn.isSysAdmin)))
-                        {
-                            <button onclick="document.getElementById('elevationwarning-noperms').hidden = false; setTimeout(() => {document.getElementById('elevationwarning-noperms').hidden = true;},2000)">Save Changes</button>
-                        }
-                        else
-                        {
-                            <button onclick="UpdateIssue()">Save Changes</button>
-                        }
-                </div>
-            </td>
         </tr>
         <tr>
             <td class="issueproperties-commentspanel">
@@ -261,11 +264,21 @@
                                 @for (int i =0; i!= Comments.Length; i++)
                                 {
                                     <tr><td>
-                                        <div style="background-color:#fafafa; margin:10px;">
+                                        <div style="background-color:#f6f6f6; margin:10px;">
                                             <script>console.log("@Comments[i].IssueGUID")</script>
-                                                <span style="font-weight:bold">@if (dbman.Fetch.User(Comments[i].OwnerGUID).isHelpDesk) {<span style="background-color:#ffff00;display:inline-block;text-align:center;width:100px;border-radius:25px"> HelpDesk </span>} 
-                                                else if (dbman.Fetch.User(Comments[i].OwnerGUID).isSysAdmin) {<span style="background-color:#ff2f00;display:inline-block;width:100px;text-align:center;border-radius:25px">Admin </span>}
-                                                @dbman.Fetch.User(Comments[i].OwnerGUID).Email @@ @Comments[i].Timestamp.ToLongDateString() @Comments[i].Timestamp.ToLongTimeString()</span>
+                                                <span style="font-weight:bold">
+                                                @{UserProfile owner = dbman.Fetch.User(Comments[i].OwnerGUID);}
+                                                    @if (owner.GUID == "aef9cf1f-f0a5-4294-9ce8-5056d580b128") {<span class="systemtag">System</span>}
+                                                    else if (owner.GUID == "0d568878-35c7-4307-b0b9-5f0629de016a") {<span class="devtag">Developer</span>}
+                                                    else if (owner.GUID == "22b681aa-ceea-4028-b2b5-e39451ca3f8d")
+                                                    {
+                                                        <span class="spencer">Spencer</span>
+                                                    }
+                                                    else if (owner.isSysAdmin) {<span class="admintag">Admin</span>}
+                                                    else if (owner.isHelpDesk) {<span class="helpdesktag">Help Desk</span>}
+                                                    
+                                                    
+                                                    @dbman.Fetch.User(Comments[i].OwnerGUID).Email @@ @Comments[i].Timestamp.ToLongDateString() @Comments[i].Timestamp.ToLongTimeString()</span>
                                                 <p>@Comments[i].MessageContent</p>
                                         </div>
                                     </td></tr>

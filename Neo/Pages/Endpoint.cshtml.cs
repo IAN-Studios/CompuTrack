@@ -48,20 +48,20 @@ namespace CompuTrack.Pages
         /* 
          *  Issue Creation Overloads for client-called functions.
          */
-        public IActionResult OnPostCreateIssue_wRoomNum(string STATUS, string ASSETTAG, string DISPLAYTEXT, string DESCRIPTION, string USERGUID, string ROOMNUM) 
+        public IActionResult OnPostCreateIssue_wRoomNum(string STATUS, int ASSETTAG, string DISPLAYTEXT, string DESCRIPTION, string USERGUID, string ROOMNUM) 
         {
 			string GUID = Guid.NewGuid().ToString();
             DateTime CREATIONDATE = DateTime.Now;
 
-			dbman.Insert.Issue_New_withRoomNum(GUID, STATUS, int.Parse(ASSETTAG), DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE, ROOMNUM);
+			dbman.Insert.Issue_New_withRoomNum(GUID, STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE, ROOMNUM);
             return new JsonResult(ServerResponse.Templates.ACCEPTED);
         }
-        public IActionResult OnPostCreateIssue(string STATUS, string ASSETTAG, string DISPLAYTEXT, string DESCRIPTION, string USERGUID) 
+        public IActionResult OnPostCreateIssue(string STATUS, int ASSETTAG, string DISPLAYTEXT, string DESCRIPTION, string USERGUID) 
         {
             string GUID = Guid.NewGuid().ToString();
 			DateTime CREATIONDATE = DateTime.Now;
 
-			dbman.Insert.Issue_New(GUID, STATUS, int.Parse(ASSETTAG), DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE);
+			dbman.Insert.Issue_New(GUID, STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE);
 			return new JsonResult(ServerResponse.Templates.ACCEPTED);
         }
     }

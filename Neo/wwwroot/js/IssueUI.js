@@ -11,12 +11,15 @@ function submitNewIssueWithRoomNum(AssetTag, RoomNum, Title, Description) {
 			},
 			success: function (result) {
 				console.log(result)
+				location.href = "/issues"
 			},
 			failure: function (response) {
 				console.warn(response.responseText);
+				alert("FAILURE: GENERAL FAILURE.")
 			},
 			error: function (response) {
 				console.error(response.responseText);
+				alert("error occured")
 			}
 		});
 		//fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
@@ -160,7 +163,6 @@ function ChangeCenterSelection(newselection) {
 		}
 
 	} else if (newselection.id == "Issues_New") {
-		var newForm = document.createElement("form");
 
 		var subhead = document.createElement('h5');
 		subhead.innerHTML ="Please provide a 6 digit asset tag and a room number (eg. 105, 314, G10)"
@@ -244,10 +246,7 @@ function ChangeCenterSelection(newselection) {
 		issuesubmitfooter.append(submitbutton);
 
 
-
-
-		newForm.append(titletext, assettagholder, roomnumholder, issuettitlecontainer, issuedescriptioncont, issuesubmitfooter);
-		document.getElementById("issues-table-content-container").appendChild(newForm);
+		document.getElementById("issues-table-content-container").append(titletext, assettagholder, roomnumholder, issuettitlecontainer, issuedescriptioncont, issuesubmitfooter);
 	}
 }
 

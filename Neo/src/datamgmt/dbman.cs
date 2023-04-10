@@ -26,7 +26,7 @@ namespace CompuTrack.src.datamgmt
 
         public static class Insert
         {
-            public static void Issue_New(String GUID, String STATUS, int ASSETTAG, String DISPLAYTEXT, String DESCRIPTION, string USERGUID, DateTime CREATIONDATE)
+            public static void Issue_New(string GUID, string STATUS, int ASSETTAG, string DISPLAYTEXT, string DESCRIPTION, string USERGUID, DateTime CREATIONDATE)
             {
                 Server.app.Logger.LogWarning("WARNING: Database Data Modification Detected.");
                 OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
@@ -44,12 +44,12 @@ namespace CompuTrack.src.datamgmt
                     Console.WriteLine(e);
                 }
             }
-			public static void Issue_New_withRoomNum(String GUID, String STATUS, int ASSETTAG, String DISPLAYTEXT, String DESCRIPTION, string USERGUID, DateTime CREATIONDATE, string RoomNum)
+			public static void Issue_New_withRoomNum(string GUID, string STATUS, int ASSETTAG, string DISPLAYTEXT, string DESCRIPTION, string USERGUID, DateTime CREATIONDATE, string RoomNum)
 			{
 				Server.app.Logger.LogWarning("WARNING: Database Data Modification Detected.");
 				OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
 				string Query = String.Format("INSERT INTO Issues ([GUID], STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE, Roomnum)\nVALUES(\"{0}\", \"{1}\", {2}, \"{3}\", \"{4}\", \"{5}\", \"{6}-{7}-{8} {9}:{10}:{11}\",\"{12}\");", GUID, STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE.Year, CREATIONDATE.Month, CREATIONDATE.Day, CREATIONDATE.Hour, CREATIONDATE.Minute, CREATIONDATE.Second, RoomNum);
-				OleDbCommand command = new OleDbCommand(Query, Connection);
+                OleDbCommand command = new OleDbCommand(Query, Connection);
 				try
 				{
 					Connection.Open();
