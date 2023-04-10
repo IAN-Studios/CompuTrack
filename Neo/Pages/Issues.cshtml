@@ -8,13 +8,20 @@
 @using System.Web;
 @using CompuTrack.src.Client;
 @using Microsoft.JSInterop;
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery antiforgery
+@{
+	var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
+}
 @{
 	ViewData["Title"] = "Issue Center - CompuTrack";
+	@Html.AntiForgeryToken()
 }
 <head>
 	<link rel="stylesheet" href="/css/pages/Issues.css"/>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<script>const userguid = "@Html.Raw(HttpUtility.JavaScriptStringEncode(dbman.Fetch.User_ByEmail(User.Identity.Name).GUID))"</script>
 </head>
-<script type="text/javascript" src="/js/IssueUI.js"></script>
 @{
 	// Fetches ALL Issues
 	Issue[] IssueList = dbman.Fetch.Issues();
@@ -32,8 +39,10 @@
 
 <!-- Convert C# Data to JS. Client Side, You should only see the JS, no C#.-->
 <script>
-	@{UserProfile UsrProf = dbman.Fetch.User_ByEmail(User.Identity.Name);}
-	var issueList = new Array();
+	@{
+		UserProfile UsrProf = dbman.Fetch.User_ByEmail(User.Identity.Name);
+	}
+			var issueList = new Array();
 	var UsrProf = new UserProfile("@UsrProf.Email", "@UsrProf.GUID", "@UsrProf.isHelpDesk", "@UsrProf.isSysAdmin")
 </script>
 	@for (int i = 0; i != IssueList.Length; i++)
@@ -53,6 +62,7 @@
 		</script>
 	}
 
+<script type="text/javascript" src="/js/IssueUI.js"></script>
 
 
 <!-- HTML Time baby!-->
@@ -83,7 +93,7 @@
 						{
 							<table>
 								<thead>
-
+									<th></th>
 								</thead>
 								<tbody>
 									<!--
@@ -92,13 +102,13 @@
 										Issue isue = IssueList[i];
 										<tr>
 											@if (isue.STATUS == "CLOSED") {
-												<td><img src="~/assets/images/issue-green.png" width="25" height="25" /></td>
+												<td><img src="~/assets/images/issue-green.png" width="50" height="50" /></td>
 											} else if (isue.STATUS == "PENDING")
 											{
-												<td><img src="~/assets/images/issue-yellow.png" width="25" height="25" /></td>
+												<td><img src="~/assets/images/issue-yellow.png" width="50" height="50" /></td>
 											} else
 											{
-												<td><img src="~/assets/images/issue-red.png" width="25" height="25" /></td>
+												<td><img src="~/assets/images/issue-red.png" width="50" height="50" /></td>
 											}
 											<td>#@isue.ID</td>
 											<td class="">@isue.DISPLAYTEXT</td>

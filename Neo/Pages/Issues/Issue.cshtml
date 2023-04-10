@@ -4,46 +4,223 @@
 @using CompuTrack.src.datamgmt;
 @using System.Xml;
 @using System;
+@using Microsoft.AspNetCore.Antiforgery
+@using System.Web;
+@inject IAntiforgery antiforgery
 @{
+    var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
 
-    XmlDocument deeta = dbman.FetchData("DB1", "SELECT Issues.*\nFROM Issues;", 9, "ISSUELIST");
-    List<Issue> IssueList = new List<Issue>();
-    for (int i = 0; i != deeta.ChildNodes[0]?.ChildNodes.Count; i++)
-    {
-        XmlNode issueXML = deeta.ChildNodes[0].ChildNodes[i];
-        IssueList.Add(new Issue((ulong)int.Parse(issueXML.ChildNodes[0].InnerText), issueXML.ChildNodes[1].InnerText, issueXML.ChildNodes[2].InnerText, int.Parse(issueXML.ChildNodes[3].InnerText), issueXML.ChildNodes[4].InnerText, issueXML.ChildNodes[5].InnerText, issueXML.ChildNodes[6].InnerText, DateTime.Parse(issueXML.ChildNodes[7].InnerText)));
-    }
-    Predicate<Issue> finder = s => (s.GUID == Request.Query["IssueID"]);
-
-    Issue SelectedIssue = IssueList.Find(finder);
-    ViewData["Title"] = $"Computrack - #{SelectedIssue.ID}";
-
-    UserProfile IssueCreator = dbman.Fetch.User(SelectedIssue.USERGUID);
+    @Html.AntiForgeryToken();
 }
+@{
+    int noIssue = 0;
+    Issue[] deeta = dbman.Fetch.Issues();
+    List<Issue> IssueList = deeta.ToList<Issue>();
+    UserProfile UserLoggedIn = dbman.Fetch.User_ByEmail(User.Identity.Name);
+
+    //for (int i = 0; i != deeta.ChildNodes[0]?.ChildNodes.Count; i++)
+    //{
+    //    XmlNode issueXML = deeta.ChildNodes[0].ChildNodes[i];
+    //    IssueList.Add(new Issue((ulong)int.Parse(issueXML.ChildNodes[0].InnerText), issueXML.ChildNodes[1].InnerText, issueXML.ChildNodes[2].InnerText, int.Parse(issueXML.ChildNodes[3].InnerText), issueXML.ChildNodes[4].InnerText, issueXML.ChildNodes[5].InnerText, issueXML.ChildNodes[6].InnerText, DateTime.Parse(issueXML.ChildNodes[7].InnerText)));
+    //}
+    Predicate<Issue> finder = s => (s.GUID == Request.Query["IssueID"]);
+    Issue SelectedIssue = IssueList.Find(finder);
+    try
+    {
+        var e = SelectedIssue.ID;
+    } catch
+    {
+        noIssue = 1;
+    }
+
+    Comment[] Comments = dbman.Fetch.Comments(SelectedIssue.GUID);
+    UserProfile IssueAssignee;
+    try
+    {
+        IssueAssignee = dbman.Fetch.User(SelectedIssue.ASSIGNEEGUID);
+    } catch
+    {
+        IssueAssignee = new UserProfile(" ", " ", false, false);
+        Console.WriteLine("Issue not Assigned.");
+    }
+
+
+}
+<script>
+    var issGUID = "@Html.Raw(HttpUtility.JavaScriptStringEncode(SelectedIssue.GUID))";
+    var usrGUID = "@Html.Raw(HttpUtility.JavaScriptStringEncode(UserLoggedIn.GUID))";
+    var usrEMAIL = "@Html.Raw(HttpUtility.JavaScriptStringEncode(UserLoggedIn.Email))";
+    var asigneeguid = "@Html.Raw(HttpUtility.JavaScriptStringEncode(SelectedIssue.ASSIGNEEGUID))";
+</script>
 <head>
-	<script src="/js/Issue.js"></script>
+	<script>
+        function UpdateIssue() {
+            $.ajax({
+                type: "post",
+                url: "/Endpoint?handler=UpdateIssue",
+                dataType: "json",
+                data: {
+                    "IssueGUID": issGUID,
+                    "STATUS": document.getElementById("MarkStatus").options[document.getElementById("MarkStatus").selectedIndex].value,
+                    "AssigneeGUID": document.getElementById("MarkAssignee").options[document.getElementById("MarkAssignee").selectedIndex].value
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (result) {
+                    console.log(result);
+                    location.reload();
+                },
+                failure: function (response) {
+                    console.warn(response.responseText);
+                    location.reload();
+                },
+                error: function (response) {
+                    console.error(response.responseText);
+                    location.reload();
+                }
+            });
+        }
+        function CreateComment() {
+            $.ajax({
+                type: "post",
+                url: "/Endpoint?handler=CreateComment",
+                dataType: "json",
+                data: {
+                    "IssueGUID": issGUID,
+                    "OwnerGUID": usrGUID,
+                    "Content": document.getElementById("IssueCommentAddArea").value
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                success: function (result) {
+                    console.log(result);
+                    location.reload();
+                },
+                failure: function (response) {
+                    console.warn(response.responseText);
+                    location.reload();
+                },
+                error: function (response) {
+                    console.error(response.responseText);
+                    location.reload();
+                }
+            });
+        }
+    </script>
     <link rel="stylesheet" href="/css/pages/Issue.css" />
 </head>
 
+@if (noIssue == 1)
+{
+    <p>ERR 3u321fg6B: Issue data corrupted. Contact your System Administrator with the following information:</p>
+    <code>ERR3u321fg6B@@@Html.Raw(DateTime.Now.ToLongDateString() + "@" + DateTime.Now.ToLongTimeString());</code>
+    <code>Usr[@User.Identity.Name],isAuthenticated=@User.Identity.IsAuthenticated;</code>
+    <code>URLRequest=(@Request.Protocol,@Request.Method,@Request.Host@Request.Path@Request.QueryString)</code>
+    <code><br /><br/>Have A Nice Day!<br/></code>
+    <br />
+    <button onclick="navigator.clipboard.writeText(`RR3u321fg6B@@@Html.Raw(DateTime.Now.ToLongDateString() + "@" + DateTime.Now.ToLongTimeString()),Usr[@User.Identity.Name],isAuthenticated=@User.Identity.IsAuthenticated,URLRequest=(@Request.Protocol,@Request.Method,@Request.Host@Request.Path@Request.QueryString)`)">Copy Error Data to Clipboard</button>
+    <a href="/"><br/>Click here to return to normality</a>
+} else
+{
+    ViewData["Title"] = $"Computrack - #{SelectedIssue.ID}";
+    UserProfile IssueCreator = dbman.Fetch.User(SelectedIssue.USERGUID);
+    int UserElevationLevel = 0;
+    if (UserLoggedIn.isHelpDesk == true) UserElevationLevel = 1;
+    if (UserLoggedIn.GUID == SelectedIssue.USERGUID) UserElevationLevel = 2;
+    if (UserLoggedIn.isSysAdmin == true) UserElevationLevel = 3;
 
-<a href="/Issues">Back to Issue List</a>
+
+
 <br/>
+<div class="issueproperties-noelevation" id="elevationwarning-noperms" hidden>You must be logged in with elevated permissions to make changes to this Issue.</div>
+<div class="issueproperties-noelevation" id="elevationwarning-noadminperms" hidden>You must be logged in with administrative privlidges to make changes to this Issue.</div>
+
 <table class="issueproperties-table">
     <tbody>
+        <tr>
+                <td class="issueproperties-actionpanel">
+                    <div class="issueproperties-actionpanel-statuscontrol">
+                        <a href="/Issues" style="float:left; font-size:18px; margin:10px;">&lt;= Back to Issue List</a>
+                        <span class="issueproperties-actionpanel-submitbutton" style="float:right; margin:10px;">
+                            @if ((UserElevationLevel == 0) || ((SelectedIssue.ASSIGNEEGUID != UserLoggedIn.GUID) && (SelectedIssue.ASSIGNEEGUID != "") && (!UserLoggedIn.isSysAdmin) && (SelectedIssue.GUID != "e8bdae6c-24e7-41b8-b036-f96212fe88d1")))
+                            {
+                                <button onclick="document.getElementById('elevationwarning-noperms').hidden = false; setTimeout(() => {document.getElementById('elevationwarning-noperms').hidden = true;},2000)">Save Changes</button>
+                            }
+                            else
+                            {
+                                <button onclick="UpdateIssue()">Save Changes</button>
+                            }
+                        </span>
+                        <select id="MarkAssignee" style="float:right; margin:10px;">
+                            @if (UserLoggedIn.GUID == SelectedIssue.ASSIGNEEGUID)
+                            {
+                                <option value="">Unassigned</option>
+                                <option value="@UserLoggedIn.GUID" selected>Assigned to You</option>
+                            }
+                            else if ((SelectedIssue.ASSIGNEEGUID == "") || (SelectedIssue.ASSIGNEEGUID == null))
+                            {
+                                <option value="" selected>Unassigned</option>
+                                <option value="@UserLoggedIn.GUID">Assign yourself</option>
+                            }
+                            else
+                            {
+                                @if ((UserLoggedIn.isSysAdmin) && (SelectedIssue.GUID != "e8bdae6c-24e7-41b8-b036-f96212fe88d1"))
+                                {
+                                    <option value="">Force Unassignment</option>
+                                }
+                                <option value="@SelectedIssue.ASSIGNEEGUID" disabled selected>Assigned to <br />@IssueAssignee?.Email.Split("@").First().Replace(".", " ")</option>
+                            }
+                        </select>
+                        <select id="MarkStatus" style="float:right; margin:10px;">
+                            @if (SelectedIssue.STATUS == "OPEN")
+                            {
+                                <option selected value="OPEN"> Mark as Open</option>
+                            }
+                            else
+                            {
+                                <option value="OPEN"> Mark as Open</option>
+                            }
+
+
+                            @if (SelectedIssue.STATUS == "CLOSED")
+                            {
+                                <option selected value="CLOSED">Mark as Closed</option>
+                            }
+                            else
+                            {
+                                <option value="CLOSED">Mark as Closed</option>
+                            }
+                            @if (SelectedIssue.STATUS == "PENDING")
+                            {
+                                <option selected value="PENDING">Mark as Pending</option>
+                            }
+                            else
+                            {
+                                <option value="PENDING">Mark as Pending</option>
+                            }
+                        </select>
+                        <span style="font-size:18px; float:right; margin:10px;">Issue Options:  </span>
+                    </div>
+                </td>
+        </tr>
         <tr>
             <td class="issueproperties-panel">
                 <h1>#@SelectedIssue.ID - @SelectedIssue.DISPLAYTEXT</h1>
                 @if (SelectedIssue.STATUS == "OPEN")
                 {
-                    <h5 class="issue-status-tag red"> OPEN    </h5>
+                    <h5 class="issue-status-tag red">OPEN</h5>
                 }
                 else if (SelectedIssue.STATUS == "CLOSED")
                 {
-                    <h5 class="issue-status-tag green">   CLOSED    </h5>
+                    <h5 class="issue-status-tag green">CLOSED</h5>
                 }
                 else
                 {
-                    <h5 class="issue-status-tag yellow">   PENDING    </h5>
+                    <h5 class="issue-status-tag yellow">PENDING</h5>
                 }
                 <div>
                     <span class="noselect">Created: <code class="selectable">@SelectedIssue.CREATIONDATE.ToLongDateString() @@ @SelectedIssue.CREATIONDATE.ToLongTimeString()</code></span>
@@ -52,6 +229,8 @@
                 </div>
                 <div>
                     <span class="noselect">Asset Tag: <code style="user-select:all">@SelectedIssue.ASSETTAG</code></span>
+                    <br/>
+                    <span class="noselect">Room Num: <code style="user-select:all">@SelectedIssue.ROOMNUM</code></span>
                 </div>
                 <br />
                 <div>
@@ -60,17 +239,58 @@
                     <textarea id="issue-description"class="issueproperties-description" rows="5" cols="50" disabled>@SelectedIssue.DESCRIPTION</textarea>
                 </div>
             </td>
-            <td rowspan="2" class="issueproperties-actionpanel">
-
-            </td>
         </tr>
         <tr>
             <td class="issueproperties-commentspanel">
                 <div>
-                    <h1 class="issueproperties-commentspanel-title">Comments</h1>
-
+                    <h2 class="issueproperties-commentspanel-title">Comments</h2>
+                    <table style="width:100%">
+                        <thead>
+                            <th>
+                                <div class="issueproperties-commentspanel-addcommentbutton" onclick="this.hidden = true; document.getElementById('IssueCommentsAdd').hidden = false;">
+                                    + Add a comment...
+                                 </div>
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr id="IssueCommentsAdd" hidden><td>
+                                <div>
+                                    <textarea id="IssueCommentAddArea"style="width:100%; height:50px; resize:none" rows="2"></textarea>
+                                    <button style="width:8%; float:right;" onclick="CreateComment()">
+                                        Submit
+                                    </button>
+                                </div>
+                            </td></tr>
+                                @for (int i =0; i!= Comments.Length; i++)
+                                {
+                                    <tr><td>
+                                        <div style="background-color:#f6f6f6; margin:10px;">
+                                            <script>console.log("@Comments[i].IssueGUID")</script>
+                                                <span style="font-weight:bold">
+                                                @{UserProfile owner = dbman.Fetch.User(Comments[i].OwnerGUID);}
+                                                    @if (owner.GUID == "aef9cf1f-f0a5-4294-9ce8-5056d580b128") {<span class="systemtag">System</span>}
+                                                    else if (owner.GUID == "0d568878-35c7-4307-b0b9-5f0629de016a") {<span class="devtag">Developer</span>}
+                                                    else if (owner.GUID == "22b681aa-ceea-4028-b2b5-e39451ca3f8d")
+                                                    {
+                                                        <span class="spencer">Spencer</span>
+                                                    }
+                                                    else if (owner.isSysAdmin) {<span class="admintag">Admin</span>}
+                                                    else if (owner.isHelpDesk) {<span class="helpdesktag">Help Desk</span>}
+                                                    
+                                                    
+                                                    @dbman.Fetch.User(Comments[i].OwnerGUID).Email @@ @Comments[i].Timestamp.ToLongDateString() @Comments[i].Timestamp.ToLongTimeString()</span>
+                                                <p>@Comments[i].MessageContent</p>
+                                        </div>
+                                    </td></tr>
+                                }
+                            </tbody>
+                    </table>
                 </div>
             </td>
         </tr>
     </tbody>
 </table>
+}
+<script>
+    document.getElementById("IssueCommentsAdd").onkeydown = function (e) { if (e.keyCode == 13 && !e.shiftKey) { e.preventDefault(); } }
+</script>

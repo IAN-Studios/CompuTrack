@@ -35,6 +35,9 @@
 
 .issueproperties-actionpanel {
     width: 20%;
+    text-align:center;
+    vertical-align:top;
+    margin:10px;
 }
 .issueproperties-
 .issueproperties-commentspanel-title {
@@ -43,8 +46,65 @@
     vertical-align:top
 }
 
-
+.issueproperties-noelevation {
+    border:2px solid red;
+    background-color:#e9666e;
+    margin:10px;
+    color:black;
+    font-weight:bold;
+}
 /* Tempory Table Border for development*/
 table, th, td {
-    border: 1px solid black;
+}
+
+.issueproperties-commentspanel-addcommentbutton {
+    select: none;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border: 2px dashed black;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.admintag {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #ff0000;
+    color: white
+}
+.helpdesktag {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #ff0;
+    color: black
+}
+.devtag {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #0040ff;
+    color:white
+}
+.spencer {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #00ff00;
+    color: white
+}
+.systemtag {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0px 0px 1px 3px #000;
+    color: black;
 }

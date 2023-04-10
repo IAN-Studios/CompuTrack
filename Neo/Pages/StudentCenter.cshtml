@@ -1,4 +1,99 @@
 ﻿@page
 @model CompuTrack.Pages.StudentCenterModel
+@using CompuTrack.DataTypes;
+@using CompuTrack.src.datamgmt;
 @{
+    ViewData["Title"] = "CompuTrack - Student Center";
+    Issue[] IssueList = dbman.Fetch.Issues();
+    UserProfile UserLoggedIn = dbman.Fetch.User_ByEmail(User.Identity.Name);
 }
+
+<head>
+    <style>
+        .tablestuff {
+            width:100%;
+
+        }
+        .tableholders {
+            width: 100%;
+            max-height: 300px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        .right {
+            float:right;
+            margin-right:5px;
+        }
+        .center {
+            text-align:center;
+        }
+        .issue {
+
+        }
+        .issue:hover {
+            background-color:#cccccc;
+        }
+        .icon {
+            width:40px;
+        }
+        .nosel {
+            user-select:none;
+            font-size:20px;
+        }
+    </style>
+</head>
+
+
+
+<div>
+    <h3>Assigned to you</h3>
+    <div class="tableholders">
+        <table class="tablestuff">
+            <thead>
+            <th></th>
+            <th class="center">ID</th>
+            <th>Title</th>
+            <th class="right">Date</th>
+            </thead>
+            <tbody>
+                @for (int i = 0; i != IssueList.Length; i++)
+                {
+                    if ((IssueList[i].ASSIGNEEGUID == UserLoggedIn.GUID) && (IssueList[i].STATUS == "OPEN"))
+                    {
+                        <tr class="issue" onclick="window.location.href = '/Issues/Issue?IssueID=@IssueList[i].GUID'">
+                            <td class="right icon nosel"><img width="32" height="32" src="~/assets/images/issue-red.png" /></td>
+                            <td class="center nosel">#@IssueList[i].ID</td>
+                            <td class="nosel">@IssueList[i].DISPLAYTEXT</td>
+                            <td class="right nosel">@IssueList[i].CREATIONDATE.ToLongDateString() @@ @IssueList[i].CREATIONDATE.ToLongTimeString()</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <h3>Your Closed Issues</h3>
+    <div class="tableholders">
+        <table class="tablestuff">
+            <thead>
+            <th></th>
+            <th class="center">ID</th>
+            <th>Title</th>
+            <th class="right">Date</th>
+            </thead>
+            <tbody>
+                @for (int i = 0; i != IssueList.Length; i++)
+                {
+                    if ((IssueList[i].ASSIGNEEGUID == UserLoggedIn.GUID) && (IssueList[i].STATUS == "CLOSED"))
+                    {
+                        <tr class="issue" onclick="window.location.href = '/Issues/Issue?IssueID=@IssueList[i].GUID'">
+                            <td class="right icon nosel"><img width="32" height="32" src="~/assets/images/checkmark-green.png" /></td>
+                            <td class="center nosel">#@IssueList[i].ID</td>
+                            <td class="nosel">@IssueList[i].DISPLAYTEXT</td>
+                            <td class="right nosel">@IssueList[i].CREATIONDATE.ToLongDateString() @@ @IssueList[i].CREATIONDATE.ToLongTimeString()</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

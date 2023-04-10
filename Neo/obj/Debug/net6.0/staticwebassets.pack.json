@@ -69,6 +69,18 @@
       "PackagePath": "staticwebassets\\assets\\images\\CompuTrack_NEO_Banner.png"
     },
     {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\checkmark-blue.png",
+      "PackagePath": "staticwebassets\\assets\\images\\checkmark-blue.png"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\checkmark-green.png",
+      "PackagePath": "staticwebassets\\assets\\images\\checkmark-green.png"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\checkmark.png",
+      "PackagePath": "staticwebassets\\assets\\images\\checkmark.png"
+    },
+    {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\images\\issue-blue.png",
       "PackagePath": "staticwebassets\\assets\\images\\issue-blue.png"
     },
@@ -135,6 +147,10 @@
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\Warning-generic.psd",
       "PackagePath": "staticwebassets\\assets\\photoshop\\Warning-generic.psd"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\checkmark.psd",
+      "PackagePath": "staticwebassets\\assets\\photoshop\\checkmark.psd"
     },
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\assets\\photoshop\\computrack-neo.xcf",
@@ -211,6 +227,10 @@
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\explorer.js",
       "PackagePath": "staticwebassets\\js\\explorer.js"
+    },
+    {
+      "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\jquery.js",
+      "PackagePath": "staticwebassets\\js\\jquery.js"
     },
     {
       "Id": "C:\\Projects\\src\\jcps\\CompuTrack\\Neo\\wwwroot\\js\\site.js",

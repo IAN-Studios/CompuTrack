@@ -1,11 +1,61 @@
 ﻿``
+function submitNewIssueWithRoomNum(AssetTag, RoomNum, Title, Description) {
+		$.ajax({
+			type: "post",
+			url: "/Endpoint?handler=CreateIssue_WRoomNum",
+			dataType: "json",
+			data: { "STATUS": "OPEN", "ASSETTAG": AssetTag, "DISPLAYTEXT": Title, "DESCRIPTION": Description, "USERGUID": userguid, "ROOMNUM": RoomNum },
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			},
+			success: function (result) {
+				console.log(result)
+				location.href = "/issues"
+			},
+			failure: function (response) {
+				console.warn(response.responseText);
+				alert("FAILURE: GENERAL FAILURE.")
+			},
+			error: function (response) {
+				console.error(response.responseText);
+				alert("error occured")
+			}
+		});
+		//fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
+		//	Alert("Issue Created Sucessfully. Press OK to Continue.");
+		//	window.location.href = "/Issues"
+		//})
+		return true;
+}
 function submitNewIssue(AssetTag, Title, Description) {
 	if ((AssetTag.length != 6) || (Title == "") || (Description == "")) {
 		console.error("Issue does not meet requirements!");
 		return false;
 	} else {
-		alert("Issue Created Sucessfully. Press OK To Continue.");
-		fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``));
+		$.ajax({
+			type: "post",
+			url: "/Endpoint?handler=CreateIssue",
+			dataType: "json",
+			data: { "STATUS": "OPEN", "ASSETTAG": AssetTag, "DISPLAYTEXT": Title, "DESCRIPTION": Description, "USERGUID": UserProf },
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			},
+			success: function (result) {
+				console.log(result)
+			},
+			failure: function (response) {
+				console.warn(response.responseText);
+			},
+			error: function (response) {
+				console.error(response.responseText);
+			}
+		});
+		//fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
+		//	Alert("Issue Created Sucessfully. Press OK to Continue.");
+		//	window.location.href = "/Issues"
+		//})
 		return true;
 	}
 }
@@ -38,8 +88,8 @@ function ChangeCenterSelection(newselection) {
 
 				var icon = document.createElement("img");
 				if (element.Status == "OPEN") icon.src = "/assets/images/issue-red.png";
-				if (element.Status == "CLOSED") icon.src = "/assets/images/issue-green.png";
-				if (element.Status == "PENDING") icon.src = "/assets/images/issue-yellow.png";
+				if (element.Status == "CLOSED") icon.src = "/assets/images/checkmark-green.png";
+				if (element.Status == "PENDING") icon.src = "/assets/images/warning-yellow.png";
 				icon.height = 20;
 				icon.width = 20;
 
@@ -47,7 +97,6 @@ function ChangeCenterSelection(newselection) {
 				IDtext.innerHTML = `#${element.ID}: `;
 				IDtext.setAttribute("b-pb86f05ye5", "")
 				IDtext.classList.add("issues-table-content", "issues-issue-id")
-				icon.append(IDtext);
 
 				var TitleText = document.createElement("span");
 				TitleText.innerHTML = element.DisplayText;
@@ -59,7 +108,7 @@ function ChangeCenterSelection(newselection) {
 				DateNum.setAttribute("b-pb86f05ye5", "")
 				DateNum.classList.add("issues-table-content", "issues-issue-date")
 
-				container.append(icon, TitleText, DateNum);
+				container.append(icon, IDtext, TitleText, DateNum);
 				container.setAttribute("b-pb86f05ye5", "")
 				document.getElementById("issues-table-content-container").appendChild(container);
 				container.onclick = function () {
@@ -82,8 +131,8 @@ function ChangeCenterSelection(newselection) {
 
 				var icon = document.createElement("img");
 				if (element.Status == "OPEN") icon.src = "/assets/images/issue-red.png";
-				if (element.Status == "CLOSED") icon.src = "/assets/images/issue-green.png";
-				if (element.Status == "PENDING") icon.src = "/assets/images/issue-yellow.png";
+				if (element.Status == "CLOSED") icon.src = "/assets/images/checkmark-green.png";
+				if (element.Status == "PENDING") icon.src = "/assets/images/warning-yellow.png";
 				icon.height = 20;
 				icon.width = 20;
 
@@ -104,7 +153,7 @@ function ChangeCenterSelection(newselection) {
 				DateNum.setAttribute("b-pb86f05ye5", "")
 				DateNum.classList.add("issues-table-content", "issues-issue-date")
 
-				container.append(icon, TitleText, DateNum);
+				container.append(icon, IDtext,TitleText, DateNum);
 				container.setAttribute("b-pb86f05ye5", "")
 				document.getElementById("issues-table-content-container").appendChild(container);
 				container.onclick = function () {
@@ -114,25 +163,40 @@ function ChangeCenterSelection(newselection) {
 		}
 
 	} else if (newselection.id == "Issues_New") {
-		var newForm = document.createElement("form");
 
+		var subhead = document.createElement('h5');
+		subhead.innerHTML ="Please provide a 6 digit asset tag and a room number (eg. 105, 314, G10)"
 		var titletext = document.createElement("div");
 		titletext.innerHTML = "New Issue";
 		titletext.setAttribute("b-pb86f05ye5", "")
 		titletext.style.fontSize = "32px";
-		titletext.append(document.createElement("br"))
+		titletext.append(document.createElement("br"), subhead, document.createElement("br"))
 		titletext.classList.add("issues-table-content");
 
 		var assettagholder = document.createElement("span");
 		assettagholder.innerHTML = "Asset Tag: "
 		assettagholder.setAttribute("b-pb86f05ye5", "")
+
 		var assettaginput = document.createElement("input");
 		assettaginput.type = "number";
 		assettaginput.minlength = "6";
 		assettaginput.maxlength = "6";
-		assettagholder.append(assettaginput);
-		assettagholder.append(document.createElement("br"));
+		assettagholder.append(assettaginput, document.createElement("span").innerHTML = "   ");
 		assettagholder.classList.add("issues-table-content");
+
+
+
+		var roomnumholder = document.createElement('span');
+		roomnumholder.innerHTML = "Room: "
+		roomnumholder.setAttribute("b-pb86f05ye5", "")
+		roomnumholder.classList.add("issues-table-content");
+		var roomnuminput = document.createElement('input');
+		roomnuminput.type = "text";
+		roomnuminput.pattern = "((?:[G]|[g])+(?:[0-9]+))|(?:[0-999]+)"
+		roomnumholder.append(roomnuminput);
+		roomnumholder.append(document.createElement("br"));
+
+
 
 		var issuettitlecontainer = document.createElement("span");
 		issuettitlecontainer.innerHTML = "Issue Title"
@@ -169,7 +233,11 @@ function ChangeCenterSelection(newselection) {
 		submitbutton.type = "submit"
 		submitbutton.setAttribute("b-pb86f05ye5", "")
 		submitbutton.onclick = function () {
-			var submittal = submitNewIssue(assettaginput.value, issueinput.value, issuedesc.value)
+			if (roomnuminput.value == "") {
+				var submittal = submitNewIssue(assettaginput.value, roomnuminput.value, issueinput.value, issuedesc.value)
+			} else {
+				var submittal = submitNewIssueWithRoomNum(assettaginput.value, roomnuminput.value, issueinput.value, issuedesc.value)
+			}
 			if (submittal == false) {
 				alert("Invalid Issue Settings!\nFields must not be blank!\nAsset Tag Must be 6 Digits Long!");
 			} else {
@@ -178,10 +246,7 @@ function ChangeCenterSelection(newselection) {
 		issuesubmitfooter.append(submitbutton);
 
 
-
-
-		newForm.append(titletext, assettagholder, issuettitlecontainer, issuedescriptioncont, issuesubmitfooter);
-		document.getElementById("issues-table-content-container").appendChild(newForm);
+		document.getElementById("issues-table-content-container").append(titletext, assettagholder, roomnumholder, issuettitlecontainer, issuedescriptioncont, issuesubmitfooter);
 	}
 }
 

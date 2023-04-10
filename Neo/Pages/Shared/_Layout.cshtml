@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" src="/js/jquery.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
@@ -10,6 +11,13 @@
     <script href="~/CompuTrack.scripts.js" asp-asp-append-version="true"></script>
     <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
     <link rel="icon" type="image/x-icon" href="~/assets/icons/CompuTrack.ico" />
+    <script>
+        function ConsoleWarn() {
+            console.info('%cDANGER: Leaving Safe Zone!', 'font-size: 40px; color: red;font-weight:bold',)
+            console.info('%cDeveloper Console is normally used by Developers.', 'font-size:20px; font-weight:bold')
+            console.info('%cDO NOT ENTER ANY COMMANDS SOMEONE TELLS YOU TO PASTE INTO HERE', 'font-size:20px; font-weight:bold')
+        };
+    </script>
 </head>
 <!-- This File is brought to you by ASP.NET. ASP.NET, Innovating the Future.-->
 @using System.Xml;
@@ -31,6 +39,7 @@
     } catch (Exception e)
     {
         Console.WriteLine(e);
+        UserLevel = 0;
     }
 }
 <body>
@@ -48,9 +57,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
+                        <!--
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Settings">Settings</a>
                         </li>
+                        -->
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Issues">Issue Center</a>
                         </li>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Runtime.CompilerServices;
 using CompuTrack.src.datamgmt;
 using System.Xml;
+using CompuTrack;
 
 namespace CompuTrack.Pages.Issues
 {
