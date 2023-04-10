@@ -11,7 +11,7 @@ namespace CompuTrack.DataTypes
 		public string STATUS { get; set; }
 		public int ASSETTAG { get; set; }
 			[AllowNull]
-			public int ROOMNUM { get; set; }
+			public string ROOMNUM { get; set; }
 		public string DISPLAYTEXT { get; set; }
 		public string DESCRIPTION { get; set; }
 		public string USERGUID { get; set; }
@@ -54,7 +54,7 @@ namespace CompuTrack.DataTypes
 		}
 		public Issue(ulong Id, string Guid, string Status,
 			int AssetTag, string DisplayText, string Description,
-			string UserGuid, DateTime CreationDate, string AssigneeGUID, bool ForceAssignment, int RoomNumber) : base()
+			string UserGuid, DateTime CreationDate, string AssigneeGUID, bool ForceAssignment, string RoomNumber) : base()
 		{
 			this.ID = Id;
 			this.GUID = Guid;
@@ -70,7 +70,7 @@ namespace CompuTrack.DataTypes
 		}
 		public Issue(ulong Id, string Guid, string Status,
 			int AssetTag, string DisplayText, string Description,
-			string UserGuid, DateTime CreationDate, int RoomNumber) : base()
+			string UserGuid, DateTime CreationDate, string RoomNumber) : base()
 		{
 			this.ID = Id;
 			this.GUID = Guid;
@@ -111,7 +111,7 @@ namespace CompuTrack.DataTypes
 		}
 		public Issue(string Guid, string Status,
 			int AssetTag, string DisplayText, string Description,
-			string UserGuid, DateTime CreationDate, int RoomNumber) : base()
+			string UserGuid, DateTime CreationDate, string RoomNumber) : base()
 		{
 			this.GUID = Guid;
 			this.STATUS = Status;
@@ -138,7 +138,7 @@ namespace CompuTrack.DataTypes
 		}
 		public Issue(string Guid, string Status,
 			int AssetTag, string DisplayText, string Description,
-			string UserGuid, DateTime CreationDate, string AssigneeGUID, bool ForceAssignment, int RoomNumber) : base()
+			string UserGuid, DateTime CreationDate, string AssigneeGUID, bool ForceAssignment, string RoomNumber) : base()
 		{
 			this.GUID = Guid;
 			this.STATUS = Status;

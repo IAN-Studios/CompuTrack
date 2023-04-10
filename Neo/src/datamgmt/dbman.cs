@@ -44,6 +44,44 @@ namespace CompuTrack.src.datamgmt
                     Console.WriteLine(e);
                 }
             }
+			public static void Issue_New_withRoomNum(String GUID, String STATUS, int ASSETTAG, String DISPLAYTEXT, String DESCRIPTION, string USERGUID, DateTime CREATIONDATE, string RoomNum)
+			{
+				Server.app.Logger.LogWarning("WARNING: Database Data Modification Detected.");
+				OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
+				string Query = String.Format("INSERT INTO Issues ([GUID], STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE, Roomnum)\nVALUES(\"{0}\", \"{1}\", {2}, \"{3}\", \"{4}\", \"{5}\", \"{6}-{7}-{8} {9}:{10}:{11}\",\"{12}\");", GUID, STATUS, ASSETTAG, DISPLAYTEXT, DESCRIPTION, USERGUID, CREATIONDATE.Year, CREATIONDATE.Month, CREATIONDATE.Day, CREATIONDATE.Hour, CREATIONDATE.Minute, CREATIONDATE.Second, RoomNum);
+				OleDbCommand command = new OleDbCommand(Query, Connection);
+				try
+				{
+					Connection.Open();
+					command.ExecuteNonQuery();
+					Connection.Close();
+					Server.app.Logger.LogInformation($"Issue Created: {DISPLAYTEXT}");
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+				}
+			}
+
+            public static void Comment_New(string IssueGUID, string OwnerGUID, string MessageContent)
+            {
+                Server.app.Logger.LogWarning("WARNING: Database Data Modification Detected.");
+                OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
+                string Query = String.Format("INSERT INTO Comments (IssueGUID, OwnerGUID, MessageContent, [Timestamp])\nVALUES(\"{0}\",\"{1}\", \"{2}\", \"{3}-{4}-{5} {6}:{7}:{8}\");", IssueGUID, OwnerGUID, MessageContent, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
+                OleDbCommand command = new OleDbCommand(Query, Connection);
+                try
+                {
+                    Connection.Open();
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                    Server.app.Logger.LogInformation($"Comment Created!");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
 
 
 
@@ -54,7 +92,7 @@ namespace CompuTrack.src.datamgmt
 
 
 
-            public static void GUID_New(string UserEmail)
+			public static void GUID_New(string UserEmail)
             {
                 Console.WriteLine("User [" + UserEmail + "] Has no GUID! Generating.....");
                 var UserGUID = Guid.NewGuid();
@@ -86,7 +124,24 @@ namespace CompuTrack.src.datamgmt
 
         public static class Post
         {
-
+            public static void UpdateIssue(string IssueGUID, string STATUS, string AssigneeGUID)
+            {
+                Server.app.Logger.LogWarning("WARNING: Database Data Modification Detected.");
+                OleDbConnection Connection = new OleDbConnection(DB1ConnectionString);
+                string Query = String.Format($"UPDATE Issues\nSET STATUS = \"{STATUS}\", AssigneeGUID = \"{AssigneeGUID}\"\nWHERE GUID = \"{IssueGUID}\";");
+                OleDbCommand command = new OleDbCommand(Query, Connection);
+                try
+                {
+                    Connection.Open();
+                    command.ExecuteNonQuery();
+                    Connection.Close();
+                    Server.app.Logger.LogInformation($"Issue {IssueGUID} Updated");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
         }
 
 
@@ -100,6 +155,34 @@ namespace CompuTrack.src.datamgmt
 
         public static class Fetch
         {
+            public static Comment[] Comments(string IssueGUID)
+            {
+                OleDbConnection connection = new OleDbConnection(DB1ConnectionString);
+                string Query = $"SELECT Comments.OwnerGUID, Comments.IssueGUID, Comments.MessageContent, Comments.Timestamp\nFROM Comments\nWHERE (((Comments.IssueGUID)=\"{IssueGUID}\"))\nORDER By Timestamp desc;";
+                OleDbCommand cmd = new OleDbCommand(Query, connection);
+
+                try
+                {
+                    connection.Open();
+                    OleDbDataReader reader = cmd.ExecuteReader();
+
+                    List<Comment> CommentList = new List<Comment>();
+                    while (reader.Read())
+                    {
+                        CommentList.Add(new Comment((string) reader[1], (string) reader[0], (string) reader[2], (DateTime)reader[3]));
+                    }
+                    reader.Close();
+                    connection.Close();
+
+                    return CommentList.ToArray();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+                return new Comment[] { };
+            }
             public static Issue[] Issues()
             {
                 OleDbConnection connection = new OleDbConnection(DB1ConnectionString);
@@ -114,7 +197,15 @@ namespace CompuTrack.src.datamgmt
                     List<Issue> IssueList = new List<Issue>();
                     while (reader.Read())
                     {
-                        IssueList.Add(new Issue((ulong)(int)reader[0], (string)reader[1], (string)reader[2], (int)reader[3], (string)reader[4], (string)reader[5], (string)reader[6], (DateTime)reader[7]));
+                        string assignmentguid;
+                        if (reader[8] == DBNull.Value)
+                        {
+                            assignmentguid = "";
+                        } else
+                        {
+                            assignmentguid = (string)reader[8];
+                        }
+                        IssueList.Add(new Issue((ulong)(int)reader[0], (string)reader[1], (string)reader[2], (int)reader[3], (string)reader[4], (string)reader[5], (string)reader[6], (DateTime)reader[7],  assignmentguid, (bool)reader[9], (string)reader[10]));
                     }
                     reader.Close();
                     connection.Close();
@@ -192,7 +283,26 @@ namespace CompuTrack.src.datamgmt
 
 
 
+        
 
+
+
+
+
+        /*
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         *          LeGaCY Code ahead!
+         * 
+         * 
+         * 
+         * 
+         * 
+         */
 
         public static XmlDocument FetchData(string Databasenumber, string Query, int QueryColumnCount, string QueryType)
         {
@@ -296,6 +406,7 @@ namespace CompuTrack.src.datamgmt
 
             return Response;
         }
+
     }
 }
 

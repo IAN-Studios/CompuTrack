@@ -35,6 +35,7 @@
 
 .issueproperties-actionpanel {
     width: 20%;
+    text-align:center;
 }
 .issueproperties-
 .issueproperties-commentspanel-title {
@@ -52,5 +53,16 @@
 }
 /* Tempory Table Border for development*/
 table, th, td {
-    border: 1px solid black;
+}
+
+.issueproperties-commentspanel-addcommentbutton {
+    select: none;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border: 2px dashed black;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
 }

@@ -22,6 +22,11 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "Run - DEMO Mode": {
+      "commandName": "Project",
+      "hotReloadEnabled": false,
+      "applicationUrl": "https://DESKTOP-9OC9PDE:443/"
     }
   },
   "iisSettings": {

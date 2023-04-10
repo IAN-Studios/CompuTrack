@@ -1,4 +1,30 @@
 ﻿``
+function submitNewIssueWithRoomNum(AssetTag, RoomNum, Title, Description) {
+		$.ajax({
+			type: "post",
+			url: "/Endpoint?handler=CreateIssue_WRoomNum",
+			dataType: "json",
+			data: { "STATUS": "OPEN", "ASSETTAG": AssetTag, "DISPLAYTEXT": Title, "DESCRIPTION": Description, "USERGUID": userguid, "ROOMNUM": RoomNum },
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			},
+			success: function (result) {
+				console.log(result)
+			},
+			failure: function (response) {
+				console.warn(response.responseText);
+			},
+			error: function (response) {
+				console.error(response.responseText);
+			}
+		});
+		//fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
+		//	Alert("Issue Created Sucessfully. Press OK to Continue.");
+		//	window.location.href = "/Issues"
+		//})
+		return true;
+}
 function submitNewIssue(AssetTag, Title, Description) {
 	if ((AssetTag.length != 6) || (Title == "") || (Description == "")) {
 		console.error("Issue does not meet requirements!");
@@ -6,14 +32,21 @@ function submitNewIssue(AssetTag, Title, Description) {
 	} else {
 		$.ajax({
 			type: "post",
-			url: "/Endpoints/UpdateIssue",
+			url: "/Endpoint?handler=CreateIssue",
 			dataType: "json",
+			data: { "STATUS": "OPEN", "ASSETTAG": AssetTag, "DISPLAYTEXT": Title, "DESCRIPTION": Description, "USERGUID": UserProf },
 			beforeSend: function (xhr) {
 				xhr.setRequestHeader("XSRF-TOKEN",
 					$('input:hidden[name="__RequestVerificationToken"]').val());
 			},
 			success: function (result) {
-				// do something
+				console.log(result)
+			},
+			failure: function (response) {
+				console.warn(response.responseText);
+			},
+			error: function (response) {
+				console.error(response.responseText);
 			}
 		});
 		//fetch(new Request(`/Issues/New?IssueData.ASSETTAG=` + AssetTag + `&IssueData.DISPLAYTEXT=` + Title + `&IssueData.DESCRIPTION=` + Description + ``)).then(() => {
@@ -129,23 +162,39 @@ function ChangeCenterSelection(newselection) {
 	} else if (newselection.id == "Issues_New") {
 		var newForm = document.createElement("form");
 
+		var subhead = document.createElement('h5');
+		subhead.innerHTML ="Please provide a 6 digit asset tag and a room number (eg. 105, 314, G10)"
 		var titletext = document.createElement("div");
 		titletext.innerHTML = "New Issue";
 		titletext.setAttribute("b-pb86f05ye5", "")
 		titletext.style.fontSize = "32px";
-		titletext.append(document.createElement("br"))
+		titletext.append(document.createElement("br"), subhead, document.createElement("br"))
 		titletext.classList.add("issues-table-content");
 
 		var assettagholder = document.createElement("span");
 		assettagholder.innerHTML = "Asset Tag: "
 		assettagholder.setAttribute("b-pb86f05ye5", "")
+
 		var assettaginput = document.createElement("input");
 		assettaginput.type = "number";
 		assettaginput.minlength = "6";
 		assettaginput.maxlength = "6";
-		assettagholder.append(assettaginput);
-		assettagholder.append(document.createElement("br"));
+		assettagholder.append(assettaginput, document.createElement("span").innerHTML = "   ");
 		assettagholder.classList.add("issues-table-content");
+
+
+
+		var roomnumholder = document.createElement('span');
+		roomnumholder.innerHTML = "Room: "
+		roomnumholder.setAttribute("b-pb86f05ye5", "")
+		roomnumholder.classList.add("issues-table-content");
+		var roomnuminput = document.createElement('input');
+		roomnuminput.type = "text";
+		roomnuminput.pattern = "((?:[G]|[g])+(?:[0-9]+))|(?:[0-999]+)"
+		roomnumholder.append(roomnuminput);
+		roomnumholder.append(document.createElement("br"));
+
+
 
 		var issuettitlecontainer = document.createElement("span");
 		issuettitlecontainer.innerHTML = "Issue Title"
@@ -182,7 +231,11 @@ function ChangeCenterSelection(newselection) {
 		submitbutton.type = "submit"
 		submitbutton.setAttribute("b-pb86f05ye5", "")
 		submitbutton.onclick = function () {
-			var submittal = submitNewIssue(assettaginput.value, issueinput.value, issuedesc.value)
+			if (roomnuminput.value == "") {
+				var submittal = submitNewIssue(assettaginput.value, roomnuminput.value, issueinput.value, issuedesc.value)
+			} else {
+				var submittal = submitNewIssueWithRoomNum(assettaginput.value, roomnuminput.value, issueinput.value, issuedesc.value)
+			}
 			if (submittal == false) {
 				alert("Invalid Issue Settings!\nFields must not be blank!\nAsset Tag Must be 6 Digits Long!");
 			} else {
@@ -193,7 +246,7 @@ function ChangeCenterSelection(newselection) {
 
 
 
-		newForm.append(titletext, assettagholder, issuettitlecontainer, issuedescriptioncont, issuesubmitfooter);
+		newForm.append(titletext, assettagholder, roomnumholder, issuettitlecontainer, issuedescriptioncont, issuesubmitfooter);
 		document.getElementById("issues-table-content-container").appendChild(newForm);
 	}
 }

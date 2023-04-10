@@ -2,10 +2,13 @@
 @model CompuTrack.Pages.EndpointModel
 @using Microsoft.AspNetCore.Antiforgery
 @inject IAntiforgery antiforgery
+@using CompuTrack.DataTypes;
 @{
     Layout = null;
     var token = antiforgery.GetAndStoreTokens(HttpContext).RequestToken;
+    Response.StatusCode = 602;
 }
+ERR 602 FUCK YOU<br/>
 <script src="/_framework/aspnetcore-browser-refresh.js"></script>
 If you are reading this, you have ended up in the wrong spot. This page is for requests to the server.
 <br />

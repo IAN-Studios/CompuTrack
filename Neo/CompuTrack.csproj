@@ -2,10 +2,14 @@
 
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
-    <Configurations>Debug;Release;Production</Configurations>
+    <Configurations>Debug;Release;Production;DEMO</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DEMO|AnyCPU'" Label="Configuration">
     <TypeScriptNoEmitOnError>False</TypeScriptNoEmitOnError>
   </PropertyGroup>
 
